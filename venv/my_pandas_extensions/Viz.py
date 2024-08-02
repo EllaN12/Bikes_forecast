@@ -11,7 +11,7 @@ from plotly.subplots import make_subplots
 from plotly import graph_objects as go
 
 import pandas as pd
-
+import os
 import pandas_flavor as pf
 import pathlib
 import pickle
@@ -111,20 +111,34 @@ def forecast_data_pull(total = False, Mountain = False, Road = False, bikeshop =
 
     Road_list = df[df['category_1'] == 'Road']['category_2'].unique().tolist()
     bikeshop_name = df['bikeshop_name'].unique().tolist()
+
+    print("Current working directory:", os.getcwd())
+    total_path = '04_artifacts/total_prediction.pkl'
+    cat_1_path = '04_artifacts/cat_1_prediction.pkl'
+    cat_2_path = '04_artifacts/cat_2_prediction.pkl'
+    bikeshop_path = '04_artifacts/bikeshop_prediction.pkl'
+    resolved_total_path = os.path.abspath(total_path)
+    resolved_cat_1_path = os.path.abspath(cat_1_path)
+    resolved_cat_2_path = os.path.abspath(cat_2_path)
+    resolved_bikeshop_path = os.path.abspath(bikeshop_path)
+    print("Resolved path to total file:", resolved_total_path)
+    print("Resolved path to cat 1 file:", resolved_cat_1_path)
+    print("Resolved path to cat 2 file:", resolved_cat_2_path)
+    print("Resolved path to bikeshop file:", resolved_bikeshop_path)
     
     # total
-    file_path = '/Users/ellandalla/Desktop/Bike_Sales_Forecasting/venv/04_artifacts/total_prediction.pkl'
+    file_path = resolved_total_path
     with open(file_path, 'rb') as f:
         total_df = pickle.load(f)
         df = total_df.copy()
         
     # Mountain and Road
-    file_path = '/Users/ellandalla/Desktop/Bike_Sales_Forecasting/venv/04_artifacts/cat_1_prediction.pkl'
+    file_path = resolved_cat_1_path
     with open(file_path, 'rb') as f:
         cat_1_df = pickle.load(f)
         
         
-    file_path = '/Users/ellandalla/Desktop/Bike_Sales_Forecasting/venv/04_artifacts/cat_2_prediction.pkl'
+    file_path = resolved_cat_2_path
     with open(file_path, 'rb') as f:
         cat_2_df = pickle.load(f)
         
@@ -139,7 +153,7 @@ def forecast_data_pull(total = False, Mountain = False, Road = False, bikeshop =
     road_df = pd.concat([R, R2], axis = 0)
     
 # bikeshops
-    file_path = '/Users/ellandalla/Desktop/Bike_Sales_Forecasting/venv/04_artifacts/bikeshop_prediction.pkl'
+    file_path = resolved_bikeshop_path
 
     with open(file_path, 'rb') as f:
         bikeshops_df = pickle.load(f)
