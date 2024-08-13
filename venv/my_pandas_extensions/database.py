@@ -5,7 +5,7 @@ import pandas_flavor as pf
 import os
 import pandas as pd
 import numpy as np
-#import pandas flavor as pf
+import pandas_flavor as pf
 
 #COLLECT DATA ---
 
@@ -15,7 +15,7 @@ resolved_db_path = os.path.abspath(db_path)
 print("Resolved path to database file:", resolved_db_path)
 
 # conn_string = "sqlite:////C:/Users/Admin/Downloads/bike_orders_database.sqlite"
-
+@pf.register_dataframe_method
 def collect_data(conn_string = f'sqlite:///{resolved_db_path}'):  
     """
     Collects and combines the bike orders data. 

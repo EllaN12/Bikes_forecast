@@ -1,4 +1,4 @@
-import dash
+
 from dash import dcc, html
 from dash.dependencies import Input, Output
 from dash import callback_context as ctx
@@ -13,7 +13,7 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-
+import dash
 import os
 import pandas as pd
 import pathlib
@@ -21,7 +21,7 @@ import pickle
 
 # Data collection
 from my_pandas_extensions.database import collect_data
-from my_pandas_extensions.Viz import get_top_performers, get_top_stores, get_total, forecast_data_pull
+from my_pandas_extensions.Viz import forecast_data_pull
 
 #%%
 # DataFrame setup
@@ -129,16 +129,13 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.Div([
-                html.Hr(),
+                html.Br(),
                 dropdown,
                 html.Br(),
-                html.Hr(),
                 html.H5("Sales Distribution"),
                 html.Br(),
-                html.Hr(),
                 cards,
                 html.Br(),
-                html.Hr(),
                 dcc.Markdown("By Category"),
                 TreeMap,
                 html.Br(),
@@ -149,7 +146,9 @@ app.layout = dbc.Container([
         ], width=12, lg=5),
         dbc.Col([
             dropdown2,
-            html.H5("Sales Forecast"),           
+            html.Br(),
+            html.H5("Sales Forecast"), 
+            html.Br(),          
             Q12016_forecast_line,
         ], width=12, lg=7)
     ]),
@@ -289,7 +288,7 @@ def update_bikeshops_bar_chart(overview_clicks, mountain_clicks, road_clicks, bi
         logger.error(f"Error in callback: {str(e)}")
         return no_update
 
-
+forecast_data_pull(Road = True)
 
 @app.callback(
     Output("line", "figure"),
