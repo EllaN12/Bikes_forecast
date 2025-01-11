@@ -1,4 +1,4 @@
-#!/Users/ellandalla/Desktop/Bike_Sales_Forecasting/venv/bin/python3.11
+#!/Users/ellandalla/Documents/GitHub/Bikes_forecast/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

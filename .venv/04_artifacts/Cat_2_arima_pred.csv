@@ -1,0 +1,541 @@
+,category_2,order_date,value,prediction,ci_lower,ci_upper,Index
+0,Cross Country Race,2020-01,143660.0,,,,Cross Country Race
+1,Cross Country Race,2020-02,324400.0,,,,Cross Country Race
+2,Cross Country Race,2020-03,142000.0,,,,Cross Country Race
+3,Cross Country Race,2020-04,498580.0,,,,Cross Country Race
+4,Cross Country Race,2020-05,220310.0,,,,Cross Country Race
+5,Cross Country Race,2020-06,364420.0,,,,Cross Country Race
+6,Cross Country Race,2020-07,307300.0,,,,Cross Country Race
+7,Cross Country Race,2020-08,110600.0,,,,Cross Country Race
+8,Cross Country Race,2020-09,191870.0,,,,Cross Country Race
+9,Cross Country Race,2020-10,196440.0,,,,Cross Country Race
+10,Cross Country Race,2020-11,292830.0,,,,Cross Country Race
+11,Cross Country Race,2020-12,124840.0,,,,Cross Country Race
+12,Cross Country Race,2021-01,179800.0,,,,Cross Country Race
+13,Cross Country Race,2021-02,158320.0,,,,Cross Country Race
+14,Cross Country Race,2021-03,393210.0,,,,Cross Country Race
+15,Cross Country Race,2021-04,469250.0,,,,Cross Country Race
+16,Cross Country Race,2021-05,300980.0,,,,Cross Country Race
+17,Cross Country Race,2021-06,326780.0,,,,Cross Country Race
+18,Cross Country Race,2021-07,373280.0,,,,Cross Country Race
+19,Cross Country Race,2021-08,322520.0,,,,Cross Country Race
+20,Cross Country Race,2021-09,304420.0,,,,Cross Country Race
+21,Cross Country Race,2021-10,166950.0,,,,Cross Country Race
+22,Cross Country Race,2021-11,224970.0,,,,Cross Country Race
+23,Cross Country Race,2021-12,140320.0,,,,Cross Country Race
+24,Cross Country Race,2022-01,276540.0,,,,Cross Country Race
+25,Cross Country Race,2022-02,313350.0,,,,Cross Country Race
+26,Cross Country Race,2022-03,427580.0,,,,Cross Country Race
+27,Cross Country Race,2022-04,397800.0,,,,Cross Country Race
+28,Cross Country Race,2022-05,641640.0,,,,Cross Country Race
+29,Cross Country Race,2022-06,464510.0,,,,Cross Country Race
+30,Cross Country Race,2022-07,635880.0,,,,Cross Country Race
+31,Cross Country Race,2022-08,279640.0,,,,Cross Country Race
+32,Cross Country Race,2022-09,252560.0,,,,Cross Country Race
+33,Cross Country Race,2022-10,259170.0,,,,Cross Country Race
+34,Cross Country Race,2022-11,159330.0,,,,Cross Country Race
+35,Cross Country Race,2022-12,207430.0,,,,Cross Country Race
+36,Cross Country Race,2023-01,273800.0,,,,Cross Country Race
+37,Cross Country Race,2023-02,262380.0,,,,Cross Country Race
+38,Cross Country Race,2023-03,316750.0,,,,Cross Country Race
+39,Cross Country Race,2023-04,278190.0,,,,Cross Country Race
+40,Cross Country Race,2023-05,443800.0,,,,Cross Country Race
+41,Cross Country Race,2023-06,364360.0,,,,Cross Country Race
+42,Cross Country Race,2023-07,415780.0,,,,Cross Country Race
+43,Cross Country Race,2023-08,320960.0,,,,Cross Country Race
+44,Cross Country Race,2023-09,423430.0,,,,Cross Country Race
+45,Cross Country Race,2023-10,357620.0,,,,Cross Country Race
+46,Cross Country Race,2023-11,109100.0,,,,Cross Country Race
+47,Cross Country Race,2023-12,125610.0,,,,Cross Country Race
+48,Cross Country Race,2024-01,329950.0,,,,Cross Country Race
+49,Cross Country Race,2024-02,395780.0,,,,Cross Country Race
+50,Cross Country Race,2024-03,662620.0,,,,Cross Country Race
+51,Cross Country Race,2024-04,672500.0,,,,Cross Country Race
+52,Cross Country Race,2024-05,727100.0,,,,Cross Country Race
+53,Cross Country Race,2024-06,524400.0,,,,Cross Country Race
+54,Cross Country Race,2024-07,617940.0,,,,Cross Country Race
+55,Cross Country Race,2024-08,598770.0,,,,Cross Country Race
+56,Cross Country Race,2024-09,410310.0,,,,Cross Country Race
+57,Cross Country Race,2024-10,,482940.3525986555,230386.5720811577,735494.1331161533,Cross Country Race
+58,Cross Country Race,2024-11,,454949.4361251066,158508.19649788854,751390.6757523246,Cross Country Race
+59,Cross Country Race,2024-12,,465736.8187688154,112150.41040177527,819323.2271358556,Cross Country Race
+60,Cyclocross,2020-01,7910.0,,,,Cyclocross
+61,Cyclocross,2020-02,24010.0,,,,Cyclocross
+62,Cyclocross,2020-03,21490.0,,,,Cyclocross
+63,Cyclocross,2020-04,51870.0,,,,Cyclocross
+64,Cyclocross,2020-05,47390.0,,,,Cyclocross
+65,Cyclocross,2020-06,72730.0,,,,Cyclocross
+66,Cyclocross,2020-07,16310.0,,,,Cyclocross
+67,Cyclocross,2020-08,36260.0,,,,Cyclocross
+68,Cyclocross,2020-09,41790.0,,,,Cyclocross
+69,Cyclocross,2020-10,28700.0,,,,Cyclocross
+70,Cyclocross,2020-11,15540.0,,,,Cyclocross
+71,Cyclocross,2020-12,14980.0,,,,Cyclocross
+72,Cyclocross,2021-01,25620.0,,,,Cyclocross
+73,Cyclocross,2021-02,23520.0,,,,Cyclocross
+74,Cyclocross,2021-03,31710.0,,,,Cyclocross
+75,Cyclocross,2021-04,49350.0,,,,Cyclocross
+76,Cyclocross,2021-05,32340.0,,,,Cyclocross
+77,Cyclocross,2021-06,27440.0,,,,Cyclocross
+78,Cyclocross,2021-07,23520.0,,,,Cyclocross
+79,Cyclocross,2021-08,44170.0,,,,Cyclocross
+80,Cyclocross,2021-09,32200.0,,,,Cyclocross
+81,Cyclocross,2021-10,18620.0,,,,Cyclocross
+82,Cyclocross,2021-11,14280.0,,,,Cyclocross
+83,Cyclocross,2021-12,19320.0,,,,Cyclocross
+84,Cyclocross,2022-01,31570.0,,,,Cyclocross
+85,Cyclocross,2022-02,22260.0,,,,Cyclocross
+86,Cyclocross,2022-03,60270.0,,,,Cyclocross
+87,Cyclocross,2022-04,30240.0,,,,Cyclocross
+88,Cyclocross,2022-05,72800.0,,,,Cyclocross
+89,Cyclocross,2022-06,46200.0,,,,Cyclocross
+90,Cyclocross,2022-07,88270.0,,,,Cyclocross
+91,Cyclocross,2022-08,33320.0,,,,Cyclocross
+92,Cyclocross,2022-09,47460.0,,,,Cyclocross
+93,Cyclocross,2022-10,5950.0,,,,Cyclocross
+94,Cyclocross,2022-11,34020.0,,,,Cyclocross
+95,Cyclocross,2022-12,31220.0,,,,Cyclocross
+96,Cyclocross,2023-01,26670.0,,,,Cyclocross
+97,Cyclocross,2023-02,30870.0,,,,Cyclocross
+98,Cyclocross,2023-03,26320.0,,,,Cyclocross
+99,Cyclocross,2023-04,28350.0,,,,Cyclocross
+100,Cyclocross,2023-05,43330.0,,,,Cyclocross
+101,Cyclocross,2023-06,45850.0,,,,Cyclocross
+102,Cyclocross,2023-07,24780.0,,,,Cyclocross
+103,Cyclocross,2023-08,41090.0,,,,Cyclocross
+104,Cyclocross,2023-09,56420.0,,,,Cyclocross
+105,Cyclocross,2023-10,27510.0,,,,Cyclocross
+106,Cyclocross,2023-11,35350.0,,,,Cyclocross
+107,Cyclocross,2023-12,3710.0,,,,Cyclocross
+108,Cyclocross,2024-01,7420.0,,,,Cyclocross
+109,Cyclocross,2024-02,48790.0,,,,Cyclocross
+110,Cyclocross,2024-03,52500.0,,,,Cyclocross
+111,Cyclocross,2024-04,89670.0,,,,Cyclocross
+112,Cyclocross,2024-05,81270.0,,,,Cyclocross
+113,Cyclocross,2024-06,44240.0,,,,Cyclocross
+114,Cyclocross,2024-07,57470.0,,,,Cyclocross
+115,Cyclocross,2024-08,68320.0,,,,Cyclocross
+116,Cyclocross,2024-09,43540.0,,,,Cyclocross
+117,Cyclocross,2024-10,,46146.48579827471,11727.392759952694,80565.57883659673,Cyclocross
+118,Cyclocross,2024-11,,31957.347359473388,-4062.8872077195265,67977.5819266663,Cyclocross
+119,Cyclocross,2024-12,,35308.523971601164,-3198.7259296858174,73815.77387288815,Cyclocross
+120,Elite Road,2020-01,144765.0,,,,Elite Road
+121,Elite Road,2020-02,291410.0,,,,Elite Road
+122,Elite Road,2020-03,148340.0,,,,Elite Road
+123,Elite Road,2020-04,371385.0,,,,Elite Road
+124,Elite Road,2020-05,212520.0,,,,Elite Road
+125,Elite Road,2020-06,342135.0,,,,Elite Road
+126,Elite Road,2020-07,237230.0,,,,Elite Road
+127,Elite Road,2020-08,127775.0,,,,Elite Road
+128,Elite Road,2020-09,199195.0,,,,Elite Road
+129,Elite Road,2020-10,157395.0,,,,Elite Road
+130,Elite Road,2020-11,177260.0,,,,Elite Road
+131,Elite Road,2020-12,83905.0,,,,Elite Road
+132,Elite Road,2021-01,173285.0,,,,Elite Road
+133,Elite Road,2021-02,137495.0,,,,Elite Road
+134,Elite Road,2021-03,423500.0,,,,Elite Road
+135,Elite Road,2021-04,351175.0,,,,Elite Road
+136,Elite Road,2021-05,249655.0,,,,Elite Road
+137,Elite Road,2021-06,174855.0,,,,Elite Road
+138,Elite Road,2021-07,287940.0,,,,Elite Road
+139,Elite Road,2021-08,246470.0,,,,Elite Road
+140,Elite Road,2021-09,272480.0,,,,Elite Road
+141,Elite Road,2021-10,100595.0,,,,Elite Road
+142,Elite Road,2021-11,127160.0,,,,Elite Road
+143,Elite Road,2021-12,93325.0,,,,Elite Road
+144,Elite Road,2022-01,194945.0,,,,Elite Road
+145,Elite Road,2022-02,193065.0,,,,Elite Road
+146,Elite Road,2022-03,360105.0,,,,Elite Road
+147,Elite Road,2022-04,169250.0,,,,Elite Road
+148,Elite Road,2022-05,403995.0,,,,Elite Road
+149,Elite Road,2022-06,422455.0,,,,Elite Road
+150,Elite Road,2022-07,421840.0,,,,Elite Road
+151,Elite Road,2022-08,329210.0,,,,Elite Road
+152,Elite Road,2022-09,286140.0,,,,Elite Road
+153,Elite Road,2022-10,260430.0,,,,Elite Road
+154,Elite Road,2022-11,183830.0,,,,Elite Road
+155,Elite Road,2022-12,168945.0,,,,Elite Road
+156,Elite Road,2023-01,194100.0,,,,Elite Road
+157,Elite Road,2023-02,219095.0,,,,Elite Road
+158,Elite Road,2023-03,300875.0,,,,Elite Road
+159,Elite Road,2023-04,242425.0,,,,Elite Road
+160,Elite Road,2023-05,381285.0,,,,Elite Road
+161,Elite Road,2023-06,387595.0,,,,Elite Road
+162,Elite Road,2023-07,307145.0,,,,Elite Road
+163,Elite Road,2023-08,160620.0,,,,Elite Road
+164,Elite Road,2023-09,512255.0,,,,Elite Road
+165,Elite Road,2023-10,292950.0,,,,Elite Road
+166,Elite Road,2023-11,130660.0,,,,Elite Road
+167,Elite Road,2023-12,41120.0,,,,Elite Road
+168,Elite Road,2024-01,146740.0,,,,Elite Road
+169,Elite Road,2024-02,262720.0,,,,Elite Road
+170,Elite Road,2024-03,530820.0,,,,Elite Road
+171,Elite Road,2024-04,566960.0,,,,Elite Road
+172,Elite Road,2024-05,527555.0,,,,Elite Road
+173,Elite Road,2024-06,433430.0,,,,Elite Road
+174,Elite Road,2024-07,413835.0,,,,Elite Road
+175,Elite Road,2024-08,311325.0,,,,Elite Road
+176,Elite Road,2024-09,445695.0,,,,Elite Road
+177,Elite Road,2024-10,,378062.56022950704,153940.5338701283,602184.5865888858,Elite Road
+178,Elite Road,2024-11,,385605.3119727523,130365.76157388237,640844.8623716221,Elite Road
+179,Elite Road,2024-12,,347088.56597552355,71296.79040448566,622880.3415465615,Elite Road
+180,Endurance Road,2020-01,83200.0,,,,Endurance Road
+181,Endurance Road,2020-02,138000.0,,,,Endurance Road
+182,Endurance Road,2020-03,87790.0,,,,Endurance Road
+183,Endurance Road,2020-04,216360.0,,,,Endurance Road
+184,Endurance Road,2020-05,114320.0,,,,Endurance Road
+185,Endurance Road,2020-06,188790.0,,,,Endurance Road
+186,Endurance Road,2020-07,142600.0,,,,Endurance Road
+187,Endurance Road,2020-08,110400.0,,,,Endurance Road
+188,Endurance Road,2020-09,147460.0,,,,Endurance Road
+189,Endurance Road,2020-10,113740.0,,,,Endurance Road
+190,Endurance Road,2020-11,200340.0,,,,Endurance Road
+191,Endurance Road,2020-12,63230.0,,,,Endurance Road
+192,Endurance Road,2021-01,89810.0,,,,Endurance Road
+193,Endurance Road,2021-02,74280.0,,,,Endurance Road
+194,Endurance Road,2021-03,219220.0,,,,Endurance Road
+195,Endurance Road,2021-04,228570.0,,,,Endurance Road
+196,Endurance Road,2021-05,137440.0,,,,Endurance Road
+197,Endurance Road,2021-06,118090.0,,,,Endurance Road
+198,Endurance Road,2021-07,294810.0,,,,Endurance Road
+199,Endurance Road,2021-08,159650.0,,,,Endurance Road
+200,Endurance Road,2021-09,111430.0,,,,Endurance Road
+201,Endurance Road,2021-10,58790.0,,,,Endurance Road
+202,Endurance Road,2021-11,106060.0,,,,Endurance Road
+203,Endurance Road,2021-12,70710.0,,,,Endurance Road
+204,Endurance Road,2022-01,115630.0,,,,Endurance Road
+205,Endurance Road,2022-02,207310.0,,,,Endurance Road
+206,Endurance Road,2022-03,460170.0,,,,Endurance Road
+207,Endurance Road,2022-04,168860.0,,,,Endurance Road
+208,Endurance Road,2022-05,258580.0,,,,Endurance Road
+209,Endurance Road,2022-06,357450.0,,,,Endurance Road
+210,Endurance Road,2022-07,259390.0,,,,Endurance Road
+211,Endurance Road,2022-08,267560.0,,,,Endurance Road
+212,Endurance Road,2022-09,163860.0,,,,Endurance Road
+213,Endurance Road,2022-10,199450.0,,,,Endurance Road
+214,Endurance Road,2022-11,122410.0,,,,Endurance Road
+215,Endurance Road,2022-12,141440.0,,,,Endurance Road
+216,Endurance Road,2023-01,112120.0,,,,Endurance Road
+217,Endurance Road,2023-02,108500.0,,,,Endurance Road
+218,Endurance Road,2023-03,112020.0,,,,Endurance Road
+219,Endurance Road,2023-04,155670.0,,,,Endurance Road
+220,Endurance Road,2023-05,245540.0,,,,Endurance Road
+221,Endurance Road,2023-06,133630.0,,,,Endurance Road
+222,Endurance Road,2023-07,406110.0,,,,Endurance Road
+223,Endurance Road,2023-08,144890.0,,,,Endurance Road
+224,Endurance Road,2023-09,265130.0,,,,Endurance Road
+225,Endurance Road,2023-10,98600.0,,,,Endurance Road
+226,Endurance Road,2023-11,121670.0,,,,Endurance Road
+227,Endurance Road,2023-12,24330.0,,,,Endurance Road
+228,Endurance Road,2024-01,97600.0,,,,Endurance Road
+229,Endurance Road,2024-02,187290.0,,,,Endurance Road
+230,Endurance Road,2024-03,329920.0,,,,Endurance Road
+231,Endurance Road,2024-04,306980.0,,,,Endurance Road
+232,Endurance Road,2024-05,371840.0,,,,Endurance Road
+233,Endurance Road,2024-06,287930.0,,,,Endurance Road
+234,Endurance Road,2024-07,403610.0,,,,Endurance Road
+235,Endurance Road,2024-08,234380.0,,,,Endurance Road
+236,Endurance Road,2024-09,236100.0,,,,Endurance Road
+237,Endurance Road,2024-10,,176011.3808171157,-1656.4419779508899,353679.2036121823,Endurance Road
+238,Endurance Road,2024-11,,179586.92867954125,-6064.855643272254,365238.7130023547,Endurance Road
+239,Endurance Road,2024-12,,177269.88363770046,-17038.814144084346,371578.5814194853,Endurance Road
+240,Fat Bike,2020-01,0.0,,,,Fat Bike
+241,Fat Bike,2020-02,37820.0,,,,Fat Bike
+242,Fat Bike,2020-03,13850.0,,,,Fat Bike
+243,Fat Bike,2020-04,89500.0,,,,Fat Bike
+244,Fat Bike,2020-05,2130.0,,,,Fat Bike
+245,Fat Bike,2020-06,15980.0,,,,Fat Bike
+246,Fat Bike,2020-07,21840.0,,,,Fat Bike
+247,Fat Bike,2020-08,7990.0,,,,Fat Bike
+248,Fat Bike,2020-09,10120.0,,,,Fat Bike
+249,Fat Bike,2020-10,4260.0,,,,Fat Bike
+250,Fat Bike,2020-11,10650.0,,,,Fat Bike
+251,Fat Bike,2020-12,7460.0,,,,Fat Bike
+252,Fat Bike,2021-01,4260.0,,,,Fat Bike
+253,Fat Bike,2021-02,5860.0,,,,Fat Bike
+254,Fat Bike,2021-03,17580.0,,,,Fat Bike
+255,Fat Bike,2021-04,6390.0,,,,Fat Bike
+256,Fat Bike,2021-05,14380.0,,,,Fat Bike
+257,Fat Bike,2021-06,30900.0,,,,Fat Bike
+258,Fat Bike,2021-07,15980.0,,,,Fat Bike
+259,Fat Bike,2021-08,26640.0,,,,Fat Bike
+260,Fat Bike,2021-09,13850.0,,,,Fat Bike
+261,Fat Bike,2021-10,8520.0,,,,Fat Bike
+262,Fat Bike,2021-11,6390.0,,,,Fat Bike
+263,Fat Bike,2021-12,2130.0,,,,Fat Bike
+264,Fat Bike,2022-01,19710.0,,,,Fat Bike
+265,Fat Bike,2022-02,21310.0,,,,Fat Bike
+266,Fat Bike,2022-03,25040.0,,,,Fat Bike
+267,Fat Bike,2022-04,12250.0,,,,Fat Bike
+268,Fat Bike,2022-05,54870.0,,,,Fat Bike
+269,Fat Bike,2022-06,24510.0,,,,Fat Bike
+270,Fat Bike,2022-07,26100.0,,,,Fat Bike
+271,Fat Bike,2022-08,10120.0,,,,Fat Bike
+272,Fat Bike,2022-09,17580.0,,,,Fat Bike
+273,Fat Bike,2022-10,8520.0,,,,Fat Bike
+274,Fat Bike,2022-11,9590.0,,,,Fat Bike
+275,Fat Bike,2022-12,24510.0,,,,Fat Bike
+276,Fat Bike,2023-01,28770.0,,,,Fat Bike
+277,Fat Bike,2023-02,17050.0,,,,Fat Bike
+278,Fat Bike,2023-03,0.0,,,,Fat Bike
+279,Fat Bike,2023-04,8520.0,,,,Fat Bike
+280,Fat Bike,2023-05,26630.0,,,,Fat Bike
+281,Fat Bike,2023-06,23970.0,,,,Fat Bike
+282,Fat Bike,2023-07,18640.0,,,,Fat Bike
+283,Fat Bike,2023-08,22900.0,,,,Fat Bike
+284,Fat Bike,2023-09,11720.0,,,,Fat Bike
+285,Fat Bike,2023-10,2130.0,,,,Fat Bike
+286,Fat Bike,2023-11,3730.0,,,,Fat Bike
+287,Fat Bike,2023-12,2130.0,,,,Fat Bike
+288,Fat Bike,2024-01,18110.0,,,,Fat Bike
+289,Fat Bike,2024-02,55410.0,,,,Fat Bike
+290,Fat Bike,2024-03,12780.0,,,,Fat Bike
+291,Fat Bike,2024-04,32500.0,,,,Fat Bike
+292,Fat Bike,2024-05,45820.0,,,,Fat Bike
+293,Fat Bike,2024-06,33560.0,,,,Fat Bike
+294,Fat Bike,2024-07,20240.0,,,,Fat Bike
+295,Fat Bike,2024-08,16510.0,,,,Fat Bike
+296,Fat Bike,2024-09,22910.0,,,,Fat Bike
+297,Fat Bike,2024-10,,18467.017543859653,-11995.814427944359,48929.84951566366,Fat Bike
+298,Fat Bike,2024-11,,18467.017543859653,-11995.814427944359,48929.84951566366,Fat Bike
+299,Fat Bike,2024-12,,18467.017543859653,-11995.814427944359,48929.84951566366,Fat Bike
+300,Over Mountain,2020-01,35930.0,,,,Over Mountain
+301,Over Mountain,2020-02,114990.0,,,,Over Mountain
+302,Over Mountain,2020-03,139240.0,,,,Over Mountain
+303,Over Mountain,2020-04,171160.0,,,,Over Mountain
+304,Over Mountain,2020-05,73650.0,,,,Over Mountain
+305,Over Mountain,2020-06,171450.0,,,,Over Mountain
+306,Over Mountain,2020-07,188210.0,,,,Over Mountain
+307,Over Mountain,2020-08,86750.0,,,,Over Mountain
+308,Over Mountain,2020-09,96150.0,,,,Over Mountain
+309,Over Mountain,2020-10,61490.0,,,,Over Mountain
+310,Over Mountain,2020-11,113960.0,,,,Over Mountain
+311,Over Mountain,2020-12,75530.0,,,,Over Mountain
+312,Over Mountain,2021-01,85360.0,,,,Over Mountain
+313,Over Mountain,2021-02,81020.0,,,,Over Mountain
+314,Over Mountain,2021-03,122370.0,,,,Over Mountain
+315,Over Mountain,2021-04,190380.0,,,,Over Mountain
+316,Over Mountain,2021-05,58840.0,,,,Over Mountain
+317,Over Mountain,2021-06,134310.0,,,,Over Mountain
+318,Over Mountain,2021-07,133050.0,,,,Over Mountain
+319,Over Mountain,2021-08,128520.0,,,,Over Mountain
+320,Over Mountain,2021-09,114940.0,,,,Over Mountain
+321,Over Mountain,2021-10,66060.0,,,,Over Mountain
+322,Over Mountain,2021-11,130530.0,,,,Over Mountain
+323,Over Mountain,2021-12,100810.0,,,,Over Mountain
+324,Over Mountain,2022-01,133200.0,,,,Over Mountain
+325,Over Mountain,2022-02,168630.0,,,,Over Mountain
+326,Over Mountain,2022-03,225200.0,,,,Over Mountain
+327,Over Mountain,2022-04,176930.0,,,,Over Mountain
+328,Over Mountain,2022-05,236180.0,,,,Over Mountain
+329,Over Mountain,2022-06,244680.0,,,,Over Mountain
+330,Over Mountain,2022-07,208250.0,,,,Over Mountain
+331,Over Mountain,2022-08,109340.0,,,,Over Mountain
+332,Over Mountain,2022-09,72800.0,,,,Over Mountain
+333,Over Mountain,2022-10,151070.0,,,,Over Mountain
+334,Over Mountain,2022-11,95030.0,,,,Over Mountain
+335,Over Mountain,2022-12,90070.0,,,,Over Mountain
+336,Over Mountain,2023-01,84710.0,,,,Over Mountain
+337,Over Mountain,2023-02,49890.0,,,,Over Mountain
+338,Over Mountain,2023-03,92630.0,,,,Over Mountain
+339,Over Mountain,2023-04,202360.0,,,,Over Mountain
+340,Over Mountain,2023-05,173480.0,,,,Over Mountain
+341,Over Mountain,2023-06,144830.0,,,,Over Mountain
+342,Over Mountain,2023-07,174020.0,,,,Over Mountain
+343,Over Mountain,2023-08,123060.0,,,,Over Mountain
+344,Over Mountain,2023-09,187390.0,,,,Over Mountain
+345,Over Mountain,2023-10,112820.0,,,,Over Mountain
+346,Over Mountain,2023-11,44980.0,,,,Over Mountain
+347,Over Mountain,2023-12,37080.0,,,,Over Mountain
+348,Over Mountain,2024-01,152400.0,,,,Over Mountain
+349,Over Mountain,2024-02,124470.0,,,,Over Mountain
+350,Over Mountain,2024-03,206300.0,,,,Over Mountain
+351,Over Mountain,2024-04,242630.0,,,,Over Mountain
+352,Over Mountain,2024-05,139200.0,,,,Over Mountain
+353,Over Mountain,2024-06,146010.0,,,,Over Mountain
+354,Over Mountain,2024-07,143910.0,,,,Over Mountain
+355,Over Mountain,2024-08,223260.0,,,,Over Mountain
+356,Over Mountain,2024-09,179760.0,,,,Over Mountain
+357,Over Mountain,2024-10,,151619.415308459,56987.93595604162,246250.89466087637,Over Mountain
+358,Over Mountain,2024-11,,140517.30935349595,38787.44161435889,242247.177092633,Over Mountain
+359,Over Mountain,2024-12,,136137.27397092353,33346.630942759075,238927.916999088,Over Mountain
+360,Sport,2020-01,7750.0,,,,Sport
+361,Sport,2020-02,28815.0,,,,Sport
+362,Sport,2020-03,17565.0,,,,Sport
+363,Sport,2020-04,52525.0,,,,Sport
+364,Sport,2020-05,42120.0,,,,Sport
+365,Sport,2020-06,32330.0,,,,Sport
+366,Sport,2020-07,28670.0,,,,Sport
+367,Sport,2020-08,15075.0,,,,Sport
+368,Sport,2020-09,23345.0,,,,Sport
+369,Sport,2020-10,23725.0,,,,Sport
+370,Sport,2020-11,14695.0,,,,Sport
+371,Sport,2020-12,22675.0,,,,Sport
+372,Sport,2021-01,24695.0,,,,Sport
+373,Sport,2021-02,34075.0,,,,Sport
+374,Sport,2021-03,31925.0,,,,Sport
+375,Sport,2021-04,37170.0,,,,Sport
+376,Sport,2021-05,20035.0,,,,Sport
+377,Sport,2021-06,49965.0,,,,Sport
+378,Sport,2021-07,44990.0,,,,Sport
+379,Sport,2021-08,40610.0,,,,Sport
+380,Sport,2021-09,27990.0,,,,Sport
+381,Sport,2021-10,15500.0,,,,Sport
+382,Sport,2021-11,6995.0,,,,Sport
+383,Sport,2021-12,20190.0,,,,Sport
+384,Sport,2022-01,23545.0,,,,Sport
+385,Sport,2022-02,28795.0,,,,Sport
+386,Sport,2022-03,63780.0,,,,Sport
+387,Sport,2022-04,34845.0,,,,Sport
+388,Sport,2022-05,65330.0,,,,Sport
+389,Sport,2022-06,49170.0,,,,Sport
+390,Sport,2022-07,59595.0,,,,Sport
+391,Sport,2022-08,49845.0,,,,Sport
+392,Sport,2022-09,43060.0,,,,Sport
+393,Sport,2022-10,17550.0,,,,Sport
+394,Sport,2022-11,29690.0,,,,Sport
+395,Sport,2022-12,30190.0,,,,Sport
+396,Sport,2023-01,19010.0,,,,Sport
+397,Sport,2023-02,22110.0,,,,Sport
+398,Sport,2023-03,34425.0,,,,Sport
+399,Sport,2023-04,36570.0,,,,Sport
+400,Sport,2023-05,36610.0,,,,Sport
+401,Sport,2023-06,32635.0,,,,Sport
+402,Sport,2023-07,34760.0,,,,Sport
+403,Sport,2023-08,28110.0,,,,Sport
+404,Sport,2023-09,51305.0,,,,Sport
+405,Sport,2023-10,21860.0,,,,Sport
+406,Sport,2023-11,12850.0,,,,Sport
+407,Sport,2023-12,7555.0,,,,Sport
+408,Sport,2024-01,22385.0,,,,Sport
+409,Sport,2024-02,37375.0,,,,Sport
+410,Sport,2024-03,54395.0,,,,Sport
+411,Sport,2024-04,58985.0,,,,Sport
+412,Sport,2024-05,38980.0,,,,Sport
+413,Sport,2024-06,51435.0,,,,Sport
+414,Sport,2024-07,44385.0,,,,Sport
+415,Sport,2024-08,83920.0,,,,Sport
+416,Sport,2024-09,44270.0,,,,Sport
+417,Sport,2024-10,,64516.0417373931,38775.78056105305,90256.30291373315,Sport
+418,Sport,2024-11,,22961.892933987852,-5253.274841113671,51177.060709089375,Sport
+419,Sport,2024-12,,30422.250980671914,-7871.673013635063,68716.17497497889,Sport
+420,Trail,2020-01,34150.0,,,,Trail
+421,Trail,2020-02,154530.0,,,,Trail
+422,Trail,2020-03,46200.0,,,,Trail
+423,Trail,2020-04,264210.0,,,,Trail
+424,Trail,2020-05,112230.0,,,,Trail
+425,Trail,2020-06,138860.0,,,,Trail
+426,Trail,2020-07,221720.0,,,,Trail
+427,Trail,2020-08,140840.0,,,,Trail
+428,Trail,2020-09,79640.0,,,,Trail
+429,Trail,2020-10,91420.0,,,,Trail
+430,Trail,2020-11,117210.0,,,,Trail
+431,Trail,2020-12,45550.0,,,,Trail
+432,Trail,2021-01,79120.0,,,,Trail
+433,Trail,2021-02,113370.0,,,,Trail
+434,Trail,2021-03,187400.0,,,,Trail
+435,Trail,2021-04,240240.0,,,,Trail
+436,Trail,2021-05,82660.0,,,,Trail
+437,Trail,2021-06,92120.0,,,,Trail
+438,Trail,2021-07,200180.0,,,,Trail
+439,Trail,2021-08,206420.0,,,,Trail
+440,Trail,2021-09,157950.0,,,,Trail
+441,Trail,2021-10,69400.0,,,,Trail
+442,Trail,2021-11,74850.0,,,,Trail
+443,Trail,2021-12,91320.0,,,,Trail
+444,Trail,2022-01,78460.0,,,,Trail
+445,Trail,2022-02,140320.0,,,,Trail
+446,Trail,2022-03,208460.0,,,,Trail
+447,Trail,2022-04,195910.0,,,,Trail
+448,Trail,2022-05,288280.0,,,,Trail
+449,Trail,2022-06,264130.0,,,,Trail
+450,Trail,2022-07,210570.0,,,,Trail
+451,Trail,2022-08,180380.0,,,,Trail
+452,Trail,2022-09,147500.0,,,,Trail
+453,Trail,2022-10,149410.0,,,,Trail
+454,Trail,2022-11,118640.0,,,,Trail
+455,Trail,2022-12,84250.0,,,,Trail
+456,Trail,2023-01,158600.0,,,,Trail
+457,Trail,2023-02,114770.0,,,,Trail
+458,Trail,2023-03,124240.0,,,,Trail
+459,Trail,2023-04,140350.0,,,,Trail
+460,Trail,2023-05,228850.0,,,,Trail
+461,Trail,2023-06,206530.0,,,,Trail
+462,Trail,2023-07,280090.0,,,,Trail
+463,Trail,2023-08,161450.0,,,,Trail
+464,Trail,2023-09,219360.0,,,,Trail
+465,Trail,2023-10,101250.0,,,,Trail
+466,Trail,2023-11,62870.0,,,,Trail
+467,Trail,2023-12,81370.0,,,,Trail
+468,Trail,2024-01,164510.0,,,,Trail
+469,Trail,2024-02,254690.0,,,,Trail
+470,Trail,2024-03,147490.0,,,,Trail
+471,Trail,2024-04,332610.0,,,,Trail
+472,Trail,2024-05,255390.0,,,,Trail
+473,Trail,2024-06,359440.0,,,,Trail
+474,Trail,2024-07,299820.0,,,,Trail
+475,Trail,2024-08,375240.0,,,,Trail
+476,Trail,2024-09,196640.0,,,,Trail
+477,Trail,2024-10,,259112.63720027194,125447.1041499709,392778.17025057296,Trail
+478,Trail,2024-11,,217823.93249127784,75769.56277972541,359878.30220283027,Trail
+479,Trail,2024-12,,264942.93446871924,112242.52831591206,417643.3406215264,Trail
+480,Triathalon,2020-01,25650.0,,,,Triathalon
+481,Triathalon,2020-02,48100.0,,,,Triathalon
+482,Triathalon,2020-03,43500.0,,,,Triathalon
+483,Triathalon,2020-04,111550.0,,,,Triathalon
+484,Triathalon,2020-05,19500.0,,,,Triathalon
+485,Triathalon,2020-06,86750.0,,,,Triathalon
+486,Triathalon,2020-07,30550.0,,,,Triathalon
+487,Triathalon,2020-08,44100.0,,,,Triathalon
+488,Triathalon,2020-09,25150.0,,,,Triathalon
+489,Triathalon,2020-10,57750.0,,,,Triathalon
+490,Triathalon,2020-11,63600.0,,,,Triathalon
+491,Triathalon,2020-12,34950.0,,,,Triathalon
+492,Triathalon,2021-01,48850.0,,,,Triathalon
+493,Triathalon,2021-02,43850.0,,,,Triathalon
+494,Triathalon,2021-03,78150.0,,,,Triathalon
+495,Triathalon,2021-04,47700.0,,,,Triathalon
+496,Triathalon,2021-05,65850.0,,,,Triathalon
+497,Triathalon,2021-06,75450.0,,,,Triathalon
+498,Triathalon,2021-07,98800.0,,,,Triathalon
+499,Triathalon,2021-08,115050.0,,,,Triathalon
+500,Triathalon,2021-09,40750.0,,,,Triathalon
+501,Triathalon,2021-10,38350.0,,,,Triathalon
+502,Triathalon,2021-11,28450.0,,,,Triathalon
+503,Triathalon,2021-12,23900.0,,,,Triathalon
+504,Triathalon,2022-01,61650.0,,,,Triathalon
+505,Triathalon,2022-02,75200.0,,,,Triathalon
+506,Triathalon,2022-03,87000.0,,,,Triathalon
+507,Triathalon,2022-04,21450.0,,,,Triathalon
+508,Triathalon,2022-05,60500.0,,,,Triathalon
+509,Triathalon,2022-06,79250.0,,,,Triathalon
+510,Triathalon,2022-07,108950.0,,,,Triathalon
+511,Triathalon,2022-08,111000.0,,,,Triathalon
+512,Triathalon,2022-09,32300.0,,,,Triathalon
+513,Triathalon,2022-10,72850.0,,,,Triathalon
+514,Triathalon,2022-11,64650.0,,,,Triathalon
+515,Triathalon,2022-12,43450.0,,,,Triathalon
+516,Triathalon,2023-01,100250.0,,,,Triathalon
+517,Triathalon,2023-02,67600.0,,,,Triathalon
+518,Triathalon,2023-03,33500.0,,,,Triathalon
+519,Triathalon,2023-04,164500.0,,,,Triathalon
+520,Triathalon,2023-05,159750.0,,,,Triathalon
+521,Triathalon,2023-06,86550.0,,,,Triathalon
+522,Triathalon,2023-07,88400.0,,,,Triathalon
+523,Triathalon,2023-08,47700.0,,,,Triathalon
+524,Triathalon,2023-09,107700.0,,,,Triathalon
+525,Triathalon,2023-10,28000.0,,,,Triathalon
+526,Triathalon,2023-11,39700.0,,,,Triathalon
+527,Triathalon,2023-12,9100.0,,,,Triathalon
+528,Triathalon,2024-01,23250.0,,,,Triathalon
+529,Triathalon,2024-02,80400.0,,,,Triathalon
+530,Triathalon,2024-03,162050.0,,,,Triathalon
+531,Triathalon,2024-04,171500.0,,,,Triathalon
+532,Triathalon,2024-05,120100.0,,,,Triathalon
+533,Triathalon,2024-06,111000.0,,,,Triathalon
+534,Triathalon,2024-07,114700.0,,,,Triathalon
+535,Triathalon,2024-08,109250.0,,,,Triathalon
+536,Triathalon,2024-09,114200.0,,,,Triathalon
+537,Triathalon,2024-10,,110822.70896410254,34186.52595148473,187458.89197672036,Triathalon
+538,Triathalon,2024-11,,110789.02166048568,30546.971481492918,191031.07183947845,Triathalon
+539,Triathalon,2024-12,,111726.56420892806,31052.560028279855,192400.56838957628,Triathalon

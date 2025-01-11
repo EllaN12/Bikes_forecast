@@ -1,0 +1,1621 @@
+,order_date,ci_lower,ci_upper,category_2,variable,Sales
+0,2020-01-01,,,Cross Country Race,Actuals,143660.0
+1,2020-01-01,,,Cyclocross,Actuals,7910.0
+2,2020-01-01,,,Elite Road,Actuals,144765.0
+3,2020-01-01,,,Endurance Road,Actuals,83200.0
+4,2020-01-01,,,Fat Bike,Actuals,0.0
+5,2020-01-01,,,Over Mountain,Actuals,35930.0
+6,2020-01-01,,,Sport,Actuals,7750.0
+7,2020-01-01,,,Trail,Actuals,34150.0
+8,2020-01-01,,,Triathalon,Actuals,25650.0
+9,2020-02-01,,,Cross Country Race,Actuals,324400.0
+10,2020-02-01,,,Cyclocross,Actuals,24010.0
+11,2020-02-01,,,Elite Road,Actuals,291410.0
+12,2020-02-01,,,Endurance Road,Actuals,138000.0
+13,2020-02-01,,,Fat Bike,Actuals,37820.0
+14,2020-02-01,,,Over Mountain,Actuals,114990.0
+15,2020-02-01,,,Sport,Actuals,28815.0
+16,2020-02-01,,,Trail,Actuals,154530.0
+17,2020-02-01,,,Triathalon,Actuals,48100.0
+18,2020-03-01,,,Cross Country Race,Actuals,142000.0
+19,2020-03-01,,,Cyclocross,Actuals,21490.0
+20,2020-03-01,,,Elite Road,Actuals,148340.0
+21,2020-03-01,,,Endurance Road,Actuals,87790.0
+22,2020-03-01,,,Fat Bike,Actuals,13850.0
+23,2020-03-01,,,Over Mountain,Actuals,139240.0
+24,2020-03-01,,,Sport,Actuals,17565.0
+25,2020-03-01,,,Trail,Actuals,46200.0
+26,2020-03-01,,,Triathalon,Actuals,43500.0
+27,2020-04-01,,,Cross Country Race,Actuals,498580.0
+28,2020-04-01,,,Cyclocross,Actuals,51870.0
+29,2020-04-01,,,Elite Road,Actuals,371385.0
+30,2020-04-01,,,Endurance Road,Actuals,216360.0
+31,2020-04-01,,,Fat Bike,Actuals,89500.0
+32,2020-04-01,,,Over Mountain,Actuals,171160.0
+33,2020-04-01,,,Sport,Actuals,52525.0
+34,2020-04-01,,,Trail,Actuals,264210.0
+35,2020-04-01,,,Triathalon,Actuals,111550.0
+36,2020-05-01,,,Cross Country Race,Actuals,220310.0
+37,2020-05-01,,,Cyclocross,Actuals,47390.0
+38,2020-05-01,,,Elite Road,Actuals,212520.0
+39,2020-05-01,,,Endurance Road,Actuals,114320.0
+40,2020-05-01,,,Fat Bike,Actuals,2130.0
+41,2020-05-01,,,Over Mountain,Actuals,73650.0
+42,2020-05-01,,,Sport,Actuals,42120.0
+43,2020-05-01,,,Trail,Actuals,112230.0
+44,2020-05-01,,,Triathalon,Actuals,19500.0
+45,2020-06-01,,,Cross Country Race,Actuals,364420.0
+46,2020-06-01,,,Cyclocross,Actuals,72730.0
+47,2020-06-01,,,Elite Road,Actuals,342135.0
+48,2020-06-01,,,Endurance Road,Actuals,188790.0
+49,2020-06-01,,,Fat Bike,Actuals,15980.0
+50,2020-06-01,,,Over Mountain,Actuals,171450.0
+51,2020-06-01,,,Sport,Actuals,32330.0
+52,2020-06-01,,,Trail,Actuals,138860.0
+53,2020-06-01,,,Triathalon,Actuals,86750.0
+54,2020-07-01,,,Cross Country Race,Actuals,307300.0
+55,2020-07-01,,,Cyclocross,Actuals,16310.0
+56,2020-07-01,,,Elite Road,Actuals,237230.0
+57,2020-07-01,,,Endurance Road,Actuals,142600.0
+58,2020-07-01,,,Fat Bike,Actuals,21840.0
+59,2020-07-01,,,Over Mountain,Actuals,188210.0
+60,2020-07-01,,,Sport,Actuals,28670.0
+61,2020-07-01,,,Trail,Actuals,221720.0
+62,2020-07-01,,,Triathalon,Actuals,30550.0
+63,2020-08-01,,,Cross Country Race,Actuals,110600.0
+64,2020-08-01,,,Cyclocross,Actuals,36260.0
+65,2020-08-01,,,Elite Road,Actuals,127775.0
+66,2020-08-01,,,Endurance Road,Actuals,110400.0
+67,2020-08-01,,,Fat Bike,Actuals,7990.0
+68,2020-08-01,,,Over Mountain,Actuals,86750.0
+69,2020-08-01,,,Sport,Actuals,15075.0
+70,2020-08-01,,,Trail,Actuals,140840.0
+71,2020-08-01,,,Triathalon,Actuals,44100.0
+72,2020-09-01,,,Cross Country Race,Actuals,191870.0
+73,2020-09-01,,,Cyclocross,Actuals,41790.0
+74,2020-09-01,,,Elite Road,Actuals,199195.0
+75,2020-09-01,,,Endurance Road,Actuals,147460.0
+76,2020-09-01,,,Fat Bike,Actuals,10120.0
+77,2020-09-01,,,Over Mountain,Actuals,96150.0
+78,2020-09-01,,,Sport,Actuals,23345.0
+79,2020-09-01,,,Trail,Actuals,79640.0
+80,2020-09-01,,,Triathalon,Actuals,25150.0
+81,2020-10-01,,,Cross Country Race,Actuals,196440.0
+82,2020-10-01,,,Cyclocross,Actuals,28700.0
+83,2020-10-01,,,Elite Road,Actuals,157395.0
+84,2020-10-01,,,Endurance Road,Actuals,113740.0
+85,2020-10-01,,,Fat Bike,Actuals,4260.0
+86,2020-10-01,,,Over Mountain,Actuals,61490.0
+87,2020-10-01,,,Sport,Actuals,23725.0
+88,2020-10-01,,,Trail,Actuals,91420.0
+89,2020-10-01,,,Triathalon,Actuals,57750.0
+90,2020-11-01,,,Cross Country Race,Actuals,292830.0
+91,2020-11-01,,,Cyclocross,Actuals,15540.0
+92,2020-11-01,,,Elite Road,Actuals,177260.0
+93,2020-11-01,,,Endurance Road,Actuals,200340.0
+94,2020-11-01,,,Fat Bike,Actuals,10650.0
+95,2020-11-01,,,Over Mountain,Actuals,113960.0
+96,2020-11-01,,,Sport,Actuals,14695.0
+97,2020-11-01,,,Trail,Actuals,117210.0
+98,2020-11-01,,,Triathalon,Actuals,63600.0
+99,2020-12-01,,,Cross Country Race,Actuals,124840.0
+100,2020-12-01,,,Cyclocross,Actuals,14980.0
+101,2020-12-01,,,Elite Road,Actuals,83905.0
+102,2020-12-01,,,Endurance Road,Actuals,63230.0
+103,2020-12-01,,,Fat Bike,Actuals,7460.0
+104,2020-12-01,,,Over Mountain,Actuals,75530.0
+105,2020-12-01,,,Sport,Actuals,22675.0
+106,2020-12-01,,,Trail,Actuals,45550.0
+107,2020-12-01,,,Triathalon,Actuals,34950.0
+108,2021-01-01,,,Cross Country Race,Actuals,179800.0
+109,2021-01-01,,,Cyclocross,Actuals,25620.0
+110,2021-01-01,,,Elite Road,Actuals,173285.0
+111,2021-01-01,,,Endurance Road,Actuals,89810.0
+112,2021-01-01,,,Fat Bike,Actuals,4260.0
+113,2021-01-01,,,Over Mountain,Actuals,85360.0
+114,2021-01-01,,,Sport,Actuals,24695.0
+115,2021-01-01,,,Trail,Actuals,79120.0
+116,2021-01-01,,,Triathalon,Actuals,48850.0
+117,2021-02-01,,,Cross Country Race,Actuals,158320.0
+118,2021-02-01,,,Cyclocross,Actuals,23520.0
+119,2021-02-01,,,Elite Road,Actuals,137495.0
+120,2021-02-01,,,Endurance Road,Actuals,74280.0
+121,2021-02-01,,,Fat Bike,Actuals,5860.0
+122,2021-02-01,,,Over Mountain,Actuals,81020.0
+123,2021-02-01,,,Sport,Actuals,34075.0
+124,2021-02-01,,,Trail,Actuals,113370.0
+125,2021-02-01,,,Triathalon,Actuals,43850.0
+126,2021-03-01,,,Cross Country Race,Actuals,393210.0
+127,2021-03-01,,,Cyclocross,Actuals,31710.0
+128,2021-03-01,,,Elite Road,Actuals,423500.0
+129,2021-03-01,,,Endurance Road,Actuals,219220.0
+130,2021-03-01,,,Fat Bike,Actuals,17580.0
+131,2021-03-01,,,Over Mountain,Actuals,122370.0
+132,2021-03-01,,,Sport,Actuals,31925.0
+133,2021-03-01,,,Trail,Actuals,187400.0
+134,2021-03-01,,,Triathalon,Actuals,78150.0
+135,2021-04-01,,,Cross Country Race,Actuals,469250.0
+136,2021-04-01,,,Cyclocross,Actuals,49350.0
+137,2021-04-01,,,Elite Road,Actuals,351175.0
+138,2021-04-01,,,Endurance Road,Actuals,228570.0
+139,2021-04-01,,,Fat Bike,Actuals,6390.0
+140,2021-04-01,,,Over Mountain,Actuals,190380.0
+141,2021-04-01,,,Sport,Actuals,37170.0
+142,2021-04-01,,,Trail,Actuals,240240.0
+143,2021-04-01,,,Triathalon,Actuals,47700.0
+144,2021-05-01,,,Cross Country Race,Actuals,300980.0
+145,2021-05-01,,,Cyclocross,Actuals,32340.0
+146,2021-05-01,,,Elite Road,Actuals,249655.0
+147,2021-05-01,,,Endurance Road,Actuals,137440.0
+148,2021-05-01,,,Fat Bike,Actuals,14380.0
+149,2021-05-01,,,Over Mountain,Actuals,58840.0
+150,2021-05-01,,,Sport,Actuals,20035.0
+151,2021-05-01,,,Trail,Actuals,82660.0
+152,2021-05-01,,,Triathalon,Actuals,65850.0
+153,2021-06-01,,,Cross Country Race,Actuals,326780.0
+154,2021-06-01,,,Cyclocross,Actuals,27440.0
+155,2021-06-01,,,Elite Road,Actuals,174855.0
+156,2021-06-01,,,Endurance Road,Actuals,118090.0
+157,2021-06-01,,,Fat Bike,Actuals,30900.0
+158,2021-06-01,,,Over Mountain,Actuals,134310.0
+159,2021-06-01,,,Sport,Actuals,49965.0
+160,2021-06-01,,,Trail,Actuals,92120.0
+161,2021-06-01,,,Triathalon,Actuals,75450.0
+162,2021-07-01,,,Cross Country Race,Actuals,373280.0
+163,2021-07-01,,,Cyclocross,Actuals,23520.0
+164,2021-07-01,,,Elite Road,Actuals,287940.0
+165,2021-07-01,,,Endurance Road,Actuals,294810.0
+166,2021-07-01,,,Fat Bike,Actuals,15980.0
+167,2021-07-01,,,Over Mountain,Actuals,133050.0
+168,2021-07-01,,,Sport,Actuals,44990.0
+169,2021-07-01,,,Trail,Actuals,200180.0
+170,2021-07-01,,,Triathalon,Actuals,98800.0
+171,2021-08-01,,,Cross Country Race,Actuals,322520.0
+172,2021-08-01,,,Cyclocross,Actuals,44170.0
+173,2021-08-01,,,Elite Road,Actuals,246470.0
+174,2021-08-01,,,Endurance Road,Actuals,159650.0
+175,2021-08-01,,,Fat Bike,Actuals,26640.0
+176,2021-08-01,,,Over Mountain,Actuals,128520.0
+177,2021-08-01,,,Sport,Actuals,40610.0
+178,2021-08-01,,,Trail,Actuals,206420.0
+179,2021-08-01,,,Triathalon,Actuals,115050.0
+180,2021-09-01,,,Cross Country Race,Actuals,304420.0
+181,2021-09-01,,,Cyclocross,Actuals,32200.0
+182,2021-09-01,,,Elite Road,Actuals,272480.0
+183,2021-09-01,,,Endurance Road,Actuals,111430.0
+184,2021-09-01,,,Fat Bike,Actuals,13850.0
+185,2021-09-01,,,Over Mountain,Actuals,114940.0
+186,2021-09-01,,,Sport,Actuals,27990.0
+187,2021-09-01,,,Trail,Actuals,157950.0
+188,2021-09-01,,,Triathalon,Actuals,40750.0
+189,2021-10-01,,,Cross Country Race,Actuals,166950.0
+190,2021-10-01,,,Cyclocross,Actuals,18620.0
+191,2021-10-01,,,Elite Road,Actuals,100595.0
+192,2021-10-01,,,Endurance Road,Actuals,58790.0
+193,2021-10-01,,,Fat Bike,Actuals,8520.0
+194,2021-10-01,,,Over Mountain,Actuals,66060.0
+195,2021-10-01,,,Sport,Actuals,15500.0
+196,2021-10-01,,,Trail,Actuals,69400.0
+197,2021-10-01,,,Triathalon,Actuals,38350.0
+198,2021-11-01,,,Cross Country Race,Actuals,224970.0
+199,2021-11-01,,,Cyclocross,Actuals,14280.0
+200,2021-11-01,,,Elite Road,Actuals,127160.0
+201,2021-11-01,,,Endurance Road,Actuals,106060.0
+202,2021-11-01,,,Fat Bike,Actuals,6390.0
+203,2021-11-01,,,Over Mountain,Actuals,130530.0
+204,2021-11-01,,,Sport,Actuals,6995.0
+205,2021-11-01,,,Trail,Actuals,74850.0
+206,2021-11-01,,,Triathalon,Actuals,28450.0
+207,2021-12-01,,,Cross Country Race,Actuals,140320.0
+208,2021-12-01,,,Cyclocross,Actuals,19320.0
+209,2021-12-01,,,Elite Road,Actuals,93325.0
+210,2021-12-01,,,Endurance Road,Actuals,70710.0
+211,2021-12-01,,,Fat Bike,Actuals,2130.0
+212,2021-12-01,,,Over Mountain,Actuals,100810.0
+213,2021-12-01,,,Sport,Actuals,20190.0
+214,2021-12-01,,,Trail,Actuals,91320.0
+215,2021-12-01,,,Triathalon,Actuals,23900.0
+216,2022-01-01,,,Cross Country Race,Actuals,276540.0
+217,2022-01-01,,,Cyclocross,Actuals,31570.0
+218,2022-01-01,,,Elite Road,Actuals,194945.0
+219,2022-01-01,,,Endurance Road,Actuals,115630.0
+220,2022-01-01,,,Fat Bike,Actuals,19710.0
+221,2022-01-01,,,Over Mountain,Actuals,133200.0
+222,2022-01-01,,,Sport,Actuals,23545.0
+223,2022-01-01,,,Trail,Actuals,78460.0
+224,2022-01-01,,,Triathalon,Actuals,61650.0
+225,2022-02-01,,,Cross Country Race,Actuals,313350.0
+226,2022-02-01,,,Cyclocross,Actuals,22260.0
+227,2022-02-01,,,Elite Road,Actuals,193065.0
+228,2022-02-01,,,Endurance Road,Actuals,207310.0
+229,2022-02-01,,,Fat Bike,Actuals,21310.0
+230,2022-02-01,,,Over Mountain,Actuals,168630.0
+231,2022-02-01,,,Sport,Actuals,28795.0
+232,2022-02-01,,,Trail,Actuals,140320.0
+233,2022-02-01,,,Triathalon,Actuals,75200.0
+234,2022-03-01,,,Cross Country Race,Actuals,427580.0
+235,2022-03-01,,,Cyclocross,Actuals,60270.0
+236,2022-03-01,,,Elite Road,Actuals,360105.0
+237,2022-03-01,,,Endurance Road,Actuals,460170.0
+238,2022-03-01,,,Fat Bike,Actuals,25040.0
+239,2022-03-01,,,Over Mountain,Actuals,225200.0
+240,2022-03-01,,,Sport,Actuals,63780.0
+241,2022-03-01,,,Trail,Actuals,208460.0
+242,2022-03-01,,,Triathalon,Actuals,87000.0
+243,2022-04-01,,,Cross Country Race,Actuals,397800.0
+244,2022-04-01,,,Cyclocross,Actuals,30240.0
+245,2022-04-01,,,Elite Road,Actuals,169250.0
+246,2022-04-01,,,Endurance Road,Actuals,168860.0
+247,2022-04-01,,,Fat Bike,Actuals,12250.0
+248,2022-04-01,,,Over Mountain,Actuals,176930.0
+249,2022-04-01,,,Sport,Actuals,34845.0
+250,2022-04-01,,,Trail,Actuals,195910.0
+251,2022-04-01,,,Triathalon,Actuals,21450.0
+252,2022-05-01,,,Cross Country Race,Actuals,641640.0
+253,2022-05-01,,,Cyclocross,Actuals,72800.0
+254,2022-05-01,,,Elite Road,Actuals,403995.0
+255,2022-05-01,,,Endurance Road,Actuals,258580.0
+256,2022-05-01,,,Fat Bike,Actuals,54870.0
+257,2022-05-01,,,Over Mountain,Actuals,236180.0
+258,2022-05-01,,,Sport,Actuals,65330.0
+259,2022-05-01,,,Trail,Actuals,288280.0
+260,2022-05-01,,,Triathalon,Actuals,60500.0
+261,2022-06-01,,,Cross Country Race,Actuals,464510.0
+262,2022-06-01,,,Cyclocross,Actuals,46200.0
+263,2022-06-01,,,Elite Road,Actuals,422455.0
+264,2022-06-01,,,Endurance Road,Actuals,357450.0
+265,2022-06-01,,,Fat Bike,Actuals,24510.0
+266,2022-06-01,,,Over Mountain,Actuals,244680.0
+267,2022-06-01,,,Sport,Actuals,49170.0
+268,2022-06-01,,,Trail,Actuals,264130.0
+269,2022-06-01,,,Triathalon,Actuals,79250.0
+270,2022-07-01,,,Cross Country Race,Actuals,635880.0
+271,2022-07-01,,,Cyclocross,Actuals,88270.0
+272,2022-07-01,,,Elite Road,Actuals,421840.0
+273,2022-07-01,,,Endurance Road,Actuals,259390.0
+274,2022-07-01,,,Fat Bike,Actuals,26100.0
+275,2022-07-01,,,Over Mountain,Actuals,208250.0
+276,2022-07-01,,,Sport,Actuals,59595.0
+277,2022-07-01,,,Trail,Actuals,210570.0
+278,2022-07-01,,,Triathalon,Actuals,108950.0
+279,2022-08-01,,,Cross Country Race,Actuals,279640.0
+280,2022-08-01,,,Cyclocross,Actuals,33320.0
+281,2022-08-01,,,Elite Road,Actuals,329210.0
+282,2022-08-01,,,Endurance Road,Actuals,267560.0
+283,2022-08-01,,,Fat Bike,Actuals,10120.0
+284,2022-08-01,,,Over Mountain,Actuals,109340.0
+285,2022-08-01,,,Sport,Actuals,49845.0
+286,2022-08-01,,,Trail,Actuals,180380.0
+287,2022-08-01,,,Triathalon,Actuals,111000.0
+288,2022-09-01,,,Cross Country Race,Actuals,252560.0
+289,2022-09-01,,,Cyclocross,Actuals,47460.0
+290,2022-09-01,,,Elite Road,Actuals,286140.0
+291,2022-09-01,,,Endurance Road,Actuals,163860.0
+292,2022-09-01,,,Fat Bike,Actuals,17580.0
+293,2022-09-01,,,Over Mountain,Actuals,72800.0
+294,2022-09-01,,,Sport,Actuals,43060.0
+295,2022-09-01,,,Trail,Actuals,147500.0
+296,2022-09-01,,,Triathalon,Actuals,32300.0
+297,2022-10-01,,,Cross Country Race,Actuals,259170.0
+298,2022-10-01,,,Cyclocross,Actuals,5950.0
+299,2022-10-01,,,Elite Road,Actuals,260430.0
+300,2022-10-01,,,Endurance Road,Actuals,199450.0
+301,2022-10-01,,,Fat Bike,Actuals,8520.0
+302,2022-10-01,,,Over Mountain,Actuals,151070.0
+303,2022-10-01,,,Sport,Actuals,17550.0
+304,2022-10-01,,,Trail,Actuals,149410.0
+305,2022-10-01,,,Triathalon,Actuals,72850.0
+306,2022-11-01,,,Cross Country Race,Actuals,159330.0
+307,2022-11-01,,,Cyclocross,Actuals,34020.0
+308,2022-11-01,,,Elite Road,Actuals,183830.0
+309,2022-11-01,,,Endurance Road,Actuals,122410.0
+310,2022-11-01,,,Fat Bike,Actuals,9590.0
+311,2022-11-01,,,Over Mountain,Actuals,95030.0
+312,2022-11-01,,,Sport,Actuals,29690.0
+313,2022-11-01,,,Trail,Actuals,118640.0
+314,2022-11-01,,,Triathalon,Actuals,64650.0
+315,2022-12-01,,,Cross Country Race,Actuals,207430.0
+316,2022-12-01,,,Cyclocross,Actuals,31220.0
+317,2022-12-01,,,Elite Road,Actuals,168945.0
+318,2022-12-01,,,Endurance Road,Actuals,141440.0
+319,2022-12-01,,,Fat Bike,Actuals,24510.0
+320,2022-12-01,,,Over Mountain,Actuals,90070.0
+321,2022-12-01,,,Sport,Actuals,30190.0
+322,2022-12-01,,,Trail,Actuals,84250.0
+323,2022-12-01,,,Triathalon,Actuals,43450.0
+324,2023-01-01,,,Cross Country Race,Actuals,273800.0
+325,2023-01-01,,,Cyclocross,Actuals,26670.0
+326,2023-01-01,,,Elite Road,Actuals,194100.0
+327,2023-01-01,,,Endurance Road,Actuals,112120.0
+328,2023-01-01,,,Fat Bike,Actuals,28770.0
+329,2023-01-01,,,Over Mountain,Actuals,84710.0
+330,2023-01-01,,,Sport,Actuals,19010.0
+331,2023-01-01,,,Trail,Actuals,158600.0
+332,2023-01-01,,,Triathalon,Actuals,100250.0
+333,2023-02-01,,,Cross Country Race,Actuals,262380.0
+334,2023-02-01,,,Cyclocross,Actuals,30870.0
+335,2023-02-01,,,Elite Road,Actuals,219095.0
+336,2023-02-01,,,Endurance Road,Actuals,108500.0
+337,2023-02-01,,,Fat Bike,Actuals,17050.0
+338,2023-02-01,,,Over Mountain,Actuals,49890.0
+339,2023-02-01,,,Sport,Actuals,22110.0
+340,2023-02-01,,,Trail,Actuals,114770.0
+341,2023-02-01,,,Triathalon,Actuals,67600.0
+342,2023-03-01,,,Cross Country Race,Actuals,316750.0
+343,2023-03-01,,,Cyclocross,Actuals,26320.0
+344,2023-03-01,,,Elite Road,Actuals,300875.0
+345,2023-03-01,,,Endurance Road,Actuals,112020.0
+346,2023-03-01,,,Fat Bike,Actuals,0.0
+347,2023-03-01,,,Over Mountain,Actuals,92630.0
+348,2023-03-01,,,Sport,Actuals,34425.0
+349,2023-03-01,,,Trail,Actuals,124240.0
+350,2023-03-01,,,Triathalon,Actuals,33500.0
+351,2023-04-01,,,Cross Country Race,Actuals,278190.0
+352,2023-04-01,,,Cyclocross,Actuals,28350.0
+353,2023-04-01,,,Elite Road,Actuals,242425.0
+354,2023-04-01,,,Endurance Road,Actuals,155670.0
+355,2023-04-01,,,Fat Bike,Actuals,8520.0
+356,2023-04-01,,,Over Mountain,Actuals,202360.0
+357,2023-04-01,,,Sport,Actuals,36570.0
+358,2023-04-01,,,Trail,Actuals,140350.0
+359,2023-04-01,,,Triathalon,Actuals,164500.0
+360,2023-05-01,,,Cross Country Race,Actuals,443800.0
+361,2023-05-01,,,Cyclocross,Actuals,43330.0
+362,2023-05-01,,,Elite Road,Actuals,381285.0
+363,2023-05-01,,,Endurance Road,Actuals,245540.0
+364,2023-05-01,,,Fat Bike,Actuals,26630.0
+365,2023-05-01,,,Over Mountain,Actuals,173480.0
+366,2023-05-01,,,Sport,Actuals,36610.0
+367,2023-05-01,,,Trail,Actuals,228850.0
+368,2023-05-01,,,Triathalon,Actuals,159750.0
+369,2023-06-01,,,Cross Country Race,Actuals,364360.0
+370,2023-06-01,,,Cyclocross,Actuals,45850.0
+371,2023-06-01,,,Elite Road,Actuals,387595.0
+372,2023-06-01,,,Endurance Road,Actuals,133630.0
+373,2023-06-01,,,Fat Bike,Actuals,23970.0
+374,2023-06-01,,,Over Mountain,Actuals,144830.0
+375,2023-06-01,,,Sport,Actuals,32635.0
+376,2023-06-01,,,Trail,Actuals,206530.0
+377,2023-06-01,,,Triathalon,Actuals,86550.0
+378,2023-07-01,,,Cross Country Race,Actuals,415780.0
+379,2023-07-01,,,Cyclocross,Actuals,24780.0
+380,2023-07-01,,,Elite Road,Actuals,307145.0
+381,2023-07-01,,,Endurance Road,Actuals,406110.0
+382,2023-07-01,,,Fat Bike,Actuals,18640.0
+383,2023-07-01,,,Over Mountain,Actuals,174020.0
+384,2023-07-01,,,Sport,Actuals,34760.0
+385,2023-07-01,,,Trail,Actuals,280090.0
+386,2023-07-01,,,Triathalon,Actuals,88400.0
+387,2023-08-01,,,Cross Country Race,Actuals,320960.0
+388,2023-08-01,,,Cyclocross,Actuals,41090.0
+389,2023-08-01,,,Elite Road,Actuals,160620.0
+390,2023-08-01,,,Endurance Road,Actuals,144890.0
+391,2023-08-01,,,Fat Bike,Actuals,22900.0
+392,2023-08-01,,,Over Mountain,Actuals,123060.0
+393,2023-08-01,,,Sport,Actuals,28110.0
+394,2023-08-01,,,Trail,Actuals,161450.0
+395,2023-08-01,,,Triathalon,Actuals,47700.0
+396,2023-09-01,,,Cross Country Race,Actuals,423430.0
+397,2023-09-01,,,Cyclocross,Actuals,56420.0
+398,2023-09-01,,,Elite Road,Actuals,512255.0
+399,2023-09-01,,,Endurance Road,Actuals,265130.0
+400,2023-09-01,,,Fat Bike,Actuals,11720.0
+401,2023-09-01,,,Over Mountain,Actuals,187390.0
+402,2023-09-01,,,Sport,Actuals,51305.0
+403,2023-09-01,,,Trail,Actuals,219360.0
+404,2023-09-01,,,Triathalon,Actuals,107700.0
+405,2023-10-01,,,Cross Country Race,Actuals,357620.0
+406,2023-10-01,,,Cyclocross,Actuals,27510.0
+407,2023-10-01,,,Elite Road,Actuals,292950.0
+408,2023-10-01,,,Endurance Road,Actuals,98600.0
+409,2023-10-01,,,Fat Bike,Actuals,2130.0
+410,2023-10-01,,,Over Mountain,Actuals,112820.0
+411,2023-10-01,,,Sport,Actuals,21860.0
+412,2023-10-01,,,Trail,Actuals,101250.0
+413,2023-10-01,,,Triathalon,Actuals,28000.0
+414,2023-11-01,,,Cross Country Race,Actuals,109100.0
+415,2023-11-01,,,Cyclocross,Actuals,35350.0
+416,2023-11-01,,,Elite Road,Actuals,130660.0
+417,2023-11-01,,,Endurance Road,Actuals,121670.0
+418,2023-11-01,,,Fat Bike,Actuals,3730.0
+419,2023-11-01,,,Over Mountain,Actuals,44980.0
+420,2023-11-01,,,Sport,Actuals,12850.0
+421,2023-11-01,,,Trail,Actuals,62870.0
+422,2023-11-01,,,Triathalon,Actuals,39700.0
+423,2023-12-01,,,Cross Country Race,Actuals,125610.0
+424,2023-12-01,,,Cyclocross,Actuals,3710.0
+425,2023-12-01,,,Elite Road,Actuals,41120.0
+426,2023-12-01,,,Endurance Road,Actuals,24330.0
+427,2023-12-01,,,Fat Bike,Actuals,2130.0
+428,2023-12-01,,,Over Mountain,Actuals,37080.0
+429,2023-12-01,,,Sport,Actuals,7555.0
+430,2023-12-01,,,Trail,Actuals,81370.0
+431,2023-12-01,,,Triathalon,Actuals,9100.0
+432,2024-01-01,,,Cross Country Race,Actuals,329950.0
+433,2024-01-01,,,Cyclocross,Actuals,7420.0
+434,2024-01-01,,,Elite Road,Actuals,146740.0
+435,2024-01-01,,,Endurance Road,Actuals,97600.0
+436,2024-01-01,,,Fat Bike,Actuals,18110.0
+437,2024-01-01,,,Over Mountain,Actuals,152400.0
+438,2024-01-01,,,Sport,Actuals,22385.0
+439,2024-01-01,,,Trail,Actuals,164510.0
+440,2024-01-01,,,Triathalon,Actuals,23250.0
+441,2024-02-01,,,Cross Country Race,Actuals,395780.0
+442,2024-02-01,,,Cyclocross,Actuals,48790.0
+443,2024-02-01,,,Elite Road,Actuals,262720.0
+444,2024-02-01,,,Endurance Road,Actuals,187290.0
+445,2024-02-01,,,Fat Bike,Actuals,55410.0
+446,2024-02-01,,,Over Mountain,Actuals,124470.0
+447,2024-02-01,,,Sport,Actuals,37375.0
+448,2024-02-01,,,Trail,Actuals,254690.0
+449,2024-02-01,,,Triathalon,Actuals,80400.0
+450,2024-03-01,,,Cross Country Race,Actuals,662620.0
+451,2024-03-01,,,Cyclocross,Actuals,52500.0
+452,2024-03-01,,,Elite Road,Actuals,530820.0
+453,2024-03-01,,,Endurance Road,Actuals,329920.0
+454,2024-03-01,,,Fat Bike,Actuals,12780.0
+455,2024-03-01,,,Over Mountain,Actuals,206300.0
+456,2024-03-01,,,Sport,Actuals,54395.0
+457,2024-03-01,,,Trail,Actuals,147490.0
+458,2024-03-01,,,Triathalon,Actuals,162050.0
+459,2024-04-01,,,Cross Country Race,Actuals,672500.0
+460,2024-04-01,,,Cyclocross,Actuals,89670.0
+461,2024-04-01,,,Elite Road,Actuals,566960.0
+462,2024-04-01,,,Endurance Road,Actuals,306980.0
+463,2024-04-01,,,Fat Bike,Actuals,32500.0
+464,2024-04-01,,,Over Mountain,Actuals,242630.0
+465,2024-04-01,,,Sport,Actuals,58985.0
+466,2024-04-01,,,Trail,Actuals,332610.0
+467,2024-04-01,,,Triathalon,Actuals,171500.0
+468,2024-05-01,,,Cross Country Race,Actuals,727100.0
+469,2024-05-01,,,Cyclocross,Actuals,81270.0
+470,2024-05-01,,,Elite Road,Actuals,527555.0
+471,2024-05-01,,,Endurance Road,Actuals,371840.0
+472,2024-05-01,,,Fat Bike,Actuals,45820.0
+473,2024-05-01,,,Over Mountain,Actuals,139200.0
+474,2024-05-01,,,Sport,Actuals,38980.0
+475,2024-05-01,,,Trail,Actuals,255390.0
+476,2024-05-01,,,Triathalon,Actuals,120100.0
+477,2024-06-01,,,Cross Country Race,Actuals,524400.0
+478,2024-06-01,,,Cyclocross,Actuals,44240.0
+479,2024-06-01,,,Elite Road,Actuals,433430.0
+480,2024-06-01,,,Endurance Road,Actuals,287930.0
+481,2024-06-01,,,Fat Bike,Actuals,33560.0
+482,2024-06-01,,,Over Mountain,Actuals,146010.0
+483,2024-06-01,,,Sport,Actuals,51435.0
+484,2024-06-01,,,Trail,Actuals,359440.0
+485,2024-06-01,,,Triathalon,Actuals,111000.0
+486,2024-07-01,,,Cross Country Race,Actuals,617940.0
+487,2024-07-01,,,Cyclocross,Actuals,57470.0
+488,2024-07-01,,,Elite Road,Actuals,413835.0
+489,2024-07-01,,,Endurance Road,Actuals,403610.0
+490,2024-07-01,,,Fat Bike,Actuals,20240.0
+491,2024-07-01,,,Over Mountain,Actuals,143910.0
+492,2024-07-01,,,Sport,Actuals,44385.0
+493,2024-07-01,,,Trail,Actuals,299820.0
+494,2024-07-01,,,Triathalon,Actuals,114700.0
+495,2024-08-01,,,Cross Country Race,Actuals,598770.0
+496,2024-08-01,,,Cyclocross,Actuals,68320.0
+497,2024-08-01,,,Elite Road,Actuals,311325.0
+498,2024-08-01,,,Endurance Road,Actuals,234380.0
+499,2024-08-01,,,Fat Bike,Actuals,16510.0
+500,2024-08-01,,,Over Mountain,Actuals,223260.0
+501,2024-08-01,,,Sport,Actuals,83920.0
+502,2024-08-01,,,Trail,Actuals,375240.0
+503,2024-08-01,,,Triathalon,Actuals,109250.0
+504,2024-09-01,,,Cross Country Race,Actuals,410310.0
+505,2024-09-01,,,Cyclocross,Actuals,43540.0
+506,2024-09-01,,,Elite Road,Actuals,445695.0
+507,2024-09-01,,,Endurance Road,Actuals,236100.0
+508,2024-09-01,,,Fat Bike,Actuals,22910.0
+509,2024-09-01,,,Over Mountain,Actuals,179760.0
+510,2024-09-01,,,Sport,Actuals,44270.0
+511,2024-09-01,,,Trail,Actuals,196640.0
+512,2024-09-01,,,Triathalon,Actuals,114200.0
+513,2024-10-01,230386.0,735494.0,Cross Country Race,Actuals,
+514,2024-10-01,11727.0,80565.0,Cyclocross,Actuals,
+515,2024-10-01,153940.0,602184.0,Elite Road,Actuals,
+516,2024-10-01,-1656.0,353679.0,Endurance Road,Actuals,
+517,2024-10-01,-11995.0,48929.0,Fat Bike,Actuals,
+518,2024-10-01,56987.0,246250.0,Over Mountain,Actuals,
+519,2024-10-01,38775.0,90256.0,Sport,Actuals,
+520,2024-10-01,125447.0,392778.0,Trail,Actuals,
+521,2024-10-01,34186.0,187458.0,Triathalon,Actuals,
+522,2024-11-01,158508.0,751390.0,Cross Country Race,Actuals,
+523,2024-11-01,-4062.0,67977.0,Cyclocross,Actuals,
+524,2024-11-01,130365.0,640844.0,Elite Road,Actuals,
+525,2024-11-01,-6064.0,365238.0,Endurance Road,Actuals,
+526,2024-11-01,-11995.0,48929.0,Fat Bike,Actuals,
+527,2024-11-01,38787.0,242247.0,Over Mountain,Actuals,
+528,2024-11-01,-5253.0,51177.0,Sport,Actuals,
+529,2024-11-01,75769.0,359878.0,Trail,Actuals,
+530,2024-11-01,30546.0,191031.0,Triathalon,Actuals,
+531,2024-12-01,112150.0,819323.0,Cross Country Race,Actuals,
+532,2024-12-01,-3198.0,73815.0,Cyclocross,Actuals,
+533,2024-12-01,71296.0,622880.0,Elite Road,Actuals,
+534,2024-12-01,-17038.0,371578.0,Endurance Road,Actuals,
+535,2024-12-01,-11995.0,48929.0,Fat Bike,Actuals,
+536,2024-12-01,33346.0,238927.0,Over Mountain,Actuals,
+537,2024-12-01,-7871.0,68716.0,Sport,Actuals,
+538,2024-12-01,112242.0,417643.0,Trail,Actuals,
+539,2024-12-01,31052.0,192400.0,Triathalon,Actuals,
+540,2020-01-01,,,Cross Country Race,Arima_prediction,
+541,2020-01-01,,,Cyclocross,Arima_prediction,
+542,2020-01-01,,,Elite Road,Arima_prediction,
+543,2020-01-01,,,Endurance Road,Arima_prediction,
+544,2020-01-01,,,Fat Bike,Arima_prediction,
+545,2020-01-01,,,Over Mountain,Arima_prediction,
+546,2020-01-01,,,Sport,Arima_prediction,
+547,2020-01-01,,,Trail,Arima_prediction,
+548,2020-01-01,,,Triathalon,Arima_prediction,
+549,2020-02-01,,,Cross Country Race,Arima_prediction,
+550,2020-02-01,,,Cyclocross,Arima_prediction,
+551,2020-02-01,,,Elite Road,Arima_prediction,
+552,2020-02-01,,,Endurance Road,Arima_prediction,
+553,2020-02-01,,,Fat Bike,Arima_prediction,
+554,2020-02-01,,,Over Mountain,Arima_prediction,
+555,2020-02-01,,,Sport,Arima_prediction,
+556,2020-02-01,,,Trail,Arima_prediction,
+557,2020-02-01,,,Triathalon,Arima_prediction,
+558,2020-03-01,,,Cross Country Race,Arima_prediction,
+559,2020-03-01,,,Cyclocross,Arima_prediction,
+560,2020-03-01,,,Elite Road,Arima_prediction,
+561,2020-03-01,,,Endurance Road,Arima_prediction,
+562,2020-03-01,,,Fat Bike,Arima_prediction,
+563,2020-03-01,,,Over Mountain,Arima_prediction,
+564,2020-03-01,,,Sport,Arima_prediction,
+565,2020-03-01,,,Trail,Arima_prediction,
+566,2020-03-01,,,Triathalon,Arima_prediction,
+567,2020-04-01,,,Cross Country Race,Arima_prediction,
+568,2020-04-01,,,Cyclocross,Arima_prediction,
+569,2020-04-01,,,Elite Road,Arima_prediction,
+570,2020-04-01,,,Endurance Road,Arima_prediction,
+571,2020-04-01,,,Fat Bike,Arima_prediction,
+572,2020-04-01,,,Over Mountain,Arima_prediction,
+573,2020-04-01,,,Sport,Arima_prediction,
+574,2020-04-01,,,Trail,Arima_prediction,
+575,2020-04-01,,,Triathalon,Arima_prediction,
+576,2020-05-01,,,Cross Country Race,Arima_prediction,
+577,2020-05-01,,,Cyclocross,Arima_prediction,
+578,2020-05-01,,,Elite Road,Arima_prediction,
+579,2020-05-01,,,Endurance Road,Arima_prediction,
+580,2020-05-01,,,Fat Bike,Arima_prediction,
+581,2020-05-01,,,Over Mountain,Arima_prediction,
+582,2020-05-01,,,Sport,Arima_prediction,
+583,2020-05-01,,,Trail,Arima_prediction,
+584,2020-05-01,,,Triathalon,Arima_prediction,
+585,2020-06-01,,,Cross Country Race,Arima_prediction,
+586,2020-06-01,,,Cyclocross,Arima_prediction,
+587,2020-06-01,,,Elite Road,Arima_prediction,
+588,2020-06-01,,,Endurance Road,Arima_prediction,
+589,2020-06-01,,,Fat Bike,Arima_prediction,
+590,2020-06-01,,,Over Mountain,Arima_prediction,
+591,2020-06-01,,,Sport,Arima_prediction,
+592,2020-06-01,,,Trail,Arima_prediction,
+593,2020-06-01,,,Triathalon,Arima_prediction,
+594,2020-07-01,,,Cross Country Race,Arima_prediction,
+595,2020-07-01,,,Cyclocross,Arima_prediction,
+596,2020-07-01,,,Elite Road,Arima_prediction,
+597,2020-07-01,,,Endurance Road,Arima_prediction,
+598,2020-07-01,,,Fat Bike,Arima_prediction,
+599,2020-07-01,,,Over Mountain,Arima_prediction,
+600,2020-07-01,,,Sport,Arima_prediction,
+601,2020-07-01,,,Trail,Arima_prediction,
+602,2020-07-01,,,Triathalon,Arima_prediction,
+603,2020-08-01,,,Cross Country Race,Arima_prediction,
+604,2020-08-01,,,Cyclocross,Arima_prediction,
+605,2020-08-01,,,Elite Road,Arima_prediction,
+606,2020-08-01,,,Endurance Road,Arima_prediction,
+607,2020-08-01,,,Fat Bike,Arima_prediction,
+608,2020-08-01,,,Over Mountain,Arima_prediction,
+609,2020-08-01,,,Sport,Arima_prediction,
+610,2020-08-01,,,Trail,Arima_prediction,
+611,2020-08-01,,,Triathalon,Arima_prediction,
+612,2020-09-01,,,Cross Country Race,Arima_prediction,
+613,2020-09-01,,,Cyclocross,Arima_prediction,
+614,2020-09-01,,,Elite Road,Arima_prediction,
+615,2020-09-01,,,Endurance Road,Arima_prediction,
+616,2020-09-01,,,Fat Bike,Arima_prediction,
+617,2020-09-01,,,Over Mountain,Arima_prediction,
+618,2020-09-01,,,Sport,Arima_prediction,
+619,2020-09-01,,,Trail,Arima_prediction,
+620,2020-09-01,,,Triathalon,Arima_prediction,
+621,2020-10-01,,,Cross Country Race,Arima_prediction,
+622,2020-10-01,,,Cyclocross,Arima_prediction,
+623,2020-10-01,,,Elite Road,Arima_prediction,
+624,2020-10-01,,,Endurance Road,Arima_prediction,
+625,2020-10-01,,,Fat Bike,Arima_prediction,
+626,2020-10-01,,,Over Mountain,Arima_prediction,
+627,2020-10-01,,,Sport,Arima_prediction,
+628,2020-10-01,,,Trail,Arima_prediction,
+629,2020-10-01,,,Triathalon,Arima_prediction,
+630,2020-11-01,,,Cross Country Race,Arima_prediction,
+631,2020-11-01,,,Cyclocross,Arima_prediction,
+632,2020-11-01,,,Elite Road,Arima_prediction,
+633,2020-11-01,,,Endurance Road,Arima_prediction,
+634,2020-11-01,,,Fat Bike,Arima_prediction,
+635,2020-11-01,,,Over Mountain,Arima_prediction,
+636,2020-11-01,,,Sport,Arima_prediction,
+637,2020-11-01,,,Trail,Arima_prediction,
+638,2020-11-01,,,Triathalon,Arima_prediction,
+639,2020-12-01,,,Cross Country Race,Arima_prediction,
+640,2020-12-01,,,Cyclocross,Arima_prediction,
+641,2020-12-01,,,Elite Road,Arima_prediction,
+642,2020-12-01,,,Endurance Road,Arima_prediction,
+643,2020-12-01,,,Fat Bike,Arima_prediction,
+644,2020-12-01,,,Over Mountain,Arima_prediction,
+645,2020-12-01,,,Sport,Arima_prediction,
+646,2020-12-01,,,Trail,Arima_prediction,
+647,2020-12-01,,,Triathalon,Arima_prediction,
+648,2021-01-01,,,Cross Country Race,Arima_prediction,
+649,2021-01-01,,,Cyclocross,Arima_prediction,
+650,2021-01-01,,,Elite Road,Arima_prediction,
+651,2021-01-01,,,Endurance Road,Arima_prediction,
+652,2021-01-01,,,Fat Bike,Arima_prediction,
+653,2021-01-01,,,Over Mountain,Arima_prediction,
+654,2021-01-01,,,Sport,Arima_prediction,
+655,2021-01-01,,,Trail,Arima_prediction,
+656,2021-01-01,,,Triathalon,Arima_prediction,
+657,2021-02-01,,,Cross Country Race,Arima_prediction,
+658,2021-02-01,,,Cyclocross,Arima_prediction,
+659,2021-02-01,,,Elite Road,Arima_prediction,
+660,2021-02-01,,,Endurance Road,Arima_prediction,
+661,2021-02-01,,,Fat Bike,Arima_prediction,
+662,2021-02-01,,,Over Mountain,Arima_prediction,
+663,2021-02-01,,,Sport,Arima_prediction,
+664,2021-02-01,,,Trail,Arima_prediction,
+665,2021-02-01,,,Triathalon,Arima_prediction,
+666,2021-03-01,,,Cross Country Race,Arima_prediction,
+667,2021-03-01,,,Cyclocross,Arima_prediction,
+668,2021-03-01,,,Elite Road,Arima_prediction,
+669,2021-03-01,,,Endurance Road,Arima_prediction,
+670,2021-03-01,,,Fat Bike,Arima_prediction,
+671,2021-03-01,,,Over Mountain,Arima_prediction,
+672,2021-03-01,,,Sport,Arima_prediction,
+673,2021-03-01,,,Trail,Arima_prediction,
+674,2021-03-01,,,Triathalon,Arima_prediction,
+675,2021-04-01,,,Cross Country Race,Arima_prediction,
+676,2021-04-01,,,Cyclocross,Arima_prediction,
+677,2021-04-01,,,Elite Road,Arima_prediction,
+678,2021-04-01,,,Endurance Road,Arima_prediction,
+679,2021-04-01,,,Fat Bike,Arima_prediction,
+680,2021-04-01,,,Over Mountain,Arima_prediction,
+681,2021-04-01,,,Sport,Arima_prediction,
+682,2021-04-01,,,Trail,Arima_prediction,
+683,2021-04-01,,,Triathalon,Arima_prediction,
+684,2021-05-01,,,Cross Country Race,Arima_prediction,
+685,2021-05-01,,,Cyclocross,Arima_prediction,
+686,2021-05-01,,,Elite Road,Arima_prediction,
+687,2021-05-01,,,Endurance Road,Arima_prediction,
+688,2021-05-01,,,Fat Bike,Arima_prediction,
+689,2021-05-01,,,Over Mountain,Arima_prediction,
+690,2021-05-01,,,Sport,Arima_prediction,
+691,2021-05-01,,,Trail,Arima_prediction,
+692,2021-05-01,,,Triathalon,Arima_prediction,
+693,2021-06-01,,,Cross Country Race,Arima_prediction,
+694,2021-06-01,,,Cyclocross,Arima_prediction,
+695,2021-06-01,,,Elite Road,Arima_prediction,
+696,2021-06-01,,,Endurance Road,Arima_prediction,
+697,2021-06-01,,,Fat Bike,Arima_prediction,
+698,2021-06-01,,,Over Mountain,Arima_prediction,
+699,2021-06-01,,,Sport,Arima_prediction,
+700,2021-06-01,,,Trail,Arima_prediction,
+701,2021-06-01,,,Triathalon,Arima_prediction,
+702,2021-07-01,,,Cross Country Race,Arima_prediction,
+703,2021-07-01,,,Cyclocross,Arima_prediction,
+704,2021-07-01,,,Elite Road,Arima_prediction,
+705,2021-07-01,,,Endurance Road,Arima_prediction,
+706,2021-07-01,,,Fat Bike,Arima_prediction,
+707,2021-07-01,,,Over Mountain,Arima_prediction,
+708,2021-07-01,,,Sport,Arima_prediction,
+709,2021-07-01,,,Trail,Arima_prediction,
+710,2021-07-01,,,Triathalon,Arima_prediction,
+711,2021-08-01,,,Cross Country Race,Arima_prediction,
+712,2021-08-01,,,Cyclocross,Arima_prediction,
+713,2021-08-01,,,Elite Road,Arima_prediction,
+714,2021-08-01,,,Endurance Road,Arima_prediction,
+715,2021-08-01,,,Fat Bike,Arima_prediction,
+716,2021-08-01,,,Over Mountain,Arima_prediction,
+717,2021-08-01,,,Sport,Arima_prediction,
+718,2021-08-01,,,Trail,Arima_prediction,
+719,2021-08-01,,,Triathalon,Arima_prediction,
+720,2021-09-01,,,Cross Country Race,Arima_prediction,
+721,2021-09-01,,,Cyclocross,Arima_prediction,
+722,2021-09-01,,,Elite Road,Arima_prediction,
+723,2021-09-01,,,Endurance Road,Arima_prediction,
+724,2021-09-01,,,Fat Bike,Arima_prediction,
+725,2021-09-01,,,Over Mountain,Arima_prediction,
+726,2021-09-01,,,Sport,Arima_prediction,
+727,2021-09-01,,,Trail,Arima_prediction,
+728,2021-09-01,,,Triathalon,Arima_prediction,
+729,2021-10-01,,,Cross Country Race,Arima_prediction,
+730,2021-10-01,,,Cyclocross,Arima_prediction,
+731,2021-10-01,,,Elite Road,Arima_prediction,
+732,2021-10-01,,,Endurance Road,Arima_prediction,
+733,2021-10-01,,,Fat Bike,Arima_prediction,
+734,2021-10-01,,,Over Mountain,Arima_prediction,
+735,2021-10-01,,,Sport,Arima_prediction,
+736,2021-10-01,,,Trail,Arima_prediction,
+737,2021-10-01,,,Triathalon,Arima_prediction,
+738,2021-11-01,,,Cross Country Race,Arima_prediction,
+739,2021-11-01,,,Cyclocross,Arima_prediction,
+740,2021-11-01,,,Elite Road,Arima_prediction,
+741,2021-11-01,,,Endurance Road,Arima_prediction,
+742,2021-11-01,,,Fat Bike,Arima_prediction,
+743,2021-11-01,,,Over Mountain,Arima_prediction,
+744,2021-11-01,,,Sport,Arima_prediction,
+745,2021-11-01,,,Trail,Arima_prediction,
+746,2021-11-01,,,Triathalon,Arima_prediction,
+747,2021-12-01,,,Cross Country Race,Arima_prediction,
+748,2021-12-01,,,Cyclocross,Arima_prediction,
+749,2021-12-01,,,Elite Road,Arima_prediction,
+750,2021-12-01,,,Endurance Road,Arima_prediction,
+751,2021-12-01,,,Fat Bike,Arima_prediction,
+752,2021-12-01,,,Over Mountain,Arima_prediction,
+753,2021-12-01,,,Sport,Arima_prediction,
+754,2021-12-01,,,Trail,Arima_prediction,
+755,2021-12-01,,,Triathalon,Arima_prediction,
+756,2022-01-01,,,Cross Country Race,Arima_prediction,
+757,2022-01-01,,,Cyclocross,Arima_prediction,
+758,2022-01-01,,,Elite Road,Arima_prediction,
+759,2022-01-01,,,Endurance Road,Arima_prediction,
+760,2022-01-01,,,Fat Bike,Arima_prediction,
+761,2022-01-01,,,Over Mountain,Arima_prediction,
+762,2022-01-01,,,Sport,Arima_prediction,
+763,2022-01-01,,,Trail,Arima_prediction,
+764,2022-01-01,,,Triathalon,Arima_prediction,
+765,2022-02-01,,,Cross Country Race,Arima_prediction,
+766,2022-02-01,,,Cyclocross,Arima_prediction,
+767,2022-02-01,,,Elite Road,Arima_prediction,
+768,2022-02-01,,,Endurance Road,Arima_prediction,
+769,2022-02-01,,,Fat Bike,Arima_prediction,
+770,2022-02-01,,,Over Mountain,Arima_prediction,
+771,2022-02-01,,,Sport,Arima_prediction,
+772,2022-02-01,,,Trail,Arima_prediction,
+773,2022-02-01,,,Triathalon,Arima_prediction,
+774,2022-03-01,,,Cross Country Race,Arima_prediction,
+775,2022-03-01,,,Cyclocross,Arima_prediction,
+776,2022-03-01,,,Elite Road,Arima_prediction,
+777,2022-03-01,,,Endurance Road,Arima_prediction,
+778,2022-03-01,,,Fat Bike,Arima_prediction,
+779,2022-03-01,,,Over Mountain,Arima_prediction,
+780,2022-03-01,,,Sport,Arima_prediction,
+781,2022-03-01,,,Trail,Arima_prediction,
+782,2022-03-01,,,Triathalon,Arima_prediction,
+783,2022-04-01,,,Cross Country Race,Arima_prediction,
+784,2022-04-01,,,Cyclocross,Arima_prediction,
+785,2022-04-01,,,Elite Road,Arima_prediction,
+786,2022-04-01,,,Endurance Road,Arima_prediction,
+787,2022-04-01,,,Fat Bike,Arima_prediction,
+788,2022-04-01,,,Over Mountain,Arima_prediction,
+789,2022-04-01,,,Sport,Arima_prediction,
+790,2022-04-01,,,Trail,Arima_prediction,
+791,2022-04-01,,,Triathalon,Arima_prediction,
+792,2022-05-01,,,Cross Country Race,Arima_prediction,
+793,2022-05-01,,,Cyclocross,Arima_prediction,
+794,2022-05-01,,,Elite Road,Arima_prediction,
+795,2022-05-01,,,Endurance Road,Arima_prediction,
+796,2022-05-01,,,Fat Bike,Arima_prediction,
+797,2022-05-01,,,Over Mountain,Arima_prediction,
+798,2022-05-01,,,Sport,Arima_prediction,
+799,2022-05-01,,,Trail,Arima_prediction,
+800,2022-05-01,,,Triathalon,Arima_prediction,
+801,2022-06-01,,,Cross Country Race,Arima_prediction,
+802,2022-06-01,,,Cyclocross,Arima_prediction,
+803,2022-06-01,,,Elite Road,Arima_prediction,
+804,2022-06-01,,,Endurance Road,Arima_prediction,
+805,2022-06-01,,,Fat Bike,Arima_prediction,
+806,2022-06-01,,,Over Mountain,Arima_prediction,
+807,2022-06-01,,,Sport,Arima_prediction,
+808,2022-06-01,,,Trail,Arima_prediction,
+809,2022-06-01,,,Triathalon,Arima_prediction,
+810,2022-07-01,,,Cross Country Race,Arima_prediction,
+811,2022-07-01,,,Cyclocross,Arima_prediction,
+812,2022-07-01,,,Elite Road,Arima_prediction,
+813,2022-07-01,,,Endurance Road,Arima_prediction,
+814,2022-07-01,,,Fat Bike,Arima_prediction,
+815,2022-07-01,,,Over Mountain,Arima_prediction,
+816,2022-07-01,,,Sport,Arima_prediction,
+817,2022-07-01,,,Trail,Arima_prediction,
+818,2022-07-01,,,Triathalon,Arima_prediction,
+819,2022-08-01,,,Cross Country Race,Arima_prediction,
+820,2022-08-01,,,Cyclocross,Arima_prediction,
+821,2022-08-01,,,Elite Road,Arima_prediction,
+822,2022-08-01,,,Endurance Road,Arima_prediction,
+823,2022-08-01,,,Fat Bike,Arima_prediction,
+824,2022-08-01,,,Over Mountain,Arima_prediction,
+825,2022-08-01,,,Sport,Arima_prediction,
+826,2022-08-01,,,Trail,Arima_prediction,
+827,2022-08-01,,,Triathalon,Arima_prediction,
+828,2022-09-01,,,Cross Country Race,Arima_prediction,
+829,2022-09-01,,,Cyclocross,Arima_prediction,
+830,2022-09-01,,,Elite Road,Arima_prediction,
+831,2022-09-01,,,Endurance Road,Arima_prediction,
+832,2022-09-01,,,Fat Bike,Arima_prediction,
+833,2022-09-01,,,Over Mountain,Arima_prediction,
+834,2022-09-01,,,Sport,Arima_prediction,
+835,2022-09-01,,,Trail,Arima_prediction,
+836,2022-09-01,,,Triathalon,Arima_prediction,
+837,2022-10-01,,,Cross Country Race,Arima_prediction,
+838,2022-10-01,,,Cyclocross,Arima_prediction,
+839,2022-10-01,,,Elite Road,Arima_prediction,
+840,2022-10-01,,,Endurance Road,Arima_prediction,
+841,2022-10-01,,,Fat Bike,Arima_prediction,
+842,2022-10-01,,,Over Mountain,Arima_prediction,
+843,2022-10-01,,,Sport,Arima_prediction,
+844,2022-10-01,,,Trail,Arima_prediction,
+845,2022-10-01,,,Triathalon,Arima_prediction,
+846,2022-11-01,,,Cross Country Race,Arima_prediction,
+847,2022-11-01,,,Cyclocross,Arima_prediction,
+848,2022-11-01,,,Elite Road,Arima_prediction,
+849,2022-11-01,,,Endurance Road,Arima_prediction,
+850,2022-11-01,,,Fat Bike,Arima_prediction,
+851,2022-11-01,,,Over Mountain,Arima_prediction,
+852,2022-11-01,,,Sport,Arima_prediction,
+853,2022-11-01,,,Trail,Arima_prediction,
+854,2022-11-01,,,Triathalon,Arima_prediction,
+855,2022-12-01,,,Cross Country Race,Arima_prediction,
+856,2022-12-01,,,Cyclocross,Arima_prediction,
+857,2022-12-01,,,Elite Road,Arima_prediction,
+858,2022-12-01,,,Endurance Road,Arima_prediction,
+859,2022-12-01,,,Fat Bike,Arima_prediction,
+860,2022-12-01,,,Over Mountain,Arima_prediction,
+861,2022-12-01,,,Sport,Arima_prediction,
+862,2022-12-01,,,Trail,Arima_prediction,
+863,2022-12-01,,,Triathalon,Arima_prediction,
+864,2023-01-01,,,Cross Country Race,Arima_prediction,
+865,2023-01-01,,,Cyclocross,Arima_prediction,
+866,2023-01-01,,,Elite Road,Arima_prediction,
+867,2023-01-01,,,Endurance Road,Arima_prediction,
+868,2023-01-01,,,Fat Bike,Arima_prediction,
+869,2023-01-01,,,Over Mountain,Arima_prediction,
+870,2023-01-01,,,Sport,Arima_prediction,
+871,2023-01-01,,,Trail,Arima_prediction,
+872,2023-01-01,,,Triathalon,Arima_prediction,
+873,2023-02-01,,,Cross Country Race,Arima_prediction,
+874,2023-02-01,,,Cyclocross,Arima_prediction,
+875,2023-02-01,,,Elite Road,Arima_prediction,
+876,2023-02-01,,,Endurance Road,Arima_prediction,
+877,2023-02-01,,,Fat Bike,Arima_prediction,
+878,2023-02-01,,,Over Mountain,Arima_prediction,
+879,2023-02-01,,,Sport,Arima_prediction,
+880,2023-02-01,,,Trail,Arima_prediction,
+881,2023-02-01,,,Triathalon,Arima_prediction,
+882,2023-03-01,,,Cross Country Race,Arima_prediction,
+883,2023-03-01,,,Cyclocross,Arima_prediction,
+884,2023-03-01,,,Elite Road,Arima_prediction,
+885,2023-03-01,,,Endurance Road,Arima_prediction,
+886,2023-03-01,,,Fat Bike,Arima_prediction,
+887,2023-03-01,,,Over Mountain,Arima_prediction,
+888,2023-03-01,,,Sport,Arima_prediction,
+889,2023-03-01,,,Trail,Arima_prediction,
+890,2023-03-01,,,Triathalon,Arima_prediction,
+891,2023-04-01,,,Cross Country Race,Arima_prediction,
+892,2023-04-01,,,Cyclocross,Arima_prediction,
+893,2023-04-01,,,Elite Road,Arima_prediction,
+894,2023-04-01,,,Endurance Road,Arima_prediction,
+895,2023-04-01,,,Fat Bike,Arima_prediction,
+896,2023-04-01,,,Over Mountain,Arima_prediction,
+897,2023-04-01,,,Sport,Arima_prediction,
+898,2023-04-01,,,Trail,Arima_prediction,
+899,2023-04-01,,,Triathalon,Arima_prediction,
+900,2023-05-01,,,Cross Country Race,Arima_prediction,
+901,2023-05-01,,,Cyclocross,Arima_prediction,
+902,2023-05-01,,,Elite Road,Arima_prediction,
+903,2023-05-01,,,Endurance Road,Arima_prediction,
+904,2023-05-01,,,Fat Bike,Arima_prediction,
+905,2023-05-01,,,Over Mountain,Arima_prediction,
+906,2023-05-01,,,Sport,Arima_prediction,
+907,2023-05-01,,,Trail,Arima_prediction,
+908,2023-05-01,,,Triathalon,Arima_prediction,
+909,2023-06-01,,,Cross Country Race,Arima_prediction,
+910,2023-06-01,,,Cyclocross,Arima_prediction,
+911,2023-06-01,,,Elite Road,Arima_prediction,
+912,2023-06-01,,,Endurance Road,Arima_prediction,
+913,2023-06-01,,,Fat Bike,Arima_prediction,
+914,2023-06-01,,,Over Mountain,Arima_prediction,
+915,2023-06-01,,,Sport,Arima_prediction,
+916,2023-06-01,,,Trail,Arima_prediction,
+917,2023-06-01,,,Triathalon,Arima_prediction,
+918,2023-07-01,,,Cross Country Race,Arima_prediction,
+919,2023-07-01,,,Cyclocross,Arima_prediction,
+920,2023-07-01,,,Elite Road,Arima_prediction,
+921,2023-07-01,,,Endurance Road,Arima_prediction,
+922,2023-07-01,,,Fat Bike,Arima_prediction,
+923,2023-07-01,,,Over Mountain,Arima_prediction,
+924,2023-07-01,,,Sport,Arima_prediction,
+925,2023-07-01,,,Trail,Arima_prediction,
+926,2023-07-01,,,Triathalon,Arima_prediction,
+927,2023-08-01,,,Cross Country Race,Arima_prediction,
+928,2023-08-01,,,Cyclocross,Arima_prediction,
+929,2023-08-01,,,Elite Road,Arima_prediction,
+930,2023-08-01,,,Endurance Road,Arima_prediction,
+931,2023-08-01,,,Fat Bike,Arima_prediction,
+932,2023-08-01,,,Over Mountain,Arima_prediction,
+933,2023-08-01,,,Sport,Arima_prediction,
+934,2023-08-01,,,Trail,Arima_prediction,
+935,2023-08-01,,,Triathalon,Arima_prediction,
+936,2023-09-01,,,Cross Country Race,Arima_prediction,
+937,2023-09-01,,,Cyclocross,Arima_prediction,
+938,2023-09-01,,,Elite Road,Arima_prediction,
+939,2023-09-01,,,Endurance Road,Arima_prediction,
+940,2023-09-01,,,Fat Bike,Arima_prediction,
+941,2023-09-01,,,Over Mountain,Arima_prediction,
+942,2023-09-01,,,Sport,Arima_prediction,
+943,2023-09-01,,,Trail,Arima_prediction,
+944,2023-09-01,,,Triathalon,Arima_prediction,
+945,2023-10-01,,,Cross Country Race,Arima_prediction,
+946,2023-10-01,,,Cyclocross,Arima_prediction,
+947,2023-10-01,,,Elite Road,Arima_prediction,
+948,2023-10-01,,,Endurance Road,Arima_prediction,
+949,2023-10-01,,,Fat Bike,Arima_prediction,
+950,2023-10-01,,,Over Mountain,Arima_prediction,
+951,2023-10-01,,,Sport,Arima_prediction,
+952,2023-10-01,,,Trail,Arima_prediction,
+953,2023-10-01,,,Triathalon,Arima_prediction,
+954,2023-11-01,,,Cross Country Race,Arima_prediction,
+955,2023-11-01,,,Cyclocross,Arima_prediction,
+956,2023-11-01,,,Elite Road,Arima_prediction,
+957,2023-11-01,,,Endurance Road,Arima_prediction,
+958,2023-11-01,,,Fat Bike,Arima_prediction,
+959,2023-11-01,,,Over Mountain,Arima_prediction,
+960,2023-11-01,,,Sport,Arima_prediction,
+961,2023-11-01,,,Trail,Arima_prediction,
+962,2023-11-01,,,Triathalon,Arima_prediction,
+963,2023-12-01,,,Cross Country Race,Arima_prediction,
+964,2023-12-01,,,Cyclocross,Arima_prediction,
+965,2023-12-01,,,Elite Road,Arima_prediction,
+966,2023-12-01,,,Endurance Road,Arima_prediction,
+967,2023-12-01,,,Fat Bike,Arima_prediction,
+968,2023-12-01,,,Over Mountain,Arima_prediction,
+969,2023-12-01,,,Sport,Arima_prediction,
+970,2023-12-01,,,Trail,Arima_prediction,
+971,2023-12-01,,,Triathalon,Arima_prediction,
+972,2024-01-01,,,Cross Country Race,Arima_prediction,
+973,2024-01-01,,,Cyclocross,Arima_prediction,
+974,2024-01-01,,,Elite Road,Arima_prediction,
+975,2024-01-01,,,Endurance Road,Arima_prediction,
+976,2024-01-01,,,Fat Bike,Arima_prediction,
+977,2024-01-01,,,Over Mountain,Arima_prediction,
+978,2024-01-01,,,Sport,Arima_prediction,
+979,2024-01-01,,,Trail,Arima_prediction,
+980,2024-01-01,,,Triathalon,Arima_prediction,
+981,2024-02-01,,,Cross Country Race,Arima_prediction,
+982,2024-02-01,,,Cyclocross,Arima_prediction,
+983,2024-02-01,,,Elite Road,Arima_prediction,
+984,2024-02-01,,,Endurance Road,Arima_prediction,
+985,2024-02-01,,,Fat Bike,Arima_prediction,
+986,2024-02-01,,,Over Mountain,Arima_prediction,
+987,2024-02-01,,,Sport,Arima_prediction,
+988,2024-02-01,,,Trail,Arima_prediction,
+989,2024-02-01,,,Triathalon,Arima_prediction,
+990,2024-03-01,,,Cross Country Race,Arima_prediction,
+991,2024-03-01,,,Cyclocross,Arima_prediction,
+992,2024-03-01,,,Elite Road,Arima_prediction,
+993,2024-03-01,,,Endurance Road,Arima_prediction,
+994,2024-03-01,,,Fat Bike,Arima_prediction,
+995,2024-03-01,,,Over Mountain,Arima_prediction,
+996,2024-03-01,,,Sport,Arima_prediction,
+997,2024-03-01,,,Trail,Arima_prediction,
+998,2024-03-01,,,Triathalon,Arima_prediction,
+999,2024-04-01,,,Cross Country Race,Arima_prediction,
+1000,2024-04-01,,,Cyclocross,Arima_prediction,
+1001,2024-04-01,,,Elite Road,Arima_prediction,
+1002,2024-04-01,,,Endurance Road,Arima_prediction,
+1003,2024-04-01,,,Fat Bike,Arima_prediction,
+1004,2024-04-01,,,Over Mountain,Arima_prediction,
+1005,2024-04-01,,,Sport,Arima_prediction,
+1006,2024-04-01,,,Trail,Arima_prediction,
+1007,2024-04-01,,,Triathalon,Arima_prediction,
+1008,2024-05-01,,,Cross Country Race,Arima_prediction,
+1009,2024-05-01,,,Cyclocross,Arima_prediction,
+1010,2024-05-01,,,Elite Road,Arima_prediction,
+1011,2024-05-01,,,Endurance Road,Arima_prediction,
+1012,2024-05-01,,,Fat Bike,Arima_prediction,
+1013,2024-05-01,,,Over Mountain,Arima_prediction,
+1014,2024-05-01,,,Sport,Arima_prediction,
+1015,2024-05-01,,,Trail,Arima_prediction,
+1016,2024-05-01,,,Triathalon,Arima_prediction,
+1017,2024-06-01,,,Cross Country Race,Arima_prediction,
+1018,2024-06-01,,,Cyclocross,Arima_prediction,
+1019,2024-06-01,,,Elite Road,Arima_prediction,
+1020,2024-06-01,,,Endurance Road,Arima_prediction,
+1021,2024-06-01,,,Fat Bike,Arima_prediction,
+1022,2024-06-01,,,Over Mountain,Arima_prediction,
+1023,2024-06-01,,,Sport,Arima_prediction,
+1024,2024-06-01,,,Trail,Arima_prediction,
+1025,2024-06-01,,,Triathalon,Arima_prediction,
+1026,2024-07-01,,,Cross Country Race,Arima_prediction,
+1027,2024-07-01,,,Cyclocross,Arima_prediction,
+1028,2024-07-01,,,Elite Road,Arima_prediction,
+1029,2024-07-01,,,Endurance Road,Arima_prediction,
+1030,2024-07-01,,,Fat Bike,Arima_prediction,
+1031,2024-07-01,,,Over Mountain,Arima_prediction,
+1032,2024-07-01,,,Sport,Arima_prediction,
+1033,2024-07-01,,,Trail,Arima_prediction,
+1034,2024-07-01,,,Triathalon,Arima_prediction,
+1035,2024-08-01,,,Cross Country Race,Arima_prediction,
+1036,2024-08-01,,,Cyclocross,Arima_prediction,
+1037,2024-08-01,,,Elite Road,Arima_prediction,
+1038,2024-08-01,,,Endurance Road,Arima_prediction,
+1039,2024-08-01,,,Fat Bike,Arima_prediction,
+1040,2024-08-01,,,Over Mountain,Arima_prediction,
+1041,2024-08-01,,,Sport,Arima_prediction,
+1042,2024-08-01,,,Trail,Arima_prediction,
+1043,2024-08-01,,,Triathalon,Arima_prediction,
+1044,2024-09-01,,,Cross Country Race,Arima_prediction,
+1045,2024-09-01,,,Cyclocross,Arima_prediction,
+1046,2024-09-01,,,Elite Road,Arima_prediction,
+1047,2024-09-01,,,Endurance Road,Arima_prediction,
+1048,2024-09-01,,,Fat Bike,Arima_prediction,
+1049,2024-09-01,,,Over Mountain,Arima_prediction,
+1050,2024-09-01,,,Sport,Arima_prediction,
+1051,2024-09-01,,,Trail,Arima_prediction,
+1052,2024-09-01,,,Triathalon,Arima_prediction,
+1053,2024-10-01,230386.0,735494.0,Cross Country Race,Arima_prediction,482940.0
+1054,2024-10-01,11727.0,80565.0,Cyclocross,Arima_prediction,46146.0
+1055,2024-10-01,153940.0,602184.0,Elite Road,Arima_prediction,378062.0
+1056,2024-10-01,-1656.0,353679.0,Endurance Road,Arima_prediction,176011.0
+1057,2024-10-01,-11995.0,48929.0,Fat Bike,Arima_prediction,18467.0
+1058,2024-10-01,56987.0,246250.0,Over Mountain,Arima_prediction,151619.0
+1059,2024-10-01,38775.0,90256.0,Sport,Arima_prediction,64516.0
+1060,2024-10-01,125447.0,392778.0,Trail,Arima_prediction,259112.0
+1061,2024-10-01,34186.0,187458.0,Triathalon,Arima_prediction,110822.0
+1062,2024-11-01,158508.0,751390.0,Cross Country Race,Arima_prediction,454949.0
+1063,2024-11-01,-4062.0,67977.0,Cyclocross,Arima_prediction,31957.0
+1064,2024-11-01,130365.0,640844.0,Elite Road,Arima_prediction,385605.0
+1065,2024-11-01,-6064.0,365238.0,Endurance Road,Arima_prediction,179586.0
+1066,2024-11-01,-11995.0,48929.0,Fat Bike,Arima_prediction,18467.0
+1067,2024-11-01,38787.0,242247.0,Over Mountain,Arima_prediction,140517.0
+1068,2024-11-01,-5253.0,51177.0,Sport,Arima_prediction,22961.0
+1069,2024-11-01,75769.0,359878.0,Trail,Arima_prediction,217823.0
+1070,2024-11-01,30546.0,191031.0,Triathalon,Arima_prediction,110789.0
+1071,2024-12-01,112150.0,819323.0,Cross Country Race,Arima_prediction,465736.0
+1072,2024-12-01,-3198.0,73815.0,Cyclocross,Arima_prediction,35308.0
+1073,2024-12-01,71296.0,622880.0,Elite Road,Arima_prediction,347088.0
+1074,2024-12-01,-17038.0,371578.0,Endurance Road,Arima_prediction,177269.0
+1075,2024-12-01,-11995.0,48929.0,Fat Bike,Arima_prediction,18467.0
+1076,2024-12-01,33346.0,238927.0,Over Mountain,Arima_prediction,136137.0
+1077,2024-12-01,-7871.0,68716.0,Sport,Arima_prediction,30422.0
+1078,2024-12-01,112242.0,417643.0,Trail,Arima_prediction,264942.0
+1079,2024-12-01,31052.0,192400.0,Triathalon,Arima_prediction,111726.0
+1080,2020-01-01,,,Cross Country Race,LSTM_prediction,
+1081,2020-01-01,,,Cyclocross,LSTM_prediction,
+1082,2020-01-01,,,Elite Road,LSTM_prediction,
+1083,2020-01-01,,,Endurance Road,LSTM_prediction,
+1084,2020-01-01,,,Fat Bike,LSTM_prediction,
+1085,2020-01-01,,,Over Mountain,LSTM_prediction,
+1086,2020-01-01,,,Sport,LSTM_prediction,
+1087,2020-01-01,,,Trail,LSTM_prediction,
+1088,2020-01-01,,,Triathalon,LSTM_prediction,
+1089,2020-02-01,,,Cross Country Race,LSTM_prediction,
+1090,2020-02-01,,,Cyclocross,LSTM_prediction,
+1091,2020-02-01,,,Elite Road,LSTM_prediction,
+1092,2020-02-01,,,Endurance Road,LSTM_prediction,
+1093,2020-02-01,,,Fat Bike,LSTM_prediction,
+1094,2020-02-01,,,Over Mountain,LSTM_prediction,
+1095,2020-02-01,,,Sport,LSTM_prediction,
+1096,2020-02-01,,,Trail,LSTM_prediction,
+1097,2020-02-01,,,Triathalon,LSTM_prediction,
+1098,2020-03-01,,,Cross Country Race,LSTM_prediction,
+1099,2020-03-01,,,Cyclocross,LSTM_prediction,
+1100,2020-03-01,,,Elite Road,LSTM_prediction,
+1101,2020-03-01,,,Endurance Road,LSTM_prediction,
+1102,2020-03-01,,,Fat Bike,LSTM_prediction,
+1103,2020-03-01,,,Over Mountain,LSTM_prediction,
+1104,2020-03-01,,,Sport,LSTM_prediction,
+1105,2020-03-01,,,Trail,LSTM_prediction,
+1106,2020-03-01,,,Triathalon,LSTM_prediction,
+1107,2020-04-01,,,Cross Country Race,LSTM_prediction,
+1108,2020-04-01,,,Cyclocross,LSTM_prediction,
+1109,2020-04-01,,,Elite Road,LSTM_prediction,
+1110,2020-04-01,,,Endurance Road,LSTM_prediction,
+1111,2020-04-01,,,Fat Bike,LSTM_prediction,
+1112,2020-04-01,,,Over Mountain,LSTM_prediction,
+1113,2020-04-01,,,Sport,LSTM_prediction,
+1114,2020-04-01,,,Trail,LSTM_prediction,
+1115,2020-04-01,,,Triathalon,LSTM_prediction,
+1116,2020-05-01,,,Cross Country Race,LSTM_prediction,
+1117,2020-05-01,,,Cyclocross,LSTM_prediction,
+1118,2020-05-01,,,Elite Road,LSTM_prediction,
+1119,2020-05-01,,,Endurance Road,LSTM_prediction,
+1120,2020-05-01,,,Fat Bike,LSTM_prediction,
+1121,2020-05-01,,,Over Mountain,LSTM_prediction,
+1122,2020-05-01,,,Sport,LSTM_prediction,
+1123,2020-05-01,,,Trail,LSTM_prediction,
+1124,2020-05-01,,,Triathalon,LSTM_prediction,
+1125,2020-06-01,,,Cross Country Race,LSTM_prediction,
+1126,2020-06-01,,,Cyclocross,LSTM_prediction,
+1127,2020-06-01,,,Elite Road,LSTM_prediction,
+1128,2020-06-01,,,Endurance Road,LSTM_prediction,
+1129,2020-06-01,,,Fat Bike,LSTM_prediction,
+1130,2020-06-01,,,Over Mountain,LSTM_prediction,
+1131,2020-06-01,,,Sport,LSTM_prediction,
+1132,2020-06-01,,,Trail,LSTM_prediction,
+1133,2020-06-01,,,Triathalon,LSTM_prediction,
+1134,2020-07-01,,,Cross Country Race,LSTM_prediction,
+1135,2020-07-01,,,Cyclocross,LSTM_prediction,
+1136,2020-07-01,,,Elite Road,LSTM_prediction,
+1137,2020-07-01,,,Endurance Road,LSTM_prediction,
+1138,2020-07-01,,,Fat Bike,LSTM_prediction,
+1139,2020-07-01,,,Over Mountain,LSTM_prediction,
+1140,2020-07-01,,,Sport,LSTM_prediction,
+1141,2020-07-01,,,Trail,LSTM_prediction,
+1142,2020-07-01,,,Triathalon,LSTM_prediction,
+1143,2020-08-01,,,Cross Country Race,LSTM_prediction,
+1144,2020-08-01,,,Cyclocross,LSTM_prediction,
+1145,2020-08-01,,,Elite Road,LSTM_prediction,
+1146,2020-08-01,,,Endurance Road,LSTM_prediction,
+1147,2020-08-01,,,Fat Bike,LSTM_prediction,
+1148,2020-08-01,,,Over Mountain,LSTM_prediction,
+1149,2020-08-01,,,Sport,LSTM_prediction,
+1150,2020-08-01,,,Trail,LSTM_prediction,
+1151,2020-08-01,,,Triathalon,LSTM_prediction,
+1152,2020-09-01,,,Cross Country Race,LSTM_prediction,
+1153,2020-09-01,,,Cyclocross,LSTM_prediction,
+1154,2020-09-01,,,Elite Road,LSTM_prediction,
+1155,2020-09-01,,,Endurance Road,LSTM_prediction,
+1156,2020-09-01,,,Fat Bike,LSTM_prediction,
+1157,2020-09-01,,,Over Mountain,LSTM_prediction,
+1158,2020-09-01,,,Sport,LSTM_prediction,
+1159,2020-09-01,,,Trail,LSTM_prediction,
+1160,2020-09-01,,,Triathalon,LSTM_prediction,
+1161,2020-10-01,,,Cross Country Race,LSTM_prediction,
+1162,2020-10-01,,,Cyclocross,LSTM_prediction,
+1163,2020-10-01,,,Elite Road,LSTM_prediction,
+1164,2020-10-01,,,Endurance Road,LSTM_prediction,
+1165,2020-10-01,,,Fat Bike,LSTM_prediction,
+1166,2020-10-01,,,Over Mountain,LSTM_prediction,
+1167,2020-10-01,,,Sport,LSTM_prediction,
+1168,2020-10-01,,,Trail,LSTM_prediction,
+1169,2020-10-01,,,Triathalon,LSTM_prediction,
+1170,2020-11-01,,,Cross Country Race,LSTM_prediction,
+1171,2020-11-01,,,Cyclocross,LSTM_prediction,
+1172,2020-11-01,,,Elite Road,LSTM_prediction,
+1173,2020-11-01,,,Endurance Road,LSTM_prediction,
+1174,2020-11-01,,,Fat Bike,LSTM_prediction,
+1175,2020-11-01,,,Over Mountain,LSTM_prediction,
+1176,2020-11-01,,,Sport,LSTM_prediction,
+1177,2020-11-01,,,Trail,LSTM_prediction,
+1178,2020-11-01,,,Triathalon,LSTM_prediction,
+1179,2020-12-01,,,Cross Country Race,LSTM_prediction,
+1180,2020-12-01,,,Cyclocross,LSTM_prediction,
+1181,2020-12-01,,,Elite Road,LSTM_prediction,
+1182,2020-12-01,,,Endurance Road,LSTM_prediction,
+1183,2020-12-01,,,Fat Bike,LSTM_prediction,
+1184,2020-12-01,,,Over Mountain,LSTM_prediction,
+1185,2020-12-01,,,Sport,LSTM_prediction,
+1186,2020-12-01,,,Trail,LSTM_prediction,
+1187,2020-12-01,,,Triathalon,LSTM_prediction,
+1188,2021-01-01,,,Cross Country Race,LSTM_prediction,
+1189,2021-01-01,,,Cyclocross,LSTM_prediction,
+1190,2021-01-01,,,Elite Road,LSTM_prediction,
+1191,2021-01-01,,,Endurance Road,LSTM_prediction,
+1192,2021-01-01,,,Fat Bike,LSTM_prediction,
+1193,2021-01-01,,,Over Mountain,LSTM_prediction,
+1194,2021-01-01,,,Sport,LSTM_prediction,
+1195,2021-01-01,,,Trail,LSTM_prediction,
+1196,2021-01-01,,,Triathalon,LSTM_prediction,
+1197,2021-02-01,,,Cross Country Race,LSTM_prediction,
+1198,2021-02-01,,,Cyclocross,LSTM_prediction,
+1199,2021-02-01,,,Elite Road,LSTM_prediction,
+1200,2021-02-01,,,Endurance Road,LSTM_prediction,
+1201,2021-02-01,,,Fat Bike,LSTM_prediction,
+1202,2021-02-01,,,Over Mountain,LSTM_prediction,
+1203,2021-02-01,,,Sport,LSTM_prediction,
+1204,2021-02-01,,,Trail,LSTM_prediction,
+1205,2021-02-01,,,Triathalon,LSTM_prediction,
+1206,2021-03-01,,,Cross Country Race,LSTM_prediction,
+1207,2021-03-01,,,Cyclocross,LSTM_prediction,
+1208,2021-03-01,,,Elite Road,LSTM_prediction,
+1209,2021-03-01,,,Endurance Road,LSTM_prediction,
+1210,2021-03-01,,,Fat Bike,LSTM_prediction,
+1211,2021-03-01,,,Over Mountain,LSTM_prediction,
+1212,2021-03-01,,,Sport,LSTM_prediction,
+1213,2021-03-01,,,Trail,LSTM_prediction,
+1214,2021-03-01,,,Triathalon,LSTM_prediction,
+1215,2021-04-01,,,Cross Country Race,LSTM_prediction,
+1216,2021-04-01,,,Cyclocross,LSTM_prediction,
+1217,2021-04-01,,,Elite Road,LSTM_prediction,
+1218,2021-04-01,,,Endurance Road,LSTM_prediction,
+1219,2021-04-01,,,Fat Bike,LSTM_prediction,
+1220,2021-04-01,,,Over Mountain,LSTM_prediction,
+1221,2021-04-01,,,Sport,LSTM_prediction,
+1222,2021-04-01,,,Trail,LSTM_prediction,
+1223,2021-04-01,,,Triathalon,LSTM_prediction,
+1224,2021-05-01,,,Cross Country Race,LSTM_prediction,
+1225,2021-05-01,,,Cyclocross,LSTM_prediction,
+1226,2021-05-01,,,Elite Road,LSTM_prediction,
+1227,2021-05-01,,,Endurance Road,LSTM_prediction,
+1228,2021-05-01,,,Fat Bike,LSTM_prediction,
+1229,2021-05-01,,,Over Mountain,LSTM_prediction,
+1230,2021-05-01,,,Sport,LSTM_prediction,
+1231,2021-05-01,,,Trail,LSTM_prediction,
+1232,2021-05-01,,,Triathalon,LSTM_prediction,
+1233,2021-06-01,,,Cross Country Race,LSTM_prediction,
+1234,2021-06-01,,,Cyclocross,LSTM_prediction,
+1235,2021-06-01,,,Elite Road,LSTM_prediction,
+1236,2021-06-01,,,Endurance Road,LSTM_prediction,
+1237,2021-06-01,,,Fat Bike,LSTM_prediction,
+1238,2021-06-01,,,Over Mountain,LSTM_prediction,
+1239,2021-06-01,,,Sport,LSTM_prediction,
+1240,2021-06-01,,,Trail,LSTM_prediction,
+1241,2021-06-01,,,Triathalon,LSTM_prediction,
+1242,2021-07-01,,,Cross Country Race,LSTM_prediction,
+1243,2021-07-01,,,Cyclocross,LSTM_prediction,
+1244,2021-07-01,,,Elite Road,LSTM_prediction,
+1245,2021-07-01,,,Endurance Road,LSTM_prediction,
+1246,2021-07-01,,,Fat Bike,LSTM_prediction,
+1247,2021-07-01,,,Over Mountain,LSTM_prediction,
+1248,2021-07-01,,,Sport,LSTM_prediction,
+1249,2021-07-01,,,Trail,LSTM_prediction,
+1250,2021-07-01,,,Triathalon,LSTM_prediction,
+1251,2021-08-01,,,Cross Country Race,LSTM_prediction,
+1252,2021-08-01,,,Cyclocross,LSTM_prediction,
+1253,2021-08-01,,,Elite Road,LSTM_prediction,
+1254,2021-08-01,,,Endurance Road,LSTM_prediction,
+1255,2021-08-01,,,Fat Bike,LSTM_prediction,
+1256,2021-08-01,,,Over Mountain,LSTM_prediction,
+1257,2021-08-01,,,Sport,LSTM_prediction,
+1258,2021-08-01,,,Trail,LSTM_prediction,
+1259,2021-08-01,,,Triathalon,LSTM_prediction,
+1260,2021-09-01,,,Cross Country Race,LSTM_prediction,
+1261,2021-09-01,,,Cyclocross,LSTM_prediction,
+1262,2021-09-01,,,Elite Road,LSTM_prediction,
+1263,2021-09-01,,,Endurance Road,LSTM_prediction,
+1264,2021-09-01,,,Fat Bike,LSTM_prediction,
+1265,2021-09-01,,,Over Mountain,LSTM_prediction,
+1266,2021-09-01,,,Sport,LSTM_prediction,
+1267,2021-09-01,,,Trail,LSTM_prediction,
+1268,2021-09-01,,,Triathalon,LSTM_prediction,
+1269,2021-10-01,,,Cross Country Race,LSTM_prediction,
+1270,2021-10-01,,,Cyclocross,LSTM_prediction,
+1271,2021-10-01,,,Elite Road,LSTM_prediction,
+1272,2021-10-01,,,Endurance Road,LSTM_prediction,
+1273,2021-10-01,,,Fat Bike,LSTM_prediction,
+1274,2021-10-01,,,Over Mountain,LSTM_prediction,
+1275,2021-10-01,,,Sport,LSTM_prediction,
+1276,2021-10-01,,,Trail,LSTM_prediction,
+1277,2021-10-01,,,Triathalon,LSTM_prediction,
+1278,2021-11-01,,,Cross Country Race,LSTM_prediction,
+1279,2021-11-01,,,Cyclocross,LSTM_prediction,
+1280,2021-11-01,,,Elite Road,LSTM_prediction,
+1281,2021-11-01,,,Endurance Road,LSTM_prediction,
+1282,2021-11-01,,,Fat Bike,LSTM_prediction,
+1283,2021-11-01,,,Over Mountain,LSTM_prediction,
+1284,2021-11-01,,,Sport,LSTM_prediction,
+1285,2021-11-01,,,Trail,LSTM_prediction,
+1286,2021-11-01,,,Triathalon,LSTM_prediction,
+1287,2021-12-01,,,Cross Country Race,LSTM_prediction,
+1288,2021-12-01,,,Cyclocross,LSTM_prediction,
+1289,2021-12-01,,,Elite Road,LSTM_prediction,
+1290,2021-12-01,,,Endurance Road,LSTM_prediction,
+1291,2021-12-01,,,Fat Bike,LSTM_prediction,
+1292,2021-12-01,,,Over Mountain,LSTM_prediction,
+1293,2021-12-01,,,Sport,LSTM_prediction,
+1294,2021-12-01,,,Trail,LSTM_prediction,
+1295,2021-12-01,,,Triathalon,LSTM_prediction,
+1296,2022-01-01,,,Cross Country Race,LSTM_prediction,
+1297,2022-01-01,,,Cyclocross,LSTM_prediction,
+1298,2022-01-01,,,Elite Road,LSTM_prediction,
+1299,2022-01-01,,,Endurance Road,LSTM_prediction,
+1300,2022-01-01,,,Fat Bike,LSTM_prediction,
+1301,2022-01-01,,,Over Mountain,LSTM_prediction,
+1302,2022-01-01,,,Sport,LSTM_prediction,
+1303,2022-01-01,,,Trail,LSTM_prediction,
+1304,2022-01-01,,,Triathalon,LSTM_prediction,
+1305,2022-02-01,,,Cross Country Race,LSTM_prediction,
+1306,2022-02-01,,,Cyclocross,LSTM_prediction,
+1307,2022-02-01,,,Elite Road,LSTM_prediction,
+1308,2022-02-01,,,Endurance Road,LSTM_prediction,
+1309,2022-02-01,,,Fat Bike,LSTM_prediction,
+1310,2022-02-01,,,Over Mountain,LSTM_prediction,
+1311,2022-02-01,,,Sport,LSTM_prediction,
+1312,2022-02-01,,,Trail,LSTM_prediction,
+1313,2022-02-01,,,Triathalon,LSTM_prediction,
+1314,2022-03-01,,,Cross Country Race,LSTM_prediction,
+1315,2022-03-01,,,Cyclocross,LSTM_prediction,
+1316,2022-03-01,,,Elite Road,LSTM_prediction,
+1317,2022-03-01,,,Endurance Road,LSTM_prediction,
+1318,2022-03-01,,,Fat Bike,LSTM_prediction,
+1319,2022-03-01,,,Over Mountain,LSTM_prediction,
+1320,2022-03-01,,,Sport,LSTM_prediction,
+1321,2022-03-01,,,Trail,LSTM_prediction,
+1322,2022-03-01,,,Triathalon,LSTM_prediction,
+1323,2022-04-01,,,Cross Country Race,LSTM_prediction,
+1324,2022-04-01,,,Cyclocross,LSTM_prediction,
+1325,2022-04-01,,,Elite Road,LSTM_prediction,
+1326,2022-04-01,,,Endurance Road,LSTM_prediction,
+1327,2022-04-01,,,Fat Bike,LSTM_prediction,
+1328,2022-04-01,,,Over Mountain,LSTM_prediction,
+1329,2022-04-01,,,Sport,LSTM_prediction,
+1330,2022-04-01,,,Trail,LSTM_prediction,
+1331,2022-04-01,,,Triathalon,LSTM_prediction,
+1332,2022-05-01,,,Cross Country Race,LSTM_prediction,
+1333,2022-05-01,,,Cyclocross,LSTM_prediction,
+1334,2022-05-01,,,Elite Road,LSTM_prediction,
+1335,2022-05-01,,,Endurance Road,LSTM_prediction,
+1336,2022-05-01,,,Fat Bike,LSTM_prediction,
+1337,2022-05-01,,,Over Mountain,LSTM_prediction,
+1338,2022-05-01,,,Sport,LSTM_prediction,
+1339,2022-05-01,,,Trail,LSTM_prediction,
+1340,2022-05-01,,,Triathalon,LSTM_prediction,
+1341,2022-06-01,,,Cross Country Race,LSTM_prediction,
+1342,2022-06-01,,,Cyclocross,LSTM_prediction,
+1343,2022-06-01,,,Elite Road,LSTM_prediction,
+1344,2022-06-01,,,Endurance Road,LSTM_prediction,
+1345,2022-06-01,,,Fat Bike,LSTM_prediction,
+1346,2022-06-01,,,Over Mountain,LSTM_prediction,
+1347,2022-06-01,,,Sport,LSTM_prediction,
+1348,2022-06-01,,,Trail,LSTM_prediction,
+1349,2022-06-01,,,Triathalon,LSTM_prediction,
+1350,2022-07-01,,,Cross Country Race,LSTM_prediction,
+1351,2022-07-01,,,Cyclocross,LSTM_prediction,
+1352,2022-07-01,,,Elite Road,LSTM_prediction,
+1353,2022-07-01,,,Endurance Road,LSTM_prediction,
+1354,2022-07-01,,,Fat Bike,LSTM_prediction,
+1355,2022-07-01,,,Over Mountain,LSTM_prediction,
+1356,2022-07-01,,,Sport,LSTM_prediction,
+1357,2022-07-01,,,Trail,LSTM_prediction,
+1358,2022-07-01,,,Triathalon,LSTM_prediction,
+1359,2022-08-01,,,Cross Country Race,LSTM_prediction,
+1360,2022-08-01,,,Cyclocross,LSTM_prediction,
+1361,2022-08-01,,,Elite Road,LSTM_prediction,
+1362,2022-08-01,,,Endurance Road,LSTM_prediction,
+1363,2022-08-01,,,Fat Bike,LSTM_prediction,
+1364,2022-08-01,,,Over Mountain,LSTM_prediction,
+1365,2022-08-01,,,Sport,LSTM_prediction,
+1366,2022-08-01,,,Trail,LSTM_prediction,
+1367,2022-08-01,,,Triathalon,LSTM_prediction,
+1368,2022-09-01,,,Cross Country Race,LSTM_prediction,
+1369,2022-09-01,,,Cyclocross,LSTM_prediction,
+1370,2022-09-01,,,Elite Road,LSTM_prediction,
+1371,2022-09-01,,,Endurance Road,LSTM_prediction,
+1372,2022-09-01,,,Fat Bike,LSTM_prediction,
+1373,2022-09-01,,,Over Mountain,LSTM_prediction,
+1374,2022-09-01,,,Sport,LSTM_prediction,
+1375,2022-09-01,,,Trail,LSTM_prediction,
+1376,2022-09-01,,,Triathalon,LSTM_prediction,
+1377,2022-10-01,,,Cross Country Race,LSTM_prediction,
+1378,2022-10-01,,,Cyclocross,LSTM_prediction,
+1379,2022-10-01,,,Elite Road,LSTM_prediction,
+1380,2022-10-01,,,Endurance Road,LSTM_prediction,
+1381,2022-10-01,,,Fat Bike,LSTM_prediction,
+1382,2022-10-01,,,Over Mountain,LSTM_prediction,
+1383,2022-10-01,,,Sport,LSTM_prediction,
+1384,2022-10-01,,,Trail,LSTM_prediction,
+1385,2022-10-01,,,Triathalon,LSTM_prediction,
+1386,2022-11-01,,,Cross Country Race,LSTM_prediction,
+1387,2022-11-01,,,Cyclocross,LSTM_prediction,
+1388,2022-11-01,,,Elite Road,LSTM_prediction,
+1389,2022-11-01,,,Endurance Road,LSTM_prediction,
+1390,2022-11-01,,,Fat Bike,LSTM_prediction,
+1391,2022-11-01,,,Over Mountain,LSTM_prediction,
+1392,2022-11-01,,,Sport,LSTM_prediction,
+1393,2022-11-01,,,Trail,LSTM_prediction,
+1394,2022-11-01,,,Triathalon,LSTM_prediction,
+1395,2022-12-01,,,Cross Country Race,LSTM_prediction,
+1396,2022-12-01,,,Cyclocross,LSTM_prediction,
+1397,2022-12-01,,,Elite Road,LSTM_prediction,
+1398,2022-12-01,,,Endurance Road,LSTM_prediction,
+1399,2022-12-01,,,Fat Bike,LSTM_prediction,
+1400,2022-12-01,,,Over Mountain,LSTM_prediction,
+1401,2022-12-01,,,Sport,LSTM_prediction,
+1402,2022-12-01,,,Trail,LSTM_prediction,
+1403,2022-12-01,,,Triathalon,LSTM_prediction,
+1404,2023-01-01,,,Cross Country Race,LSTM_prediction,
+1405,2023-01-01,,,Cyclocross,LSTM_prediction,
+1406,2023-01-01,,,Elite Road,LSTM_prediction,
+1407,2023-01-01,,,Endurance Road,LSTM_prediction,
+1408,2023-01-01,,,Fat Bike,LSTM_prediction,
+1409,2023-01-01,,,Over Mountain,LSTM_prediction,
+1410,2023-01-01,,,Sport,LSTM_prediction,
+1411,2023-01-01,,,Trail,LSTM_prediction,
+1412,2023-01-01,,,Triathalon,LSTM_prediction,
+1413,2023-02-01,,,Cross Country Race,LSTM_prediction,
+1414,2023-02-01,,,Cyclocross,LSTM_prediction,
+1415,2023-02-01,,,Elite Road,LSTM_prediction,
+1416,2023-02-01,,,Endurance Road,LSTM_prediction,
+1417,2023-02-01,,,Fat Bike,LSTM_prediction,
+1418,2023-02-01,,,Over Mountain,LSTM_prediction,
+1419,2023-02-01,,,Sport,LSTM_prediction,
+1420,2023-02-01,,,Trail,LSTM_prediction,
+1421,2023-02-01,,,Triathalon,LSTM_prediction,
+1422,2023-03-01,,,Cross Country Race,LSTM_prediction,
+1423,2023-03-01,,,Cyclocross,LSTM_prediction,
+1424,2023-03-01,,,Elite Road,LSTM_prediction,
+1425,2023-03-01,,,Endurance Road,LSTM_prediction,
+1426,2023-03-01,,,Fat Bike,LSTM_prediction,
+1427,2023-03-01,,,Over Mountain,LSTM_prediction,
+1428,2023-03-01,,,Sport,LSTM_prediction,
+1429,2023-03-01,,,Trail,LSTM_prediction,
+1430,2023-03-01,,,Triathalon,LSTM_prediction,
+1431,2023-04-01,,,Cross Country Race,LSTM_prediction,
+1432,2023-04-01,,,Cyclocross,LSTM_prediction,
+1433,2023-04-01,,,Elite Road,LSTM_prediction,
+1434,2023-04-01,,,Endurance Road,LSTM_prediction,
+1435,2023-04-01,,,Fat Bike,LSTM_prediction,
+1436,2023-04-01,,,Over Mountain,LSTM_prediction,
+1437,2023-04-01,,,Sport,LSTM_prediction,
+1438,2023-04-01,,,Trail,LSTM_prediction,
+1439,2023-04-01,,,Triathalon,LSTM_prediction,
+1440,2023-05-01,,,Cross Country Race,LSTM_prediction,
+1441,2023-05-01,,,Cyclocross,LSTM_prediction,
+1442,2023-05-01,,,Elite Road,LSTM_prediction,
+1443,2023-05-01,,,Endurance Road,LSTM_prediction,
+1444,2023-05-01,,,Fat Bike,LSTM_prediction,
+1445,2023-05-01,,,Over Mountain,LSTM_prediction,
+1446,2023-05-01,,,Sport,LSTM_prediction,
+1447,2023-05-01,,,Trail,LSTM_prediction,
+1448,2023-05-01,,,Triathalon,LSTM_prediction,
+1449,2023-06-01,,,Cross Country Race,LSTM_prediction,
+1450,2023-06-01,,,Cyclocross,LSTM_prediction,
+1451,2023-06-01,,,Elite Road,LSTM_prediction,
+1452,2023-06-01,,,Endurance Road,LSTM_prediction,
+1453,2023-06-01,,,Fat Bike,LSTM_prediction,
+1454,2023-06-01,,,Over Mountain,LSTM_prediction,
+1455,2023-06-01,,,Sport,LSTM_prediction,
+1456,2023-06-01,,,Trail,LSTM_prediction,
+1457,2023-06-01,,,Triathalon,LSTM_prediction,
+1458,2023-07-01,,,Cross Country Race,LSTM_prediction,
+1459,2023-07-01,,,Cyclocross,LSTM_prediction,
+1460,2023-07-01,,,Elite Road,LSTM_prediction,
+1461,2023-07-01,,,Endurance Road,LSTM_prediction,
+1462,2023-07-01,,,Fat Bike,LSTM_prediction,
+1463,2023-07-01,,,Over Mountain,LSTM_prediction,
+1464,2023-07-01,,,Sport,LSTM_prediction,
+1465,2023-07-01,,,Trail,LSTM_prediction,
+1466,2023-07-01,,,Triathalon,LSTM_prediction,
+1467,2023-08-01,,,Cross Country Race,LSTM_prediction,
+1468,2023-08-01,,,Cyclocross,LSTM_prediction,
+1469,2023-08-01,,,Elite Road,LSTM_prediction,
+1470,2023-08-01,,,Endurance Road,LSTM_prediction,
+1471,2023-08-01,,,Fat Bike,LSTM_prediction,
+1472,2023-08-01,,,Over Mountain,LSTM_prediction,
+1473,2023-08-01,,,Sport,LSTM_prediction,
+1474,2023-08-01,,,Trail,LSTM_prediction,
+1475,2023-08-01,,,Triathalon,LSTM_prediction,
+1476,2023-09-01,,,Cross Country Race,LSTM_prediction,
+1477,2023-09-01,,,Cyclocross,LSTM_prediction,
+1478,2023-09-01,,,Elite Road,LSTM_prediction,
+1479,2023-09-01,,,Endurance Road,LSTM_prediction,
+1480,2023-09-01,,,Fat Bike,LSTM_prediction,
+1481,2023-09-01,,,Over Mountain,LSTM_prediction,
+1482,2023-09-01,,,Sport,LSTM_prediction,
+1483,2023-09-01,,,Trail,LSTM_prediction,
+1484,2023-09-01,,,Triathalon,LSTM_prediction,
+1485,2023-10-01,,,Cross Country Race,LSTM_prediction,
+1486,2023-10-01,,,Cyclocross,LSTM_prediction,
+1487,2023-10-01,,,Elite Road,LSTM_prediction,
+1488,2023-10-01,,,Endurance Road,LSTM_prediction,
+1489,2023-10-01,,,Fat Bike,LSTM_prediction,
+1490,2023-10-01,,,Over Mountain,LSTM_prediction,
+1491,2023-10-01,,,Sport,LSTM_prediction,
+1492,2023-10-01,,,Trail,LSTM_prediction,
+1493,2023-10-01,,,Triathalon,LSTM_prediction,
+1494,2023-11-01,,,Cross Country Race,LSTM_prediction,
+1495,2023-11-01,,,Cyclocross,LSTM_prediction,
+1496,2023-11-01,,,Elite Road,LSTM_prediction,
+1497,2023-11-01,,,Endurance Road,LSTM_prediction,
+1498,2023-11-01,,,Fat Bike,LSTM_prediction,
+1499,2023-11-01,,,Over Mountain,LSTM_prediction,
+1500,2023-11-01,,,Sport,LSTM_prediction,
+1501,2023-11-01,,,Trail,LSTM_prediction,
+1502,2023-11-01,,,Triathalon,LSTM_prediction,
+1503,2023-12-01,,,Cross Country Race,LSTM_prediction,
+1504,2023-12-01,,,Cyclocross,LSTM_prediction,
+1505,2023-12-01,,,Elite Road,LSTM_prediction,
+1506,2023-12-01,,,Endurance Road,LSTM_prediction,
+1507,2023-12-01,,,Fat Bike,LSTM_prediction,
+1508,2023-12-01,,,Over Mountain,LSTM_prediction,
+1509,2023-12-01,,,Sport,LSTM_prediction,
+1510,2023-12-01,,,Trail,LSTM_prediction,
+1511,2023-12-01,,,Triathalon,LSTM_prediction,
+1512,2024-01-01,,,Cross Country Race,LSTM_prediction,
+1513,2024-01-01,,,Cyclocross,LSTM_prediction,
+1514,2024-01-01,,,Elite Road,LSTM_prediction,
+1515,2024-01-01,,,Endurance Road,LSTM_prediction,
+1516,2024-01-01,,,Fat Bike,LSTM_prediction,
+1517,2024-01-01,,,Over Mountain,LSTM_prediction,
+1518,2024-01-01,,,Sport,LSTM_prediction,
+1519,2024-01-01,,,Trail,LSTM_prediction,
+1520,2024-01-01,,,Triathalon,LSTM_prediction,
+1521,2024-02-01,,,Cross Country Race,LSTM_prediction,
+1522,2024-02-01,,,Cyclocross,LSTM_prediction,
+1523,2024-02-01,,,Elite Road,LSTM_prediction,
+1524,2024-02-01,,,Endurance Road,LSTM_prediction,
+1525,2024-02-01,,,Fat Bike,LSTM_prediction,
+1526,2024-02-01,,,Over Mountain,LSTM_prediction,
+1527,2024-02-01,,,Sport,LSTM_prediction,
+1528,2024-02-01,,,Trail,LSTM_prediction,
+1529,2024-02-01,,,Triathalon,LSTM_prediction,
+1530,2024-03-01,,,Cross Country Race,LSTM_prediction,
+1531,2024-03-01,,,Cyclocross,LSTM_prediction,
+1532,2024-03-01,,,Elite Road,LSTM_prediction,
+1533,2024-03-01,,,Endurance Road,LSTM_prediction,
+1534,2024-03-01,,,Fat Bike,LSTM_prediction,
+1535,2024-03-01,,,Over Mountain,LSTM_prediction,
+1536,2024-03-01,,,Sport,LSTM_prediction,
+1537,2024-03-01,,,Trail,LSTM_prediction,
+1538,2024-03-01,,,Triathalon,LSTM_prediction,
+1539,2024-04-01,,,Cross Country Race,LSTM_prediction,
+1540,2024-04-01,,,Cyclocross,LSTM_prediction,
+1541,2024-04-01,,,Elite Road,LSTM_prediction,
+1542,2024-04-01,,,Endurance Road,LSTM_prediction,
+1543,2024-04-01,,,Fat Bike,LSTM_prediction,
+1544,2024-04-01,,,Over Mountain,LSTM_prediction,
+1545,2024-04-01,,,Sport,LSTM_prediction,
+1546,2024-04-01,,,Trail,LSTM_prediction,
+1547,2024-04-01,,,Triathalon,LSTM_prediction,
+1548,2024-05-01,,,Cross Country Race,LSTM_prediction,
+1549,2024-05-01,,,Cyclocross,LSTM_prediction,
+1550,2024-05-01,,,Elite Road,LSTM_prediction,
+1551,2024-05-01,,,Endurance Road,LSTM_prediction,
+1552,2024-05-01,,,Fat Bike,LSTM_prediction,
+1553,2024-05-01,,,Over Mountain,LSTM_prediction,
+1554,2024-05-01,,,Sport,LSTM_prediction,
+1555,2024-05-01,,,Trail,LSTM_prediction,
+1556,2024-05-01,,,Triathalon,LSTM_prediction,
+1557,2024-06-01,,,Cross Country Race,LSTM_prediction,
+1558,2024-06-01,,,Cyclocross,LSTM_prediction,
+1559,2024-06-01,,,Elite Road,LSTM_prediction,
+1560,2024-06-01,,,Endurance Road,LSTM_prediction,
+1561,2024-06-01,,,Fat Bike,LSTM_prediction,
+1562,2024-06-01,,,Over Mountain,LSTM_prediction,
+1563,2024-06-01,,,Sport,LSTM_prediction,
+1564,2024-06-01,,,Trail,LSTM_prediction,
+1565,2024-06-01,,,Triathalon,LSTM_prediction,
+1566,2024-07-01,,,Cross Country Race,LSTM_prediction,
+1567,2024-07-01,,,Cyclocross,LSTM_prediction,
+1568,2024-07-01,,,Elite Road,LSTM_prediction,
+1569,2024-07-01,,,Endurance Road,LSTM_prediction,
+1570,2024-07-01,,,Fat Bike,LSTM_prediction,
+1571,2024-07-01,,,Over Mountain,LSTM_prediction,
+1572,2024-07-01,,,Sport,LSTM_prediction,
+1573,2024-07-01,,,Trail,LSTM_prediction,
+1574,2024-07-01,,,Triathalon,LSTM_prediction,
+1575,2024-08-01,,,Cross Country Race,LSTM_prediction,
+1576,2024-08-01,,,Cyclocross,LSTM_prediction,
+1577,2024-08-01,,,Elite Road,LSTM_prediction,
+1578,2024-08-01,,,Endurance Road,LSTM_prediction,
+1579,2024-08-01,,,Fat Bike,LSTM_prediction,
+1580,2024-08-01,,,Over Mountain,LSTM_prediction,
+1581,2024-08-01,,,Sport,LSTM_prediction,
+1582,2024-08-01,,,Trail,LSTM_prediction,
+1583,2024-08-01,,,Triathalon,LSTM_prediction,
+1584,2024-09-01,,,Cross Country Race,LSTM_prediction,
+1585,2024-09-01,,,Cyclocross,LSTM_prediction,
+1586,2024-09-01,,,Elite Road,LSTM_prediction,
+1587,2024-09-01,,,Endurance Road,LSTM_prediction,
+1588,2024-09-01,,,Fat Bike,LSTM_prediction,
+1589,2024-09-01,,,Over Mountain,LSTM_prediction,
+1590,2024-09-01,,,Sport,LSTM_prediction,
+1591,2024-09-01,,,Trail,LSTM_prediction,
+1592,2024-09-01,,,Triathalon,LSTM_prediction,
+1593,2024-10-01,230386.0,735494.0,Cross Country Race,LSTM_prediction,251500.5
+1594,2024-10-01,11727.0,80565.0,Cyclocross,LSTM_prediction,27570.67578125
+1595,2024-10-01,153940.0,602184.0,Elite Road,LSTM_prediction,180341.078125
+1596,2024-10-01,-1656.0,353679.0,Endurance Road,LSTM_prediction,121418.453125
+1597,2024-10-01,-11995.0,48929.0,Fat Bike,LSTM_prediction,15488.4833984375
+1598,2024-10-01,56987.0,246250.0,Over Mountain,LSTM_prediction,102867.40625
+1599,2024-10-01,38775.0,90256.0,Sport,LSTM_prediction,26742.771484375
+1600,2024-10-01,125447.0,392778.0,Trail,LSTM_prediction,111980.3828125
+1601,2024-10-01,34186.0,187458.0,Triathalon,LSTM_prediction,52018.546875
+1602,2024-11-01,158508.0,751390.0,Cross Country Race,LSTM_prediction,193081.859375
+1603,2024-11-01,-4062.0,67977.0,Cyclocross,LSTM_prediction,16696.26171875
+1604,2024-11-01,130365.0,640844.0,Elite Road,LSTM_prediction,132867.046875
+1605,2024-11-01,-6064.0,365238.0,Endurance Road,LSTM_prediction,86047.1953125
+1606,2024-11-01,-11995.0,48929.0,Fat Bike,LSTM_prediction,9140.603515625
+1607,2024-11-01,38787.0,242247.0,Over Mountain,LSTM_prediction,79050.75
+1608,2024-11-01,-5253.0,51177.0,Sport,LSTM_prediction,18516.130859375
+1609,2024-11-01,75769.0,359878.0,Trail,LSTM_prediction,92219.3515625
+1610,2024-11-01,30546.0,191031.0,Triathalon,LSTM_prediction,39293.23828125
+1611,2024-12-01,112150.0,819323.0,Cross Country Race,LSTM_prediction,364410.90625
+1612,2024-12-01,-3198.0,73815.0,Cyclocross,LSTM_prediction,40243.6015625
+1613,2024-12-01,71296.0,622880.0,Elite Road,LSTM_prediction,280553.0
+1614,2024-12-01,-17038.0,371578.0,Endurance Road,LSTM_prediction,188043.609375
+1615,2024-12-01,-11995.0,48929.0,Fat Bike,LSTM_prediction,21061.265625
+1616,2024-12-01,33346.0,238927.0,Over Mountain,LSTM_prediction,138522.40625
+1617,2024-12-01,-7871.0,68716.0,Sport,LSTM_prediction,35870.7421875
+1618,2024-12-01,112242.0,417643.0,Trail,LSTM_prediction,169331.296875
+1619,2024-12-01,31052.0,192400.0,Triathalon,LSTM_prediction,75921.0078125

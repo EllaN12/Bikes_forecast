@@ -276,6 +276,3 @@ df = collect_data()
 get_top_performers(df, 2015, 'Road', 5)
 
 get_top_stores(df, 2015, 5)
-
-
-

@@ -171,6 +171,29 @@ category_1_df.index = Cat_1_arima_df['order_date'].iloc[-3:]
 
 category_1_df.rename(columns = {'total_price': "LSTM_prediction"}, inplace = True)
 
+"""
+#Annualize 1 year forcast 
+def calculate_next_month(prices):
+    return (np.sum(prices[-3:]) * 4) / 12
+
+# Calculate for 9 more months for each category
+categories = category_1_df.columns.to_list()
+
+for i in range(9):
+    for category in categories[1]:
+        cat_data = category_1_df[category_1_df['category'] == category]
+        if len(cat_data) >= 3:
+            next_month = calculate_next_month(cat_data['LSTMprediction'].tail(3))
+            last_date = cat_data['order_date'].max()
+            new_date = last_date + relativedelta(months=1)
+            new_row = pd.DataFrame({
+                'date': [new_date],
+                'category': [category],
+                'LSTMprediction': [next_month]
+            })
+
+
+"""
 
 cat_1_df = category_1_df\
     .melt(
