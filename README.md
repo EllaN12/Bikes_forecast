@@ -36,7 +36,7 @@ The CRISP-DM methodology was applied, systematically addressing:
  . Auto-Arima: Mean Absolute Percentage Error (MAPE) 0.2458, Mean Squared Percentage Error (MSPE) 0.09022
  . Long-short Memory (LSTM): Mean Absolute Error: 0.2360, Mean squared error (MSE) 0.0904
 - Performance summary: The LSTM model shows a slight performance edge over AutoArima, achieving lower error rates and more conservative results
-- Model limitations: 
+
 
 ## Key Findings
 - Smoother forecasts: AutoARIMA produced smoother forecasted lines compared to LSTM
@@ -45,15 +45,6 @@ The CRISP-DM methodology was applied, systematically addressing:
  refer to viz in Tableu public https://public.tableau.com/app/profile/ella.claude/viz/BikesslaesForecast/Story1
 
 
-
-## Deliverables
-List of what's included in the repository:
-- Notebooks (with descriptions)
-- Scripts
-- Documentation
-- Presentation materials
-- Models
-- Datasets (if public)
 
 ## Installation and Setup
 ```bash
@@ -83,7 +74,7 @@ List of what's included in the repository:
 
 
 
-## Project Structure
+## Project Structure and deliverables
 ```
 project/
 │
