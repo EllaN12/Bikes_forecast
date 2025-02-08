@@ -90,7 +90,7 @@ project/
 ## Key Components
 - **database.py**: ETL function to automate dta collection and cleaning.
 - **summarize_by_time.py**: automated function to summarize data by group and time period
-- **Arima_forecast.py**: Contains AutoArima forecarst and evaluation functions and other functions to combine forecasting results,.
+- **Arima_forecast.py**: Contains AutoArima forecast and evaluation functions and other functions to combine forecasting results,.
 - **Multi_variate_forecast.py**: Performs Forecasting using LSTM model.
 
 
@@ -98,7 +98,7 @@ project/
 ## Acknowledgments
 - Pandas and NumPy for data manipulation
 - Tableau Public for data visualization
-- AutoArima and LSTM for machine learning and deep learning models
+- AutoArima and LSTM for machine learning and deep learning forecasting models
 - Scikit-learn for machine learning utilities
 
 
