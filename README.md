@@ -1,108 +1,128 @@
-# Bikes_forecast
+# Bikes Sales Forecast
 
 ## Overview
-A fictitious bicycle manufacturer distributes bikes to bikeshops nationwide. The project aims to analyze sales performance for the first three quarters of 2024 and forecast sales for the final quarter.
-Mountain bikes are top selling category of bikes nationwide. Kansas city 29rs is the top selling shop. TensorFlow forecasting yielded more accurate and conservative results compared to AutoARIMA.
 
+A fictitious bicycle manufacturer distributes bikes to bike shops nationwide. This project analyzes sales performance for Q1–Q3 2024 and forecasts sales for Q4 2024 using two machine learning approaches: AutoARIMA and a TensorFlow LSTM deep learning model.
 
+**Key results:** Mountain Bikes are the top-selling category nationwide. Kansas City 29ers is the top-performing shop. TensorFlow LSTM yielded slightly more accurate results (MAE: 0.236) compared to AutoARIMA (MAPE: 0.246), while AutoARIMA produced smoother, more interpretable forecast lines.
+
+---
 
 ## Data Sources
-- synthetic sales dataset generated using python
-- SQLite Database with 3 Interconnected Tables:
- 1. Bikes (4,753 records, 4 attributes):Comprehensive catalog of bike products, including names, descriptions, and categorization
- 2. Bikeshops (93 records, 3 attributes):Detailed registry of bike stores across the continental United States, capturing location and business information
- 3. Orderlines (109,514 records, 6 attributes):Comprehensive order history documenting bike purchases by bike shops over the past 5 years
 
+A synthetic sales dataset generated using Python, stored in a SQLite database with three interconnected tables:
+
+- **Bikes** (4,753 records, 4 attributes): Catalog of bike products including names, descriptions, and category information.
+- **Bikeshops** (93 records, 3 attributes): Registry of bike stores across the continental United States with location and business details.
+- **Orderlines** (109,514 records, 6 attributes): Complete order history documenting bike purchases by bike shops over 5 years.
+
+---
 
 ## Methods and Tools
-### Data Processing & Analysis
-The CRISP-DM methodology was applied, systematically addressing:
-- Data Understanding: Conduct exploratory data analysis (EDA) on dataset characteristics and initial insights 
-- Data Preparation: 
-  . Cleaning: Fields such as date, location, and description were split into new features like bike main categories, sub-categories, and frame materials.
-  . ETL Automation: data cleaning is automated within the ETL process using a Python function (collect_data) located in my_pandas_extension/database.py.
-- Feature engineering approaches: Auto ARIMA: Aggregated and summarized time-series data for forecasting.
-- LSTM: Scaled and split data into training and testing sets using TensorFlow Datasets. Optimized model architecture with Keras Tuner to minimize validation loss. The model generated is composed of
- . 1 LSTM layer containinng 256 units,
- . 3 dense layers of 80, 16 and 11 units respectively. 
- . The model generated 889,428 parameters of which, 296,475 were trainaible and 592,953 were optimzers 
 
+### Methodology
 
-### Machine Learning (if applicable)
-- Models tested: 
- . AutoArima Forecaster 
- . TensorFlow's LSTM: 
-- Evaluation metrics:
- . Auto-Arima: Mean Absolute Percentage Error (MAPE) 0.2458, Mean Squared Percentage Error (MSPE) 0.09022
- . Long-short Memory (LSTM): Mean Absolute Error: 0.2360, Mean squared error (MSE) 0.0904
-- Performance summary: The LSTM model shows a slight performance edge over AutoArima, achieving lower error rates and more conservative results
+The CRISP-DM framework was applied end-to-end:
 
+**Data Understanding:** Exploratory data analysis (EDA) using pandas-profiling reports to understand dataset characteristics and temporal patterns.
+
+**Data Preparation:**
+- Cleaning: Fields such as date, location, and description were split into new features (bike main categories, sub-categories, frame materials).
+- ETL Automation: Data collection and cleaning is fully automated via the `collect_data()` function in `my_pandas_extensions/database.py`, handling date parsing, feature engineering, and SQLite queries.
+
+**Feature Engineering:**
+- AutoARIMA: Aggregated and summarized time-series data per shop and category using `summarize_by_time.py`.
+- LSTM: Scaled and split data into training/testing sets using TensorFlow Datasets; model architecture optimized with Keras Tuner.
+
+### Machine Learning Models
+
+**AutoARIMA (Univariate Time Series)**
+- Automatically selects optimal ARIMA order (p, d, q)
+- Produces smooth, conservative forecast lines well-suited for interpretable results
+- Evaluation: MAPE = 0.2458, MSPE = 0.0902
+
+**TensorFlow LSTM (Multivariate Deep Learning)**
+- Architecture: 1 LSTM layer (256 units) + 3 Dense layers (80, 16, 11 units)
+- Total parameters: 889,428 (296,475 trainable, 592,953 optimizer states)
+- Hyperparameters tuned with Keras Tuner to minimize validation loss
+- Evaluation: MAE = 0.2360, MSE = 0.0904
+
+**Performance Summary:** LSTM achieves a slight edge with lower MAE, but both models perform comparably on smaller-scale (thousands-range) forecasts. AutoARIMA is preferable when smooth, interpretable lines are needed.
+
+---
 
 ## Key Findings
-- Smoother forecasts: AutoARIMA produced smoother forecasted lines compared to LSTM
-- Comparable Performance for Smaller Forecasts: Both methods demonstrated comparable performance when forecasting smaller figures (e.g., in the thousands)
-- Accuracy: LSTM acheived lower error rates. 
- refer to viz in Tableu public https://public.tableau.com/app/profile/ella.claude/viz/BikesslaesForecast/Story1
 
+- **Top Category:** Mountain Bikes are the #1 selling category nationwide across all shops.
+- **Top Shop:** Kansas City 29ers is the highest-grossing bike shop in the network.
+- **Forecast Smoothness:** AutoARIMA produced smoother forecast lines; LSTM produced more conservative, lower-error estimates.
+- **Comparable Accuracy:** Both models performed similarly for smaller regional and category-level forecasts.
+- **Visualization:** Interactive Tableau dashboard — [View on Tableau Public](https://public.tableau.com/app/profile/ella.claude/viz/BikesslaesForecast/Story1)
 
+---
 
 ## Installation and Setup
-```bash
-## Installation Instructions
 
 ### Prerequisites
 - Python 3.8+
-- Docker (optional, for containerized deployment)
+- Docker (optional)
 
 ### Setup
+
 1. Clone the repository:
-   ```
-   git clone <https://github.com/EllaN12/Bikes_forecast.git>
-   cd <Bikes_forecast>
+   ```bash
+   git clone https://github.com/EllaN12/Bikes_forecast.git
+   cd Bikes_forecast
    ```
 
 2. Create a virtual environment:
-   ```
+   ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   source venv/bin/activate   # Windows: venv\Scripts\activate
    ```
 
 3. Install dependencies:
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
+---
 
+## Project Structure
 
-## Project Structure and deliverables
 ```
-project/
-│
-├── 00_data_raw/               # Raw Data files
-├── 02_reports/          # EDA reports
-├── 03_src/               # Source code
-├── 04_artifacts/            # Trained models
-├── 05_images/              # Figure, tables etcs
-├── requirements.txt   # Dependencies
+Bikes_forecast/
+├── 00_data_raw/                          # Raw synthetic data files
+├── 02_reports/                           # EDA profile reports (HTML)
+├── 03_SRC/                               # Source code scripts
+│   ├── database.py                       # ETL automation (collect_data)
+│   ├── summarize_by_time.py              # Time-series aggregation utilities
+│   ├── Arima_forecasting.py              # AutoARIMA forecast & evaluation
+│   └── Multivariate_forecast.py          # LSTM model training & prediction
+├── 04_artifacts/                         # Trained models (.h5) & predictions (.pkl, .csv)
+├── 05_images/                            # Charts and figures
+├── my_pandas_extensions/                 # Custom ETL extension library
+├── database/                             # SQLite database
+├── requirements.txt                      # Python dependencies
+├── Bikes_Sales_Forecast_Presentation.pptx   # Project slide deck
 └── README.md
 ```
 
+---
+
 ## Key Components
-- **database.py**: ETL function to automate dta collection and cleaning.
-- **summarize_by_time.py**: automated function to summarize data by group and time period
-- **Arima_forecast.py**: Contains AutoArima forecast and evaluation functions and other functions to combine forecasting results,.
-- **Multi_variate_forecast.py**: Performs Forecasting using LSTM model.
 
+- **`database.py`**: Automates data collection, cleaning, and SQLite queries via the `collect_data()` function, including date parsing, category splitting, and feature engineering.
+- **`summarize_by_time.py`**: Aggregates sales data by shop, category, and time period for forecasting pipelines.
+- **`Arima_forecasting.py`**: AutoARIMA forecast pipeline, evaluation functions (MAPE, MSPE), and forecast combination utilities.
+- **`Multivariate_forecast.py`**: LSTM model training with TensorFlow/Keras, Keras Tuner optimization, and multivariate time-series predictions.
 
+---
 
 ## Acknowledgments
+
 - Pandas and NumPy for data manipulation
-- Tableau Public for data visualization
-- AutoArima and LSTM for machine learning and deep learning forecasting models
-- Scikit-learn for machine learning utilities
-
-
-
-
-
-
+- Tableau Public for interactive visualization
+- pmdarima (AutoARIMA) and TensorFlow/Keras for forecasting models
+- Keras Tuner for hyperparameter optimization
+- Scikit-learn for preprocessing utilities
