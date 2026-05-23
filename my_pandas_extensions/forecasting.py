@@ -20,7 +20,6 @@ from tqdm import tqdm
 
 #deep learning
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
 import tensorflow.keras.models as models
 from tensorflow.keras.losses import Huber
@@ -144,7 +143,7 @@ df = collect_data()
 
 
 
-@pf.register_series_method
+@pf.register_dataframe_method
 def data_prep(data, group, h, LSTM_df):
 
     """
@@ -180,7 +179,7 @@ def data_prep(data, group, h, LSTM_df):
     suppress_warnings = True)
     
     #convert order_date to timestamp
-    df2['order_date'].dt.to_timestamp()
+    df2['order_date'] = df2['order_date'].dt.to_timestamp()
 
 
     columns_to_convert = ['value', 'prediction', 'ci_lower', 'ci_upper']
@@ -310,7 +309,7 @@ def extract_and_evaluate(arima_results):
         mae = mean_absolute_error(y_true, y_pred)
         mse = mean_squared_error(y_true, y_pred)
         rmse = np.sqrt(mse)
-        mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+        mape = np.mean(np.abs((y_true - y_pred) / (np.abs(y_true) + 1e-10))) * 100
         
         # Store metrics for this column
         metrics_dict[col] = {

@@ -72,7 +72,7 @@ bike_sales_df = summarize_by_time(
     groups= 'bikeshop_name',
     value_column= "total_price",
     rule = "M",
-    kind = 'preiod',
+    kind = 'period',
     agg_func = np.sum,
     wide_format = True
 
@@ -87,24 +87,23 @@ BATCH_SIZE = 9
 shuffle_buffer_size = 90
 
 
-# instantiate MinMaxScaler
+# split the data into train, val, and test BEFORE scaling to prevent data leakage
+train_size = int(len(df1) * 0.8)
+dev_size = int(len(df1) * 0.1)
+
+train_raw = df1.iloc[:train_size]
+dev_raw = df1.iloc[train_size:train_size + dev_size]
+test_raw = df1.iloc[train_size + dev_size:]
+
+# instantiate MinMaxScaler and fit ONLY on training data
 scaler = MinMaxScaler()
+train_scaled = scaler.fit_transform(train_raw.values)
+dev_scaled = scaler.transform(dev_raw.values)
+test_scaled = scaler.transform(test_raw.values)
 
-#scale data
-scaled_values = scaler.fit_transform(df1.values)
-
-df2 = pd.DataFrame(scaled_values, index= df1.index, columns=df1.columns)
-df2 
-
-
-# split the data into train and val and test
-
-train_size = int(len(df2) * 0.8)
-dev_size = int(len(df2) * 0.1)
-
-train_df = df2.iloc[:train_size]
-dev_df = df2.iloc[train_size:train_size + dev_size]
-test_df = df2.iloc[train_size + dev_size:]
+train_df = pd.DataFrame(train_scaled, index=train_raw.index, columns=df1.columns)
+dev_df = pd.DataFrame(dev_scaled, index=dev_raw.index, columns=df1.columns)
+test_df = pd.DataFrame(test_scaled, index=test_raw.index, columns=df1.columns)
 
 
 def create_X_y(df, WINDOW_SIZE):
@@ -139,12 +138,13 @@ def build_model(hp):
         
     
     # building the LSTM Layer
-    for i in range(hp.Int('num_layers', 1, 3)):
+    num_layers = hp.Int('num_layers', 1, 3)
+    for i in range(num_layers):
         model.add(tf.keras.layers.LSTM(
                     units=hp.Int(f'units_{i}', min_value=32, max_value=256, step=32),
         activation= hp.Choice(f'lstm_activation_{i}', values =  ['tanh', 'relu']),
-        return_sequences = i < hp.Int('num_layers', 1,3) - 1,
-        recurrent_activation= hp.Choice(f'recurrent_activation_{i}', values = ['sigmoid', 'tanh']) 
+        return_sequences = i < num_layers - 1,
+        recurrent_activation= hp.Choice(f'recurrent_activation_{i}', values = ['sigmoid', 'tanh'])
         ))
             
         if hp.Boolean(f'dropout_{i}'):
@@ -294,7 +294,7 @@ lstm_df = bikeshop_predictions[bikeshop_predictions['variable'] == 'LSTM_predict
 
 lstm_df = lstm_df.dropna(subset=['Sales'])
 
-lstm_df.drop(columns=['ci_lower', 'ci_upper',	'variable' ])
+lstm_df = lstm_df.drop(columns=['ci_lower', 'ci_upper', 'variable'])
 
 lstm_df = lstm_df.pivot(
     columns = 'bikeshop_name',
