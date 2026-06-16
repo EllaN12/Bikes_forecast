@@ -28,10 +28,10 @@ The CRISP-DM framework was applied end-to-end:
 
 **Data Preparation:**
 - Cleaning: Fields such as date, location, and description were split into new features (bike main categories, sub-categories, frame materials).
-- ETL Automation: Data collection and cleaning is fully automated via the `collect_data()` function in `my_pandas_extensions/database.py`, handling date parsing, feature engineering, and SQLite queries.
+- ETL Automation: Data collection and cleaning is fully automated via the `collect_data()` function in `database.py`, handling date parsing, feature engineering, and SQLite queries.
 
 **Feature Engineering:**
-- AutoARIMA: Aggregated and summarized time-series data per shop and category using `summarize_by_time.py`.
+- AutoARIMA: Aggregated and summarized time-series data per shop and category using the `summarize_by_time()` function in `database.py`.
 - LSTM: Scaled and split data into training/testing sets using TensorFlow Datasets; model architecture optimized with Keras Tuner.
 
 ### Machine Learning Models
@@ -86,6 +86,15 @@ The CRISP-DM framework was applied end-to-end:
    pip install -r requirements.txt
    ```
 
+### Running the Scripts
+
+All Python source lives together in `03_SRC/`, so `Arima_forecasting.py` and `Multivariate_forecasting.py` can import `database.py` and `forecasting.py` as plain sibling modules — no `PYTHONPATH` setup needed:
+
+```bash
+python 03_SRC/Arima_forecasting.py
+python 03_SRC/Multivariate_forecasting.py
+```
+
 ---
 
 ## Project Structure
@@ -93,15 +102,12 @@ The CRISP-DM framework was applied end-to-end:
 ```
 Bikes_forecast/
 ├── 00_data_raw/                          # Raw synthetic data files
-├── 02_reports/                           # EDA profile reports (HTML)
-├── 03_SRC/                               # Source code scripts
-│   ├── database.py                       # ETL automation (collect_data)
-│   ├── summarize_by_time.py              # Time-series aggregation utilities
+├── 03_SRC/                               # All Python source, run as-is
+│   ├── database.py                       # collect_data(), summarize_by_time()
+│   ├── forecasting.py                    # arima_forecast, data_prep, extract_and_evaluate
 │   ├── Arima_forecasting.py              # AutoARIMA forecast & evaluation
-│   └── Multivariate_forecast.py          # LSTM model training & prediction
-├── 04_artifacts/                         # Trained models (.h5) & predictions (.pkl, .csv)
-├── 05_images/                            # Charts and figures
-├── my_pandas_extensions/                 # Custom ETL extension library
+│   └── Multivariate_forecasting.py       # LSTM model training & prediction
+├── outputs/                              # All file outputs: trained models (.h5), predictions (.pkl, .csv), EDA report (.html)
 ├── database/                             # SQLite database
 ├── requirements.txt                      # Python dependencies
 ├── Bikes_Sales_Forecast_Presentation.pptx   # Project slide deck
@@ -112,10 +118,10 @@ Bikes_forecast/
 
 ## Key Components
 
-- **`database.py`**: Automates data collection, cleaning, and SQLite queries via the `collect_data()` function, including date parsing, category splitting, and feature engineering.
-- **`summarize_by_time.py`**: Aggregates sales data by shop, category, and time period for forecasting pipelines.
-- **`Arima_forecasting.py`**: AutoARIMA forecast pipeline, evaluation functions (MAPE, MSPE), and forecast combination utilities.
-- **`Multivariate_forecast.py`**: LSTM model training with TensorFlow/Keras, Keras Tuner optimization, and multivariate time-series predictions.
+- **`database.py`**: Automates data collection, cleaning, and SQLite queries via the `collect_data()` function, including date parsing, category splitting, and feature engineering. Also defines `summarize_by_time()`, which aggregates sales data by shop, category, and time period for forecasting pipelines.
+- **`forecasting.py`**: Shared `arima_forecast`, `data_prep`, and `extract_and_evaluate` functions used by both forecasting scripts — single source of truth for ARIMA modeling and evaluation logic.
+- **`Arima_forecasting.py`**: Imports the shared functions from `forecasting.py` to run the AutoARIMA forecast pipeline and compute evaluation metrics (MAE, MSE, RMSE, MAPE).
+- **`Multivariate_forecasting.py`**: LSTM model training with TensorFlow/Keras, Keras Tuner optimization, and multivariate time-series predictions. Writes all outputs to `outputs/`.
 
 ---
 

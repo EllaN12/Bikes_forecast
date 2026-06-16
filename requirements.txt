@@ -1,0 +1,13 @@
+pandas
+numpy
+openpyxl
+pandas-flavor
+sqlalchemy
+sktime
+pmdarima
+tensorflow
+keras-tuner
+h5py
+scikit-learn
+matplotlib
+tqdm

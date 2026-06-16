@@ -1,9 +1,9 @@
 
 #%%
 import os
-from my_pandas_extensions.database import collect_data
-from my_pandas_extensions.database import summarize_by_time
-from my_pandas_extensions.forecasting import data_prep 
+from database import collect_data
+from database import summarize_by_time
+from forecasting import data_prep, compare_arima_lstm
 import pickle
 import h5py
 
@@ -32,7 +32,7 @@ import keras_tuner as kt
 #Forecasting using LSTM BY Category
 
 df = collect_data()
-df.to_csv('04_artifacts/data.csv')
+df.to_csv('outputs/data.csv')
 
 
 Cat_1_bikes_sales_df = summarize_by_time(
@@ -194,7 +194,7 @@ def build_model(hp):
 
 
 print("Current working directory:", os.getcwd())
-tuner_path = '04_artifacts/hyperband'
+tuner_path = 'outputs/hyperband'
 resolved_tuner_path = os.path.abspath(tuner_path)
 print("Resolved path to hyperband and model files:", tuner_path)
 
@@ -223,7 +223,7 @@ history = model.fit(train_dataset, epochs=50, validation_data= dev_dataset, verb
 
 print("Current working directory:", os.getcwd())
 
-model_path = "04_artifacts/time_series_model.h5"
+model_path = "outputs/time_series_model.h5"
 model.save (model_path, overwrite = True)
 resolved_model_path = os.path.abspath(model_path)
 print(model.summary())
@@ -270,7 +270,7 @@ pred_df = pd.DataFrame(
     
 )
 
-prediction_path = '04_artifacts/Multivariate_time_series_predictions'
+prediction_path = 'outputs/Multivariate_time_series_predictions'
 resolved_prediction_path = os.path.abspath(prediction_path)
 pred_df.to_pickle(resolved_prediction_path)
 
@@ -281,7 +281,7 @@ pred_df.to_pickle(resolved_prediction_path)
 
 
 
-bikeshop_predictions = '04_artifacts/bikeshop_prediction.pkl'
+bikeshop_predictions = 'outputs/bikeshop_prediction.pkl'
 resolved_multi_var_path = os.path.abspath(bikeshop_predictions)
 
 
@@ -315,8 +315,20 @@ bike_shop_predictions = data_prep(
     LSTM_df= lstm_df
 )
 
+comparison_df = compare_arima_lstm(
+    prediction_df = bike_shop_predictions,
+    train_actuals = bike_sales_df,
+    group = 'bikeshop_name',
+    seasonal_period = 1
+)
 
+print(comparison_df)
 
+comparison_path = 'outputs/arima_vs_lstm_comparison.csv'
+comparison_df.to_csv(os.path.abspath(comparison_path), index=False)
+
+print("\nMean metrics by model (lower is better, MASE < 1 beats naive):")
+print(comparison_df.groupby('model')[['MAE', 'RMSE', 'MAPE', 'MASE']].mean())
 
 
 
@@ -325,7 +337,7 @@ bike_shop_predictions = data_prep(
 
 """""
 
-shops_predict = '04_artifacts/bishops_time_series_predictions.pkl'
+shops_predict = 'outputs/bishops_time_series_predictions.pkl'
 resolved_state_var_path = os.path.abspath(shops_predict)
 
 with open(resolved_state_var_path, 'rb') as f:

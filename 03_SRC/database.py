@@ -1,23 +1,14 @@
 
-import sqlalchemy as sql
 from sqlalchemy import create_engine
-from sqlalchemy.types import String, Numeric, DateTime
 import pandas_flavor as pf
 
 import pandas as pd
 import numpy as np
-
-import pandas_flavor as pf
 import os
 
 
-
-print("Current working directory:", os.getcwd())
 db_path = 'database/bike_orders_database.sqlite'
 resolved_db_path = os.path.abspath(db_path)
-print("Resolved path to database file:", resolved_db_path)
-
-
 
 
 #COLLECT DATA ---
@@ -117,17 +108,8 @@ def collect_data(conn_string = f'sqlite:///{resolved_db_path}'):
 
         df.columns = df.columns.str.replace(".", "_")
 
-        df.info()
-
         return df
-# %%
 
-
-df = collect_data()
-
-print(df)
-df.info()
-print (df)
 
 @pf.register_dataframe_method
 def summarize_by_time(
@@ -157,12 +139,6 @@ def summarize_by_time(
     Returns:
         _type_: _description_
     """
-    ##Checks
-    
-    """for col in value_column:
-        if col not in data.columns:
-            raise ValueError(f"value_column '{col}' does not exist in the DataFrame.")"""
-    
     if (type(data) is not pd.DataFrame):
         raise TypeError("data must be a pandas dataframe.")
     
@@ -207,10 +183,11 @@ def summarize_by_time(
                  if not isinstance(data.index, pd.PeriodIndex):
                      data.index = data.index.to_period()    
     data = data.fillna(value = fillna)
-    
-    return data 
+
+    return data
 
 
-
-
-df = collect_data()
+if __name__ == "__main__":
+    df = collect_data()
+    print(df.head())
+    print(f"\nRows: {len(df):,}")
