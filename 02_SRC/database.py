@@ -11,7 +11,7 @@ import os
 # Repo root (parent of 03_SRC/) — paths work from any cwd (interactive window, CLI, etc.)
 ROOT = Path(__file__).resolve().parent.parent
 DATA_RAW = ROOT / "00_data_raw"
-DB_PATH = ROOT / "database" / "bike_orders_database.sqlite"
+DB_PATH = ROOT / "01_database" / "bike_orders_database.sqlite"
 OUTPUT_DIR = ROOT / "outputs"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -25,7 +25,7 @@ def collect_data(conn_string=None):
     Collects and combines the bike orders data. 
 
     Args:
-        conn_string (str, optional): A SQLAlchemy connection string to find the database. Defaults to "sqlite:///00_database/bike_orders_database.sqlite".
+        conn_string (str, optional): A SQLAlchemy connection string to find the database. Defaults to "sqlite:///01_database/bike_orders_database.sqlite".
 
     Returns:
         DataFrame: A pandas data frame that combines data from tables:
@@ -36,6 +36,8 @@ def collect_data(conn_string=None):
 
     if conn_string is None:
         conn_string = f"sqlite:///{resolved_db_path}"
+
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     # Body
 
