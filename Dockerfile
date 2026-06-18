@@ -14,10 +14,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application source
 COPY app.py .
-COPY 03_SRC/ ./03_SRC/
+COPY 02_SRC/ ./02_SRC/
 COPY 00_data_raw/ ./00_data_raw/
-COPY database/ ./database/
-COPY outputs/ ./outputs/
+COPY 01_database/ ./01_database/
+COPY 04_outputs/ ./04_outputs/
 
 # Cloud Run injects $PORT; Streamlit must bind to it on 0.0.0.0
 ENV PORT=8080

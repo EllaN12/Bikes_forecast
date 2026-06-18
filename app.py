@@ -3,7 +3,7 @@ Streamlit dashboard for the Bikes Sales Forecast project.
 
 Replaces the static Tableau dashboard with an interactive app that reads
 directly from the project's SQLite database and forecasting pipeline
-(03_SRC/database.py, 03_SRC/forecasting.py) — no separate BI tool needed.
+(02_SRC/database.py, 02_SRC/forecasting.py) — no separate BI tool needed.
 
 Run with: streamlit run app.py
 """
@@ -16,7 +16,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "03_SRC"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "02_SRC"))
 
 from database import collect_data, summarize_by_time  # noqa: E402
 from forecasting import evaluate_arima_holdout, arima_forecast, _naive_forecast  # noqa: E402
@@ -62,7 +62,7 @@ def load_lstm_predictions():
     Load LSTM per-period predictions (3 holdout months × 30 bikeshops).
     Returns a DataFrame indexed 0–2 with bikeshop columns, or None if not yet generated.
     """
-    pred_path = os.path.join("outputs", "Multivariate_time_series_predictions")
+    pred_path = os.path.join("04_outputs", "Multivariate_time_series_predictions")
     if not os.path.exists(pred_path):
         return None
     try:
@@ -560,7 +560,7 @@ st.plotly_chart(trend_fig, use_container_width=True)
 st.divider()
 
 # --- Model Performance Comparison -----------------------------------------
-comparison_path = os.path.join("outputs", "arima_vs_lstm_comparison.csv")
+comparison_path = os.path.join("04_outputs", "arima_vs_lstm_comparison.csv")
 st.header("Model Performance Comparison")
 st.markdown(
     "Holdout evaluation across all bikeshops (last 3 months held out). "
