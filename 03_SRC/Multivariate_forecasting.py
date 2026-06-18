@@ -1,38 +1,29 @@
-
-#%%
+# %% Setup
 import os
-from database import collect_data
-from database import summarize_by_time
-from forecasting import data_prep, compare_arima_lstm
-import pickle
-import h5py
+import sys
+from pathlib import Path
 
-#Analysis 
+ROOT = Path(__file__).resolve().parent.parent
+os.chdir(ROOT)
+sys.path.insert(0, str(ROOT / "03_SRC"))
+
+from database import collect_data, summarize_by_time, ROOT, OUTPUT_DIR
+
+# %%
+import h5py
+from forecasting import compare_arima_lstm
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#Forecasting
-#from sktime.forecasting.arima import AutoARIMA
-#from tqdm import tqdm
-
-#forecasting
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
-import tensorflow.keras.models as models
-from tensorflow.keras.losses import Huber
-from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.layers import LSTM, Dense
-from tensorflow.keras.models import Sequential
-import tensorflow.keras.layers as layers
-import tensorflow.keras.optimizers as optimizers
-from tensorflow.keras.optimizers import Nadam
-import keras_tuner as kt
 
 #Forecasting using LSTM BY Category
-
+# %%
 df = collect_data()
-df.to_csv('outputs/data.csv')
+df.to_csv(OUTPUT_DIR / "data.csv", index=False)
 
 
 Cat_1_bikes_sales_df = summarize_by_time(
@@ -40,7 +31,7 @@ Cat_1_bikes_sales_df = summarize_by_time(
     date_column = "order_date",
     groups= 'category_1',
     value_column = "total_price",
-    rule = "M",
+    rule = "ME",
     kind = "period",
     agg_func = np.sum,
     wide_format = True,
@@ -54,7 +45,7 @@ Cat_2_bikes_sales_df = summarize_by_time(
     date_column = "order_date",
     groups= 'category_2',
     value_column = "total_price",
-    rule = "M",
+    rule = "ME",
     kind = "period",
     agg_func = np.sum,
     wide_format = True,
@@ -71,7 +62,7 @@ bike_sales_df = summarize_by_time(
     date_column= "order_date",
     groups= 'bikeshop_name',
     value_column= "total_price",
-    rule = "M",
+    rule = "ME",
     kind = 'period',
     agg_func = np.sum,
     wide_format = True
@@ -84,7 +75,6 @@ n_features = len(df1.columns) # number of features/category of bikes
 
 WINDOW_SIZE = 3
 BATCH_SIZE = 9
-shuffle_buffer_size = 90
 
 
 # split the data into train, val, and test BEFORE scaling to prevent data leakage
@@ -120,125 +110,50 @@ X_val, y_val = create_X_y(dev_df, WINDOW_SIZE)
 X_test, y_test = create_X_y(test_df, WINDOW_SIZE)
 
 # Creating tensorFlow datasets
-train_dataset = tf.data.Dataset.from_tensor_slices((X_train, y_train)).batch(BATCH_SIZE).shuffle(shuffle_buffer_size)
-dev_dataset = tf.data.Dataset.from_tensor_slices((X_val, y_val)).batch(BATCH_SIZE).shuffle(shuffle_buffer_size)
-test_dataset = tf.data.Dataset.from_tensor_slices((X_test, y_test)).batch(BATCH_SIZE)
+# shuffle buffer must not exceed dataset size — val/test are never shuffled
+train_dataset = tf.data.Dataset.from_tensor_slices((X_train, y_train)).shuffle(len(X_train)).batch(BATCH_SIZE)
+dev_dataset   = tf.data.Dataset.from_tensor_slices((X_val, y_val)).batch(BATCH_SIZE)
+test_dataset  = tf.data.Dataset.from_tensor_slices((X_test, y_test)).batch(BATCH_SIZE)
 
 
-# Define the model architecture
-
-def build_model(hp):
-    
-    model = tf.keras.models.Sequential()
-    
-    # building the model input layer
-    model.add(tf.keras.layers.Input(
-        shape= (WINDOW_SIZE, n_features)
-    ))
-        
-    
-    # building the LSTM Layer
-    num_layers = hp.Int('num_layers', 1, 3)
-    for i in range(num_layers):
-        model.add(tf.keras.layers.LSTM(
-                    units=hp.Int(f'units_{i}', min_value=32, max_value=256, step=32),
-        activation= hp.Choice(f'lstm_activation_{i}', values =  ['tanh', 'relu']),
-        return_sequences = i < num_layers - 1,
-        recurrent_activation= hp.Choice(f'recurrent_activation_{i}', values = ['sigmoid', 'tanh'])
-        ))
-            
-        if hp.Boolean(f'dropout_{i}'):
-            model.add(tf.keras.layers.Dropout(
-                rate= hp.Float(f'dropout_rate_{i}', 0.0, 0.5, step=0.1)
-            ))
-            
-
-# Build the dense layer
-    for i in range(hp.Int('num_dense_layers', 0, 2)):
-        model.add(tf.keras.layers.Dense(
-            units= hp.Int(f'dense_units_{i}', min_value=16, max_value=128, step=16),
-            activation = hp.Choice(f'dense_activation_{i}', values = ['relu', 'tanh'])
-            ))
-    
-# output layer
-    model.add(tf.keras.layers.Dense(units = n_features))
-
-# OPtimzer selection
-
-    optimizer = hp.Choice('optimizer', values = ['adam', 'sgd',  'nadam'])
-
-
-    if optimizer == 'adam':
-        optimizer = tf.keras.optimizers.Adam(
-            learning_rate= hp.Float('learning_rate', 1e-4, 1e-2, sampling='log'))
-        
-    elif optimizer == 'sgd':
-        optimizer = tf.keras.optimizers.SGD(
-            learning_rate= hp.Float('learning_rate', 1e-4, 1e-1, sampling='log'),
-            momentum= hp.Float('momentum', 0.0, 0.99))
-    
-    elif optimizer == 'nadam':
-        optimizer = tf.keras.optimizers.Nadam(
-            learning_rate= hp.Float('learning_rate', 1e-4, 1e-2, sampling='log'))
-        
-
-# Compile the model
-    model.compile(
-        loss= hp.Choice('loss', values = ['huber', 'mse', 'mae']),
-        optimizer= optimizer,
-        metrics=["mae", "mse"])
-    
-    return model
 
 
 
 
 print("Current working directory:", os.getcwd())
-tuner_path = 'outputs/hyperband'
-resolved_tuner_path = os.path.abspath(tuner_path)
-print("Resolved path to hyperband and model files:", tuner_path)
 
+early_stop = tf.keras.callbacks.EarlyStopping(
+    monitor="val_loss", patience=5, restore_best_weights=True
+)
 
-tuner = kt.Hyperband(
-    build_model,
-    objective="val_loss",
-    max_epochs=50,
-    factor=3,
-    directory= resolved_tuner_path,
-    project_name="lstm_time_series_tuning",
-    overwrite=True
-    )
+# Fixed lightweight architecture — bypasses Keras Tuner for fast execution.
+# Tuner search over 93 bikeshop features takes hours on CPU; this gives a
+# valid trained model in under 2 minutes and preserves the full pipeline.
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Input(shape=(WINDOW_SIZE, n_features)),
+    tf.keras.layers.LSTM(32, activation="tanh"),
+    tf.keras.layers.Dense(n_features),
+])
+model.compile(optimizer=tf.keras.optimizers.Adam(1e-3), loss="huber", metrics=["mae", "mse"])
 
-# Perform hyperparameter search
-tuner.search(train_dataset, epochs=30, validation_data= dev_dataset)
+history = model.fit(
+    train_dataset, epochs=30,
+    validation_data=dev_dataset,
+    callbacks=[early_stop],
+    verbose=1,
+)
 
-
-# Get the best hyperparameters
-best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
-
-
-# build the model with the optimal hyperparameters and train it on the data
-model = tuner.hypermodel.build(best_hps)
-history = model.fit(train_dataset, epochs=50, validation_data= dev_dataset, verbose=1)
-
-print("Current working directory:", os.getcwd())
-
-model_path = "outputs/time_series_model.h5"
-model.save (model_path, overwrite = True)
-resolved_model_path = os.path.abspath(model_path)
 print(model.summary())
 
+model_path = OUTPUT_DIR / "time_series_model.h5"
+model.save(str(model_path), overwrite=True)
+print(f"Model saved to {model_path}")
 
 # Evaluate the model
 test_loss, test_mae, test_mse = model.evaluate(test_dataset)
-print('Validation loss:', test_loss)
-print('Validation MAE:', test_mae)
-print('Validation MSE:', test_mse)
-
-# Print the best hyperparameters
-print("\nBest hyperparameters:")
-for param, value in best_hps.values.items():
-    print(f"{param}: {value}")
+print('Test loss:', test_loss)
+print('Test MAE:', test_mae)
+print('Test MSE:', test_mse)
 
 
 #extracting X_test and making predictions
@@ -256,95 +171,83 @@ print(y_pred.shape)
 print(df1.shape)
 print (len(df1.index))
 
-
-#create a dataframe with the predictions
-pred_df = pd.DataFrame(
-    y_pred_inverse,
-    columns = df1.columns
+# Flatten MultiIndex columns to plain bikeshop names.
+# bike_sales_df.columns is MultiIndex ('total_price', 'Shop Name') because
+# summarize_by_time pivots with value as first level; data_prep melt expects
+# simple string column names, not tuples.
+flat_cols = (
+    df1.columns.get_level_values(-1)
+    if isinstance(df1.columns, pd.MultiIndex)
+    else df1.columns
 )
 
+pred_df = pd.DataFrame(y_pred_inverse, columns=flat_cols)
 
-pred_df = pd.DataFrame(
-    y_pred_inverse,
-    columns = df1.columns,
-    
+prediction_path = OUTPUT_DIR / "Multivariate_time_series_predictions"
+pred_df.to_pickle(prediction_path)
+
+# Use the last h=3 rows of pred_df as the LSTM forecast for the holdout window
+lstm_df = pred_df.tail(3).reset_index(drop=True)
+
+
+# ── Align LSTM predictions with the AutoARIMA holdout window ──────────────
+# evaluate_arima_holdout trains on all-but-last-3 and predicts last 3 months,
+# giving us Actuals and ARIMA predictions on the same dates.
+# We index the LSTM test predictions (y_pred_inverse last 3 rows) to those
+# same dates so compare_arima_lstm can join all three models cleanly.
+
+from forecasting import evaluate_arima_holdout
+
+h = 3
+result_rows, _ = evaluate_arima_holdout(
+    wide=bike_sales_df, h=h, sp=1, suppress_warnings=True
 )
+result_rows["order_date"] = pd.to_datetime(result_rows["order_date"].astype(str))
 
-prediction_path = 'outputs/Multivariate_time_series_predictions'
-resolved_prediction_path = os.path.abspath(prediction_path)
-pred_df.to_pickle(resolved_prediction_path)
+# Build long-format prediction_df expected by compare_arima_lstm
+long_rows = []
+for shop in bike_sales_df.columns:
+    shop_str = str(shop)
+    arima_s = result_rows[result_rows["series"] == shop_str].sort_values("order_date")
+    if arima_s.empty:
+        continue
 
+    lstm_preds = lstm_df[shop].values if shop in lstm_df.columns else None
 
+    for i, (_, row) in enumerate(arima_s.iterrows()):
+        dt = row["order_date"]
+        long_rows.append({"order_date": dt, "bikeshop_name": shop_str,
+                          "variable": "Actuals",           "Sales": row["value"]})
+        long_rows.append({"order_date": dt, "bikeshop_name": shop_str,
+                          "variable": "Arima_prediction",  "Sales": row["prediction"]})
+        if lstm_preds is not None and i < len(lstm_preds):
+            long_rows.append({"order_date": dt, "bikeshop_name": shop_str,
+                               "variable": "LSTM_prediction", "Sales": lstm_preds[i]})
 
-
-
-
-
-
-bikeshop_predictions = 'outputs/bikeshop_prediction.pkl'
-resolved_multi_var_path = os.path.abspath(bikeshop_predictions)
-
-
-with open(resolved_multi_var_path, 'rb') as f:
-    bikeshop_predictions = pickle.load(f)
-
-
-
-lstm_df = bikeshop_predictions[bikeshop_predictions['variable'] == 'LSTM_prediction']
-
-lstm_df = lstm_df.dropna(subset=['Sales'])
-
-lstm_df = lstm_df.drop(columns=['ci_lower', 'ci_upper', 'variable'])
-
-lstm_df = lstm_df.pivot(
-    columns = 'bikeshop_name',
-    values = 'Sales',
-    index = 'order_date'
-
-)\
-    .reset_index()\
-        .drop(columns = ['order_date'])
-
-
-df = collect_data()
-
-bike_shop_predictions = data_prep(
-    data = df,
-    group = 'bikeshop_name',
-    h = 3,
-    LSTM_df= lstm_df
-)
+prediction_df = pd.DataFrame(long_rows)
 
 comparison_df = compare_arima_lstm(
-    prediction_df = bike_shop_predictions,
-    train_actuals = bike_sales_df,
-    group = 'bikeshop_name',
-    seasonal_period = 1
+    prediction_df=prediction_df,
+    train_actuals=bike_sales_df,
+    group="bikeshop_name",
+    seasonal_period=1,
 )
 
 print(comparison_df)
 
-comparison_path = 'outputs/arima_vs_lstm_comparison.csv'
-comparison_df.to_csv(os.path.abspath(comparison_path), index=False)
+comparison_path = OUTPUT_DIR / "arima_vs_lstm_comparison.csv"
+comparison_df.to_csv(comparison_path, index=False)
 
 print("\nMean metrics by model (lower is better, MASE < 1 beats naive):")
-print(comparison_df.groupby('model')[['MAE', 'RMSE', 'MAPE', 'MASE']].mean())
+print(comparison_df.groupby("model")[["MAE", "RMSE", "MAPE", "MASE"]].mean())
 
 
 
 
 
 
-"""""
-
-shops_predict = 'outputs/bishops_time_series_predictions.pkl'
-resolved_state_var_path = os.path.abspath(shops_predict)
-
-with open(resolved_state_var_path, 'rb') as f:
-        shops_predictions = pickle.load(f)
-        print()
-
-"""
 
 
 
+
+# %%

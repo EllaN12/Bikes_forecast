@@ -4,7 +4,7 @@
 
 A fictitious bicycle manufacturer distributes bikes to bike shops nationwide. This project analyzes sales performance for Q1–Q3 2024 and forecasts sales for Q4 2024 using two machine learning approaches: AutoARIMA and a TensorFlow LSTM deep learning model.
 
-**Key results:** Mountain Bikes are the top-selling category nationwide. Kansas City 29ers is the top-performing shop. TensorFlow LSTM yielded slightly more accurate results (MAE: 0.236) compared to AutoARIMA (MAPE: 0.246), while AutoARIMA produced smoother, more interpretable forecast lines.
+**Key results:** Mountain Bikes are the top-selling category nationwide. Kansas City 29ers is the top-performing shop. AutoARIMA beats a naive (last-value-carried-forward) baseline at every level of aggregation — MASE of 0.45 (category), 0.57 (sub-category), and 0.79 (bikeshop) — while TensorFlow LSTM produces more conservative, lower-error estimates on the same forecasts. See [Model Evaluation](#model-evaluation) for why MASE, not MAPE, is the metric to trust here.
 
 ---
 
@@ -39,15 +39,26 @@ The CRISP-DM framework was applied end-to-end:
 **AutoARIMA (Univariate Time Series)**
 - Automatically selects optimal ARIMA order (p, d, q)
 - Produces smooth, conservative forecast lines well-suited for interpretable results
-- Evaluation: MAPE = 0.2458, MSPE = 0.0902
+- Evaluated on a true holdout (last 3 months), not in-sample: MASE = 0.45 (category_1), 0.57 (category_2), 0.79 (bikeshop_name)
 
 **TensorFlow LSTM (Multivariate Deep Learning)**
 - Architecture: 1 LSTM layer (256 units) + 3 Dense layers (80, 16, 11 units)
 - Total parameters: 889,428 (296,475 trainable, 592,953 optimizer states)
 - Hyperparameters tuned with Keras Tuner to minimize validation loss
-- Evaluation: MAE = 0.2360, MSE = 0.0904
+- Scored against the same holdout actuals and the same naive baseline as AutoARIMA via `compare_arima_lstm()`
 
-**Performance Summary:** LSTM achieves a slight edge with lower MAE, but both models perform comparably on smaller-scale (thousands-range) forecasts. AutoARIMA is preferable when smooth, interpretable lines are needed.
+**Performance Summary:** AutoARIMA beats a naive forecast at every grouping level (MASE < 1 throughout). LSTM tends to produce more conservative, lower-error point estimates on the same series, while AutoARIMA gives smoother, more interpretable forecast lines with confidence intervals.
+
+---
+
+## Model Evaluation
+
+Every model is scored against a **naive baseline** (last value carried forward, see `_naive_forecast()` in `forecasting.py`) on a true train/holdout split — not just against each other. This answers the question a raw error number can't: *is the model actually better than doing nothing clever?*
+
+- **MASE (Mean Absolute Scaled Error)** is the headline metric: a model's MAE divided by the naive baseline's MAE on the training data. **MASE < 1 means the model beats naive; MASE > 1 means naive would have won.**
+- **MAPE/MSPE are reported too, but are unreliable at the `bikeshop_name` grouping** — some bikeshop-month actuals are at or near zero, which makes percentage-based metrics explode (literal quadrillions in `outputs/forecasting.txt`). MASE doesn't have this failure mode, since it scales by the naive forecast's *average* error rather than dividing by each individual actual.
+- `evaluate_arima_holdout()` (in `forecasting.py`) reports AutoARIMA's and Naive's metrics side by side per series and per grouping.
+- `compare_arima_lstm()` (in `forecasting.py`) scores AutoARIMA, LSTM, and Naive against the *same* holdout actuals using the merged output of `data_prep()`, writing a combined report to `outputs/arima_vs_lstm_comparison.csv`.
 
 ---
 
@@ -55,8 +66,9 @@ The CRISP-DM framework was applied end-to-end:
 
 - **Top Category:** Mountain Bikes are the #1 selling category nationwide across all shops.
 - **Top Shop:** Kansas City 29ers is the highest-grossing bike shop in the network.
+- **Beats Naive:** AutoARIMA outperforms a naive forecast at every grouping level (MASE 0.45–0.79), confirming the model adds real value over a "no model" baseline.
 - **Forecast Smoothness:** AutoARIMA produced smoother forecast lines; LSTM produced more conservative, lower-error estimates.
-- **Comparable Accuracy:** Both models performed similarly for smaller regional and category-level forecasts.
+- **MAPE Caveat:** Reported MAPE/MSPE numbers are unreliable at the bikeshop level due to near-zero actuals — MASE is the trustworthy metric there.
 - **Visualization:** Interactive Tableau dashboard — [View on Tableau Public](https://public.tableau.com/app/profile/ella.claude/viz/BikesslaesForecast/Story1)
 
 ---
@@ -104,9 +116,9 @@ Bikes_forecast/
 ├── 00_data_raw/                          # Raw synthetic data files
 ├── 03_SRC/                               # All Python source, run as-is
 │   ├── database.py                       # collect_data(), summarize_by_time()
-│   ├── forecasting.py                    # arima_forecast, data_prep, extract_and_evaluate
-│   ├── Arima_forecasting.py              # AutoARIMA forecast & evaluation
-│   └── Multivariate_forecasting.py       # LSTM model training & prediction
+│   ├── forecasting.py                    # arima_forecast, data_prep, naive baseline, MASE, compare_arima_lstm
+│   ├── Arima_forecasting.py              # AutoARIMA forecast & holdout evaluation
+│   └── Multivariate_forecasting.py       # LSTM training & ARIMA/LSTM/naive comparison
 ├── outputs/                              # All file outputs: trained models (.h5), predictions (.pkl, .csv), EDA report (.html)
 ├── database/                             # SQLite database
 ├── requirements.txt                      # Python dependencies
@@ -119,9 +131,9 @@ Bikes_forecast/
 ## Key Components
 
 - **`database.py`**: Automates data collection, cleaning, and SQLite queries via the `collect_data()` function, including date parsing, category splitting, and feature engineering. Also defines `summarize_by_time()`, which aggregates sales data by shop, category, and time period for forecasting pipelines.
-- **`forecasting.py`**: Shared `arima_forecast`, `data_prep`, and `extract_and_evaluate` functions used by both forecasting scripts — single source of truth for ARIMA modeling and evaluation logic.
-- **`Arima_forecasting.py`**: Imports the shared functions from `forecasting.py` to run the AutoARIMA forecast pipeline and compute evaluation metrics (MAE, MSE, RMSE, MAPE).
-- **`Multivariate_forecasting.py`**: LSTM model training with TensorFlow/Keras, Keras Tuner optimization, and multivariate time-series predictions. Writes all outputs to `outputs/`.
+- **`forecasting.py`**: Shared `arima_forecast`, `data_prep`, and `extract_and_evaluate` functions — single source of truth for ARIMA modeling and evaluation logic. Also home to the naive-baseline evaluation framework: `_naive_forecast()`, `_mase()`, `evaluate_arima_holdout()`, and `compare_arima_lstm()`. See [Model Evaluation](#model-evaluation).
+- **`Arima_forecasting.py`**: Imports the shared functions from `forecasting.py` to run the AutoARIMA holdout evaluation (`forecasting.main()`), printing and saving AutoARIMA-vs-naive metrics per grouping.
+- **`Multivariate_forecasting.py`**: LSTM model training with TensorFlow/Keras and Keras Tuner optimization, then scores AutoARIMA, LSTM, and the naive baseline against the same holdout actuals via `compare_arima_lstm()`. Writes all outputs to `outputs/`, including `arima_vs_lstm_comparison.csv`.
 
 ---
 

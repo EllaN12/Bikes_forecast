@@ -1,0 +1,21 @@
+Current working directory: /Users/ellandalla/Documents/GitHub/Bikes_forecast
+Resolved path to hyperband and model files: outputs/hyperband
+
+Search: Running Trial #1
+
+Value             |Best Value So Far |Hyperparameter
+3                 |3                 |num_layers
+224               |224               |units_0
+relu              |relu              |lstm_activation_0
+sigmoid           |sigmoid           |recurrent_activation_0
+False             |False             |dropout_0
+1                 |1                 |num_dense_layers
+nadam             |nadam             |optimizer
+0.0027667         |0.0027667         |learning_rate
+mse               |mse               |loss
+2                 |2                 |tuner/epochs
+0                 |0                 |tuner/initial_epoch
+3                 |3                 |tuner/bracket
+0                 |0                 |tuner/round
+
+Epoch 1/2

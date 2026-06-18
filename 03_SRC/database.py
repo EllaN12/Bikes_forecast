@@ -1,3 +1,5 @@
+#%%
+from pathlib import Path
 
 from sqlalchemy import create_engine
 import pandas_flavor as pf
@@ -6,14 +8,19 @@ import pandas as pd
 import numpy as np
 import os
 
+# Repo root (parent of 03_SRC/) — paths work from any cwd (interactive window, CLI, etc.)
+ROOT = Path(__file__).resolve().parent.parent
+DATA_RAW = ROOT / "00_data_raw"
+DB_PATH = ROOT / "database" / "bike_orders_database.sqlite"
+OUTPUT_DIR = ROOT / "outputs"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-db_path = 'database/bike_orders_database.sqlite'
-resolved_db_path = os.path.abspath(db_path)
+resolved_db_path = str(DB_PATH)
 
 
 #COLLECT DATA ---
 
-def collect_data(conn_string = f'sqlite:///{resolved_db_path}'):  
+def collect_data(conn_string=None):  
     """
     Collects and combines the bike orders data. 
 
@@ -27,12 +34,15 @@ def collect_data(conn_string = f'sqlite:///{resolved_db_path}'):
             - bikeshops: Customers data
     """
 
+    if conn_string is None:
+        conn_string = f"sqlite:///{resolved_db_path}"
+
     # Body
 
     # Cread and create database
-    bikes_df = pd.read_excel("./00_data_raw/bikes.xlsx")
-    bikeshops_df = pd.read_excel("./00_data_raw/bikeshops.xlsx")
-    orderlines_df = pd.read_excel("./00_data_raw/orderlines.xlsx")
+    bikes_df = pd.read_excel(DATA_RAW / "bikes.xlsx")
+    bikeshops_df = pd.read_excel(DATA_RAW / "bikeshops.xlsx")
+    orderlines_df = pd.read_excel(DATA_RAW / "orderlines.xlsx")
 
     # 1.0 Connect to database
 
@@ -111,12 +121,23 @@ def collect_data(conn_string = f'sqlite:///{resolved_db_path}'):
         return df
 
 
+def _normalize_agg_func(func):
+    """Map numpy ufuncs to pandas string aliases (avoids FutureWarning on resample)."""
+    if func in (np.sum, sum):
+        return "sum"
+    if func in (np.mean,):
+        return "mean"
+    if func in (np.median,):
+        return "median"
+    return func
+
+
 @pf.register_dataframe_method
 def summarize_by_time(
     data, date_column, value_column,
     groups = None,
     rule  = "D",
-    agg_func = np.sum,
+    agg_func = "sum",
     kind = "timestamp",
     wide_format = True,
     fillna = 0,
@@ -167,7 +188,8 @@ def summarize_by_time(
     )
     
     # Handle aggregation
-    function_list = [agg_func] * len ( value_column) #make sure the function list is repeated for each value column
+    agg_func = _normalize_agg_func(agg_func)
+    function_list = [agg_func] * len(value_column)
     agg_dict = dict(zip(value_column, function_list))
     data = data \
         .agg(
@@ -177,12 +199,16 @@ def summarize_by_time(
         )
 #Handle Pivot Wider 
     if wide_format:
-         if groups is not None:
-             data = data.unstack(groups)  
-             if kind == "period":
-                 if not isinstance(data.index, pd.PeriodIndex):
-                     data.index = data.index.to_period()    
-    data = data.fillna(value = fillna)
+        if groups is not None:
+            data = data.unstack(groups)
+            # unstack produces MultiIndex columns ('value_col', 'group_val');
+            # drop the top level so callers get plain group-name columns
+            if isinstance(data.columns, pd.MultiIndex):
+                data.columns = data.columns.get_level_values(-1)
+            if kind == "period":
+                if not isinstance(data.index, pd.PeriodIndex):
+                    data.index = data.index.to_period()
+    data = data.fillna(value=fillna)
 
     return data
 
@@ -191,3 +217,4 @@ if __name__ == "__main__":
     df = collect_data()
     print(df.head())
     print(f"\nRows: {len(df):,}")
+# %%

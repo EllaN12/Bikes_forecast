@@ -168,7 +168,7 @@ def data_prep(data, group, h, LSTM_df):
             id_vars=id_vars,
             var_name="variable",
             value_name=".value") \
-        .assign(order_date=lambda x: x["order_date"].dt.to_timestamp()) \
+        .assign(order_date=lambda x: pd.to_datetime(x["order_date"].astype(str))) \
         .rename({".value": "Sales"}, axis=1)
 
     return prediction_df
@@ -344,18 +344,31 @@ def evaluate_arima_holdout(
 
         forecaster = AutoARIMA(sp=sp, suppress_warnings=suppress_warnings)
         forecaster.fit(y_train)
-        y_pred = forecaster.predict(fh=np.arange(1, h + 1))
+        fh = np.arange(1, h + 1)
+        y_pred = forecaster.predict(fh=fh)
         y_pred.index = y_test.index
+        try:
+            y_pred_ints = forecaster.predict_interval(fh=fh, coverage=0.95)
+            ci_lower = y_pred_ints.iloc[:, 0].values
+            ci_upper = y_pred_ints.iloc[:, 1].values
+        except Exception:
+            ci_lower = np.full(h, np.nan)
+            ci_upper = np.full(h, np.nan)
 
         naive_pred = _naive_forecast(y_train, h=h, seasonal_period=sp)
+        naive_std = np.std(y_train.diff(sp).dropna())
 
-        for dt, actual, pred, naive in zip(y_test.index, y_test.values, y_pred.values, naive_pred):
+        for i, (dt, actual, pred, naive) in enumerate(zip(y_test.index, y_test.values, y_pred.values, naive_pred)):
             result_rows.append({
                 "series": str(col),
                 "order_date": dt,
                 "value": actual,
                 "prediction": pred,
+                "ci_lower": ci_lower[i],
+                "ci_upper": ci_upper[i],
                 "naive_prediction": naive,
+                "naive_ci_lower": naive - 1.96 * naive_std,
+                "naive_ci_upper": naive + 1.96 * naive_std,
             })
 
         arima_scores = _score(y_test, y_pred)

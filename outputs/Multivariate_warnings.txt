@@ -1,0 +1,8 @@
+/Users/ellandalla/Documents/GitHub/Bikes_forecast/.venv/lib/python3.13/site-packages/openpyxl/styles/stylesheet.py:237: UserWarning: Workbook contains no default style, apply openpyxl's default
+  warn("Workbook contains no default style, apply openpyxl's default")
+/Users/ellandalla/Documents/GitHub/Bikes_forecast/03_SRC/database.py:172: FutureWarning: The provided callable <function sum at 0x106ce2c00> is currently using DatetimeIndexResamplerGroupby.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "sum" instead.
+  data = data \
+/Users/ellandalla/Documents/GitHub/Bikes_forecast/03_SRC/database.py:172: FutureWarning: The provided callable <function sum at 0x106ce2c00> is currently using DatetimeIndexResamplerGroupby.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "sum" instead.
+  data = data \
+/Users/ellandalla/Documents/GitHub/Bikes_forecast/03_SRC/database.py:172: FutureWarning: The provided callable <function sum at 0x106ce2c00> is currently using DatetimeIndexResamplerGroupby.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string "sum" instead.
+  data = data \
