@@ -12,8 +12,7 @@ A fictitious bicycle manufacturer distributes bikes to bike shops nationwide. Th
 
 The dashboard is deployed on Google Cloud Run:
 
-> **[bikes-forecast — Cloud Run URL]**  ← replace with your URL after `./deploy.sh`
-
+> **https://bikes-forecast-6trxjbynbq-uc.a.run.app**  
 ---
 
 ## Data Sources
@@ -118,7 +117,7 @@ Bikes_forecast/
 │   ├── forecasting.py                  # arima_forecast, evaluate_arima_holdout, compare_arima_lstm, _naive_forecast
 │   ├── Arima_forecasting.py            # AutoARIMA holdout evaluation script
 │   └── Multivariate_forecasting.py     # LSTM training & ARIMA/LSTM/naive comparison
-├── 04_outputs/                         # Trained model (.h5), predictions (.pkl), comparison CSV
+├── 03_outputs/                         # Trained model (.h5), predictions (.pkl), comparison CSV
 ├── app.py                              # Streamlit dashboard
 ├── requirements.txt                    # App runtime dependencies (no TensorFlow)
 ├── requirements-train.txt              # Full deps for local LSTM training (includes TensorFlow)
