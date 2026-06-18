@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+runtime.txt
+*.pptx
+Interactive-1.interactive.py
+outputs/hyperband/
+outputs/profile_report.html
+outputs/Arima_forecasting.txt
+outputs/Multivariate_forecasting.txt
+outputs/Multivariate_warnings.txt
+outputs/warnings.txt
+outputs/forecasting.txt
+outputs/forecasting_warnings.txt

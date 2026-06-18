@@ -7,8 +7,5 @@ pandas-flavor
 sqlalchemy
 sktime
 pmdarima
-tensorflow==2.20.0
-h5py
 scikit-learn
-matplotlib
 tqdm
