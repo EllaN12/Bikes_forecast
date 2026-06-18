@@ -62,7 +62,7 @@ def load_lstm_predictions():
     Load LSTM per-period predictions (3 holdout months × 30 bikeshops).
     Returns a DataFrame indexed 0–2 with bikeshop columns, or None if not yet generated.
     """
-    pred_path = os.path.join("04_outputs", "Multivariate_time_series_predictions")
+    pred_path = os.path.join("03_outputs", "Multivariate_time_series_predictions")
     if not os.path.exists(pred_path):
         return None
     try:
@@ -560,7 +560,7 @@ st.plotly_chart(trend_fig, use_container_width=True)
 st.divider()
 
 # --- Model Performance Comparison -----------------------------------------
-comparison_path = os.path.join("04_outputs", "arima_vs_lstm_comparison.csv")
+comparison_path = os.path.join("03_outputs", "arima_vs_lstm_comparison.csv")
 st.header("Model Performance Comparison")
 st.markdown(
     "Holdout evaluation across all bikeshops (last 3 months held out). "

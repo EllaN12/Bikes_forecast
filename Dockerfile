@@ -17,7 +17,7 @@ COPY app.py .
 COPY 02_SRC/ ./02_SRC/
 COPY 00_data_raw/ ./00_data_raw/
 COPY 01_database/ ./01_database/
-COPY 04_outputs/ ./04_outputs/
+COPY 03_outputs/ ./03_outputs/
 
 # Cloud Run injects $PORT; Streamlit must bind to it on 0.0.0.0
 ENV PORT=8080
