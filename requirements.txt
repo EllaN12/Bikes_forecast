@@ -8,8 +8,6 @@ sqlalchemy
 sktime
 pmdarima
 tensorflow==2.20.0
-keras-tuner
-tensorboard
 h5py
 scikit-learn
 matplotlib
