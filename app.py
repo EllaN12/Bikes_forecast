@@ -18,42 +18,32 @@ import streamlit as st
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "02_SRC"))
 
-from database import collect_data, summarize_by_time  # noqa: E402
-from forecasting import evaluate_arima_holdout, arima_forecast, _naive_forecast  # noqa: E402
-
 st.set_page_config(page_title="Bikes Sales Forecast", layout="wide")
+
+# Precomputed artifacts (written by 02_SRC/precompute_forecasts.py). Loading
+# them avoids retraining ARIMA models — and importing sktime/pmdarima at all —
+# on every cold start. The heavy imports below happen only in the fallbacks.
+PRECOMPUTED_DIR = os.path.join("03_outputs", "precomputed")
 
 
 @st.cache_data(show_spinner="Loading sales data…")
 def load_data() -> pd.DataFrame:
+    cached = os.path.join(PRECOMPUTED_DIR, "data.pkl")
+    if os.path.exists(cached):
+        return pd.read_pickle(cached)
+    from database import collect_data  # slow: rebuilds the DB from Excel
     return collect_data()
 
 
-@st.cache_data(show_spinner="Running AutoARIMA holdout evaluation…")
-def load_arima_results(group: str, h: int = 3):
-    """Returns (result_rows_df, metrics_df) for the given group."""
-    df = load_data()
-    wide = summarize_by_time(
-        data=df,
-        date_column="order_date",
-        value_column="total_price",
-        groups=group,
-        rule="ME",
-        kind="period",
-        agg_func=np.sum,
-        wide_format=True,
-    )
-    result_rows, metrics = evaluate_arima_holdout(wide=wide, h=h, sp=1, suppress_warnings=True)
-    metric_rows = []
-    for series, by_model in metrics.items():
-        for model_name, scores in by_model.items():
-            metric_rows.append({"series": series, "model": model_name, **scores})
-    return result_rows, pd.DataFrame(metric_rows)
-
-
+@st.cache_data(show_spinner="Loading AutoARIMA holdout metrics…")
 def load_arima_metrics(group: str, h: int = 3) -> pd.DataFrame:
-    _, metrics_df = load_arima_results(group=group, h=h)
-    return metrics_df
+    """Holdout metrics (series, model, MAE/RMSE/MASE) for the given group."""
+    cached = os.path.join(PRECOMPUTED_DIR, f"arima_holdout_metrics_{group}.pkl")
+    if os.path.exists(cached):
+        return pd.read_pickle(cached)
+    # Fallback: train from scratch (slow) — run precompute_forecasts.py to avoid
+    from precompute_forecasts import compute_arima_metrics
+    return compute_arima_metrics(load_data(), group, h=h)
 
 
 @st.cache_data(show_spinner=False)
@@ -113,57 +103,23 @@ def lstm_predictions_for_group(group: str, h: int = 3):
     return result
 
 
-@st.cache_data(show_spinner="Generating Q1 2025 forecasts…")
+@st.cache_data(show_spinner="Loading Q1 2025 forecasts…")
 def load_forward_forecast(group: str, h: int = 3, year_offset: int = 9):
     """
-    Train on ALL available data (no holdout) and forecast h steps ahead.
-    Dates are shifted by year_offset so the data displays as ending Dec 2024
-    and the forecast covers Q1 2025.
+    Forward forecast for the trend chart. Loads the precomputed artifact when
+    available; otherwise trains on all data (see precompute_forecasts.py).
 
     Returns dict with keys:
-      history   : DataFrame(order_date, value)
-      arima     : DataFrame(order_date, prediction, ci_lower, ci_upper)
-      naive     : DataFrame(order_date, naive_prediction)
+      history   : DataFrame(order_date, series, value)
+      arima     : DataFrame(order_date, series, prediction, ci_lower, ci_upper)
+      naive     : DataFrame(order_date, series, naive_prediction)
     """
-    raw = load_data()
-    wide = summarize_by_time(
-        data=raw, date_column="order_date", value_column="total_price",
-        groups=group, rule="ME", kind="period", agg_func=np.sum, wide_format=True,
-    )
-
-    offset = pd.DateOffset(years=year_offset)
-
-    # ARIMA forecast on full series (all groups stacked)
-    arima_raw = arima_forecast(
-        data=wide, h=h, sp=1, coverage=0.95, suppress_warnings=True
-    )
-    # arima_forecast names the series column after the group (e.g. "category_1")
-    series_col = [c for c in arima_raw.columns if c not in ("order_date", "value", "prediction", "ci_lower", "ci_upper")][0]
-    arima_raw = arima_raw.rename(columns={series_col: "series"})
-    arima_raw["order_date"] = pd.to_datetime(arima_raw["order_date"].astype(str)) + offset
-    # Keep only forecast rows (where value is NaN = future months)
-    arima_df = arima_raw[arima_raw["value"].isna()].copy()
-
-    # History from wide (long format)
-    hist_long = wide.reset_index().melt(
-        id_vars="order_date", var_name="series", value_name="value"
-    )
-    hist_long["order_date"] = pd.to_datetime(hist_long["order_date"].astype(str)) + offset
-
-    # Naive forecast per series
-    naive_rows = []
-    for col in wide.columns:
-        y = wide[col].dropna()
-        if y.empty:
-            continue
-        preds = _naive_forecast(y, h=h, seasonal_period=1)
-        last = pd.to_datetime(str(y.index[-1])) + offset
-        fc_dates = pd.date_range(last + pd.offsets.MonthEnd(1), periods=h, freq="ME")
-        for dt, val in zip(fc_dates, preds):
-            naive_rows.append({"series": str(col), "order_date": dt, "naive_prediction": val})
-    naive_df = pd.DataFrame(naive_rows)
-
-    return {"history": hist_long, "arima": arima_df, "naive": naive_df}
+    cached = os.path.join(PRECOMPUTED_DIR, f"forward_{group}.pkl")
+    if os.path.exists(cached):
+        return pd.read_pickle(cached)
+    # Fallback: train from scratch (slow) — run precompute_forecasts.py to avoid
+    from precompute_forecasts import compute_forward_forecast
+    return compute_forward_forecast(load_data(), group, h=h, year_offset=year_offset)
 
 
 df = load_data()
@@ -568,8 +524,8 @@ st.markdown(
     "**Lower MAE / RMSE = better.** MAPE is excluded — near-zero monthly sales cause division-by-zero distortion."
 )
 
-# Pull AutoARIMA + Naive metrics from the cached holdout evaluation
-_, arima_metrics_df = load_arima_results(group="bikeshop_name", h=3)
+# Pull AutoARIMA + Naive metrics from the precomputed holdout evaluation
+arima_metrics_df = load_arima_metrics(group="bikeshop_name", h=3)
 
 # If LSTM rows exist in the comparison CSV, merge them in
 if os.path.exists(comparison_path):
