@@ -44,6 +44,13 @@ Run locally:
 streamlit run app.py
 ```
 
+To reproduce the production server (Streamlit + pre-compressed static assets):
+
+```bash
+python serve.py --precompress   # one-time, after installing/upgrading streamlit
+python serve.py
+```
+
 ---
 
 ## Methods and Tools
@@ -119,10 +126,13 @@ Bikes_forecast/
 │   └── Multivariate_forecasting.py     # LSTM training & ARIMA/LSTM/naive comparison
 ├── 03_outputs/                         # Trained model (.h5), predictions (.pkl), comparison CSV
 ├── app.py                              # Streamlit dashboard
-├── requirements.txt                    # App runtime dependencies (no TensorFlow)
-├── requirements-train.txt              # Full deps for local LSTM training (includes TensorFlow)
+├── serve.py                            # Production entrypoint: gzips Streamlit's static bundle
+├── .streamlit/config.toml              # Server/client settings used in prod and locally
+├── requirements.txt                    # App runtime deps only (streamlit/plotly/pandas/numpy)
+├── requirements-precompute.txt         # Adds the forecasting stack for precompute_forecasts.py
+├── requirements-train.txt              # Adds TensorFlow for local LSTM training
 ├── Dockerfile                          # Cloud Run container (Python 3.12-slim, 512Mi)
-├── .dockerignore                       # Excludes .venv, logs, hyperband artifacts
+├── .dockerignore                       # Keeps source data and training code out of the image
 ├── cloudbuild.yaml                     # CI/CD: Cloud Build → Artifact Registry → Cloud Run
 ├── deploy.sh                           # One-shot manual deploy script
 └── README.md
@@ -139,9 +149,20 @@ git clone https://github.com/EllaN12/Bikes_forecast.git
 cd Bikes_forecast
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements-train.txt   # includes TensorFlow for retraining
+pip install -r requirements.txt         # just to run the dashboard
+# pip install -r requirements-precompute.txt   # + to regenerate forecasts
+# pip install -r requirements-train.txt        # + TensorFlow, to retrain the LSTM
 streamlit run app.py
 ```
+
+### Regenerate the dashboard's forecast artifacts
+
+```bash
+python 02_SRC/precompute_forecasts.py    # writes 03_outputs/precomputed/*.pkl
+```
+
+The app reads only these artifacts — it never trains at request time, and the
+deployed image does not install sktime/pmdarima/scikit-learn.
 
 ### Retrain the LSTM model
 

@@ -1,0 +1,130 @@
+{
+  "model_details": {
+    "name": "Bikes Sales Forecast \u2014 AutoARIMA and TensorFlow LSTM",
+    "overview": "Forecasts Q1 2025 revenue for a fictitious bicycle manufacturer distributing to 30 bikeshops, using AutoARIMA (univariate, per series) and a multivariate TensorFlow LSTM trained jointly across all shops. Built on 109,514 orderlines spanning 2020-2024 in SQLite, surfaced through a Streamlit dashboard on Google Cloud Run. Both models are scored against a naive last-value baseline on a true 3-month holdout.",
+    "documentation": "Dataset: Synthetic bikeshop sales database (Bikes, Bikeshops, Orderlines; 2020-2024) \u2014 Sensitive data: Fully synthetic. No real customers, shops, or transactions; no PII.",
+    "owners": [
+      {
+        "name": "Ella Ndalla",
+        "contact": "ndallaella@gmail.com"
+      }
+    ],
+    "version": {
+      "name": "1.0.0"
+    },
+    "licenses": [
+      {
+        "identifier": "MIT"
+      }
+    ],
+    "references": [
+      {
+        "reference": "https://bikes-forecast-6trxjbynbq-uc.a.run.app"
+      }
+    ],
+    "citations": [
+      {
+        "citation": "Ella Ndalla. Bikes Sales Forecast \u2014 AutoARIMA and TensorFlow LSTM. GitHub repository: Bikes_forecast."
+      }
+    ]
+  },
+  "model_parameters": {
+    "data": [
+      {
+        "name": "Synthetic bikeshop sales database (Bikes, Bikeshops, Orderlines; 2020-2024)",
+        "sensitive": {
+          "sensitive_data": [
+            "Fully synthetic. No real customers, shops, or transactions; no PII."
+          ]
+        }
+      }
+    ]
+  },
+  "quantitative_analysis": {
+    "performance_metrics": [
+      {
+        "type": "MASE (LSTM, mean over 30 bikeshops)",
+        "value": "0.703"
+      },
+      {
+        "type": "MASE (AutoARIMA)",
+        "value": "0.778"
+      },
+      {
+        "type": "MASE (Naive baseline)",
+        "value": "1.000"
+      },
+      {
+        "type": "MAE (LSTM)",
+        "value": "$31,981"
+      },
+      {
+        "type": "MAE (AutoARIMA)",
+        "value": "$34,688"
+      },
+      {
+        "type": "MAE (Naive)",
+        "value": "$26,612"
+      },
+      {
+        "type": "RMSE (LSTM)",
+        "value": "$38,165"
+      },
+      {
+        "type": "RMSE (AutoARIMA)",
+        "value": "$39,689"
+      }
+    ]
+  },
+  "considerations": {
+    "users": [
+      {
+        "description": "Sales and demand planning stakeholders (illustrative)"
+      },
+      {
+        "description": "Data scientists reviewing time-series forecasting practice"
+      }
+    ],
+    "use_cases": [
+      {
+        "description": "Monthly revenue forecasting at bikeshop, category, and sub-category level."
+      },
+      {
+        "description": "Demonstration of MASE-based evaluation against a naive baseline for sparse retail series."
+      }
+    ],
+    "limitations": [
+      {
+        "description": "Trained on synthetic data; absolute error figures carry no real-world meaning."
+      },
+      {
+        "description": "LSTM predictions are pre-computed and committed to 03_outputs/ \u2014 the deployed app does not retrain and TensorFlow is not a runtime dependency, so forecasts are static until the training pipeline is re-run."
+      },
+      {
+        "description": "MAPE is unusable on this dataset: near-zero bikeshop months produce percentage errors in the quadrillions. MASE is the only reliable headline metric here."
+      },
+      {
+        "description": "3-month look-back window and 30-epoch training cap limit the LSTM's ability to capture longer seasonal cycles."
+      }
+    ],
+    "tradeoffs": [
+      {
+        "description": "LSTM wins on accuracy (MASE 0.703 vs 0.778) but requires GPU-class retraining and produces no confidence intervals; AutoARIMA is slower per-series but interpretable, CPU-friendly, and yields 95% prediction intervals."
+      },
+      {
+        "description": "Joint multivariate training shares signal across shops but couples all 30 series to a single model artifact."
+      }
+    ],
+    "ethical_considerations": [
+      {
+        "name": "Over-trusting point forecasts for inventory or staffing decisions when the LSTM provides no uncertainty bounds.",
+        "mitigation_strategy": "AutoARIMA 95% prediction intervals are surfaced alongside LSTM point forecasts in the dashboard; MASE vs naive is shown so users can see how much the model actually beats a trivial baseline."
+      },
+      {
+        "name": "Silent staleness \u2014 committed predictions continue to serve after the underlying sales pattern changes.",
+        "mitigation_strategy": "Holdout evaluation scripts (evaluate_arima_holdout, compare_arima_lstm) are re-runnable to re-score before each refresh."
+      }
+    ]
+  },
+  "schema_version": "0.0.2"
+}

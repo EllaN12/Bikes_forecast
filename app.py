@@ -1,49 +1,59 @@
 """
 Streamlit dashboard for the Bikes Sales Forecast project.
 
-Replaces the static Tableau dashboard with an interactive app that reads
-directly from the project's SQLite database and forecasting pipeline
-(02_SRC/database.py, 02_SRC/forecasting.py) — no separate BI tool needed.
+Replaces the static Tableau dashboard with an interactive app. It reads only the
+artifacts in 03_outputs/precomputed/, which 02_SRC/precompute_forecasts.py
+generates offline from the SQLite database and the forecasting pipeline.
 
-Run with: streamlit run app.py
+Run with: python serve.py       (production — adds pre-compressed static assets)
+          streamlit run app.py  (local development)
 """
 
 import os
-import sys
 
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "02_SRC"))
-
 st.set_page_config(page_title="Bikes Sales Forecast", layout="wide")
 
-# Precomputed artifacts (written by 02_SRC/precompute_forecasts.py). Loading
-# them avoids retraining ARIMA models — and importing sktime/pmdarima at all —
-# on every cold start. The heavy imports below happen only in the fallbacks.
+# Precomputed artifacts (written by 02_SRC/precompute_forecasts.py). The app
+# reads nothing but these, so the deployed image needs no forecasting stack at
+# all — see requirements.txt.
 PRECOMPUTED_DIR = os.path.join("03_outputs", "precomputed")
+
+
+def _missing_artifact(name: str) -> None:
+    """Fail loudly instead of importing the (uninstalled) forecasting stack.
+
+    requirements.txt ships only streamlit/plotly/pandas/numpy; sktime, pmdarima
+    and scikit-learn live in requirements-precompute.txt. If an artifact is
+    missing the fix is to regenerate it, not to train at request time.
+    """
+    st.error(
+        f"Missing precomputed artifact `{name}`. Regenerate it with:\n\n"
+        "    pip install -r requirements-precompute.txt\n"
+        "    python 02_SRC/precompute_forecasts.py"
+    )
+    st.stop()
 
 
 @st.cache_data(show_spinner="Loading sales data…")
 def load_data() -> pd.DataFrame:
     cached = os.path.join(PRECOMPUTED_DIR, "data.pkl")
-    if os.path.exists(cached):
-        return pd.read_pickle(cached)
-    from database import collect_data  # slow: rebuilds the DB from Excel
-    return collect_data()
+    if not os.path.exists(cached):
+        _missing_artifact("data.pkl")
+    return pd.read_pickle(cached)
 
 
 @st.cache_data(show_spinner="Loading AutoARIMA holdout metrics…")
 def load_arima_metrics(group: str, h: int = 3) -> pd.DataFrame:
     """Holdout metrics (series, model, MAE/RMSE/MASE) for the given group."""
     cached = os.path.join(PRECOMPUTED_DIR, f"arima_holdout_metrics_{group}.pkl")
-    if os.path.exists(cached):
-        return pd.read_pickle(cached)
-    # Fallback: train from scratch (slow) — run precompute_forecasts.py to avoid
-    from precompute_forecasts import compute_arima_metrics
-    return compute_arima_metrics(load_data(), group, h=h)
+    if not os.path.exists(cached):
+        _missing_artifact(f"arima_holdout_metrics_{group}.pkl")
+    return pd.read_pickle(cached)
 
 
 @st.cache_data(show_spinner=False)
@@ -115,11 +125,9 @@ def load_forward_forecast(group: str, h: int = 3, year_offset: int = 9):
       naive     : DataFrame(order_date, series, naive_prediction)
     """
     cached = os.path.join(PRECOMPUTED_DIR, f"forward_{group}.pkl")
-    if os.path.exists(cached):
-        return pd.read_pickle(cached)
-    # Fallback: train from scratch (slow) — run precompute_forecasts.py to avoid
-    from precompute_forecasts import compute_forward_forecast
-    return compute_forward_forecast(load_data(), group, h=h, year_offset=year_offset)
+    if not os.path.exists(cached):
+        _missing_artifact(f"forward_{group}.pkl")
+    return pd.read_pickle(cached)
 
 
 df = load_data()
@@ -563,11 +571,9 @@ def _highlight_model_row(row):
     else:
         return ["background-color: #f5f5f5; color: #333333"] * len(row)
 
-st.dataframe(
-    summary_display.style.apply(_highlight_model_row, axis=1),
-    use_container_width=True,
-    hide_index=True,
-)
+# st.table renders plain HTML; st.dataframe would pull the interactive
+# glide-data-grid bundle (~183 KB gzipped) for three rows.
+st.table(summary_display.style.apply(_highlight_model_row, axis=1).hide(axis="index"))
 
 # ── MASE comparison bar chart ─────────────────────────────────────────────
 st.subheader("MASE by Model (lower = better, < 1 beats naïve)")

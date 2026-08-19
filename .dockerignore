@@ -1,17 +1,35 @@
+# Everything the deployed app does not read. The image only needs app.py,
+# serve.py, .streamlit/ and the artifacts listed in the Dockerfile.
 .venv/
 __pycache__/
 *.pyc
 *.pyo
 .git/
 .gitignore
+.gitattributes
+.claude/
 runtime.txt
+deploy.sh
+cloudbuild.yaml
+README.md
 *.pptx
 Interactive-1.interactive.py
+
+# Source data + training code — used only by precompute_forecasts.py, offline.
+00_data_raw/
+01_database/
+02_SRC/
+unpacked/
+model_cards/
+data_cards/
+design_docs/
+outputs/
+
+# Large 03_outputs/ files the app never opens (~5 MB).
 03_outputs/hyperband/
 03_outputs/profile_report.html
-03_outputs/Arima_forecasting.txt
-03_outputs/Multivariate_forecasting.txt
-03_outputs/Multivariate_warnings.txt
-03_outputs/warnings.txt
-03_outputs/forecasting.txt
-03_outputs/forecasting_warnings.txt
+03_outputs/data.csv
+03_outputs/data.xlsx
+03_outputs/time_series_model.h5
+03_outputs/arima_vs_lstm_comparison.xlsx
+03_outputs/*.txt

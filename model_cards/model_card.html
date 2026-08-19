@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+<style>
+  h1 {text-align: center;}
+  .row {
+    display: flex;
+  }
+  .col {
+    flex: 1;
+  }
+  .card {
+    padding: 1em;
+    border: 1px solid #DADCE0;
+    margin: 10px;
+  }
+  .img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .img-item {
+    flex: 1;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table {
+    margin-bottom: 10px;
+  }
+  table th {
+    background: #eee;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    height: 30px;
+    text-align: left;
+    padding: 5px 10px
+  }
+  caption { font-weight: bold; }
+</style>
+<title>
+  Model Card for Bikes Sales Forecast — AutoARIMA and TensorFlow LSTM
+</title>
+</head>
+<body>
+  <h1>
+    Model Card for Bikes Sales Forecast — AutoARIMA and TensorFlow LSTM
+  </h1>
+    <div class="row">
+    
+      <div class="col card">
+        <h2>Model Details</h2>
+          <h3>Overview</h3>
+              Forecasts Q1 2025 revenue for a fictitious bicycle manufacturer distributing to 30 bikeshops, using AutoARIMA (univariate, per series) and a multivariate TensorFlow LSTM trained jointly across all shops. Built on 109,514 orderlines spanning 2020-2024 in SQLite, surfaced through a Streamlit dashboard on Google Cloud Run. Both models are scored against a naive last-value baseline on a true 3-month holdout.
+          <h3>Version</h3>
+              
+  
+    <div>name: 1.0.0</div>
+
+              
+  
+
+              
+  
+
+          
+          <h3>Documentation</h3>
+              Dataset: Synthetic bikeshop sales database (Bikes, Bikeshops, Orderlines; 2020-2024) — Sensitive data: Fully synthetic. No real customers, shops, or transactions; no PII.
+          <h3>Owners</h3>
+            
+              Ella Ndalla, ndallaella@gmail.com
+            
+          
+          
+            <h3>Licenses</h3>
+              <ul>
+
+                <li>MIT</li>
+
+              </ul>
+          
+            <h3>References</h3>
+              <ul>
+              
+                <li><a href="https://bikes-forecast-6trxjbynbq-uc.a.run.app">https://bikes-forecast-6trxjbynbq-uc.a.run.app</a></li>
+              
+              </ul>
+          
+            <h3>Citations</h3>
+              <ul>
+              
+                <li>Ella Ndalla. Bikes Sales Forecast — AutoARIMA and TensorFlow LSTM. GitHub repository: Bikes_forecast.</li>
+              
+              </ul>
+        </div>
+      
+      
+      
+      <div class="col card">
+        <h2>Considerations</h2>
+          
+            <h3>Intended Users</h3>
+              
+  
+  <ul>
+  
+    <li>Sales and demand planning stakeholders (illustrative)</li>
+  
+    <li>Data scientists reviewing time-series forecasting practice</li>
+  
+  </ul>
+
+          
+          
+            <h3>Use Cases</h3>
+              
+  
+  <ul>
+  
+    <li>Monthly revenue forecasting at bikeshop, category, and sub-category level.</li>
+  
+    <li>Demonstration of MASE-based evaluation against a naive baseline for sparse retail series.</li>
+  
+  </ul>
+
+          
+          
+            <h3>Limitations</h3>
+              
+  
+  <ul>
+  
+    <li>Trained on synthetic data; absolute error figures carry no real-world meaning.</li>
+  
+    <li>LSTM predictions are pre-computed and committed to 03_outputs/ — the deployed app does not retrain and TensorFlow is not a runtime dependency, so forecasts are static until the training pipeline is re-run.</li>
+  
+    <li>MAPE is unusable on this dataset: near-zero bikeshop months produce percentage errors in the quadrillions. MASE is the only reliable headline metric here.</li>
+  
+    <li>3-month look-back window and 30-epoch training cap limit the LSTM&#39;s ability to capture longer seasonal cycles.</li>
+  
+  </ul>
+
+          
+          
+            <h3>Tradeoffs</h3>
+              
+  
+  <ul>
+  
+    <li>LSTM wins on accuracy (MASE 0.703 vs 0.778) but requires GPU-class retraining and produces no confidence intervals; AutoARIMA is slower per-series but interpretable, CPU-friendly, and yields 95% prediction intervals.</li>
+  
+    <li>Joint multivariate training shares signal across shops but couples all 30 series to a single model artifact.</li>
+  
+  </ul>
+
+          
+          
+            <h3>Ethical Considerations</h3>
+              <ul>
+                <li>
+                  <div>Risk: Over-trusting point forecasts for inventory or staffing decisions when the LSTM provides no uncertainty bounds.</div>
+                  <div>Mitigation Strategy: AutoARIMA 95% prediction intervals are surfaced alongside LSTM point forecasts in the dashboard; MASE vs naive is shown so users can see how much the model actually beats a trivial baseline.</div>
+                </li>
+                <li>
+                  <div>Risk: Silent staleness — committed predictions continue to serve after the underlying sales pattern changes.</div>
+                  <div>Mitigation Strategy: Holdout evaluation scripts (evaluate_arima_holdout, compare_arima_lstm) are re-runnable to re-score before each refresh.</div>
+                </li> </ul>
+      </div>
+      
+    </div>
+    
+      
+  <div class="col card">
+    <h2>Datasets</h2>
+    
+      <div class="row">
+        <div class="col card">
+          <h3>Synthetic bikeshop sales database (Bikes, Bikeshops, Orderlines; 2020-2024)</h3>
+            
+            
+            
+        </div>
+      </div>
+    
+  </div>
+
+    
+    
+      
+<div class="col card">
+  <h2>Quantitative Analysis</h2>
+  
+    
+<table class="center">
+  <caption>Performance Metrics</caption>
+  <tr><th>Name</th><th>Value</th></tr>
+
+  <tr><td>
+MASE (LSTM, mean over 30 bikeshops)
+</td><td>
+0.703
+</td></tr>
+
+  <tr><td>
+MASE (AutoARIMA)
+</td><td>
+0.778
+</td></tr>
+
+  <tr><td>
+MASE (Naive baseline)
+</td><td>
+1.000
+</td></tr>
+
+  <tr><td>
+MAE (LSTM)
+</td><td>
+$31,981
+</td></tr>
+
+  <tr><td>
+MAE (AutoARIMA)
+</td><td>
+$34,688
+</td></tr>
+
+  <tr><td>
+MAE (Naive)
+</td><td>
+$26,612
+</td></tr>
+
+  <tr><td>
+RMSE (LSTM)
+</td><td>
+$38,165
+</td></tr>
+
+  <tr><td>
+RMSE (AutoARIMA)
+</td><td>
+$39,689
+</td></tr>
+
+</table>
+
+  
+  
+</div>
+
+    
+</body>
+</html>

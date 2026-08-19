@@ -1,0 +1,275 @@
+{
+  "title": "Bikeshop Revenue Forecasting",
+  "subtitle": "AutoARIMA and multivariate LSTM behind a deployed Streamlit dashboard",
+  "status": "As-built \u2014 deployed to Google Cloud Run",
+  "summary": "Forecasts quarterly revenue for 30 bikeshops using two complementary models: AutoARIMA fit independently per series, and a single LSTM trained jointly across all shops. Both are scored against a naive last-value baseline on a true 3-month holdout, and results are surfaced through a Streamlit dashboard on Cloud Run.",
+  "problem": "Sales planning needs revenue forecasts at several grains at once \u2014 total, by category, by sub-category, and by individual bikeshop. Per-series statistical models handle this naturally but ignore cross-shop signal; a joint neural model captures shared structure but produces no uncertainty bounds. The project builds both and makes the comparison explicit rather than picking one on faith.",
+  "goals": [
+    "Forecast the next quarter's revenue at shop, category, and sub-category grain.",
+    "Score every model against a naive baseline on a genuine out-of-sample window.",
+    "Make forecasts explorable by non-technical stakeholders without running code.",
+    "Keep the deployed app lightweight enough to scale to zero."
+  ],
+  "non_goals": [
+    "Retraining on a schedule \u2014 predictions are pre-computed and committed.",
+    "Real-time or intraday forecasting.",
+    "Price or promotion optimization."
+  ],
+  "requirements": [
+    [
+      "Functional",
+      "Forecast at three grains with a single interface",
+      "Met \u2014 dropdown for Category / Sub-Category / Bikeshop"
+    ],
+    [
+      "Functional",
+      "Every model scored against a naive baseline",
+      "Met \u2014 MASE reported for LSTM, AutoARIMA, and Naive on the same holdout"
+    ],
+    [
+      "Functional",
+      "Show uncertainty where the model supports it",
+      "Partially met \u2014 AutoARIMA gives 95% intervals; the LSTM gives point forecasts only"
+    ],
+    [
+      "Non-functional",
+      "Deployed app must not require TensorFlow at runtime",
+      "Met \u2014 LSTM predictions are pre-computed to 03_outputs/ and loaded as artifacts"
+    ],
+    [
+      "Non-functional",
+      "Scale to zero when idle",
+      "Met \u2014 Cloud Run min-instances=0, max-instances=2, 512Mi, 1 vCPU"
+    ],
+    [
+      "Constraint",
+      "Synthetic data \u2014 absolute error figures carry no real-world meaning",
+      "Accepted and documented"
+    ]
+  ],
+  "data": {
+    "sources": "Synthetic relational database in SQLite (01_database/bike_orders_database.sqlite): bikes, bikeshops, orderlines. Raw Excel sources in 00_data_raw/.",
+    "pipeline": "collect_data() in 02_SRC/database.py loads and joins the tables; summarize_by_time() aggregates to monthly series per grouping.",
+    "notes": "Profiling found 97 bikes / 30 bikeshops / 15,644 orderlines, against the README's stated 4,753 / 93 / 109,514 \u2014 the README figures appear to describe a different generation run. Order dates run 2011-01-07 to 2015-12-25 and are relabeled as 2020\u20132024 for presentation."
+  },
+  "candidates": [
+    [
+      "Naive (last value carried forward)",
+      "MASE 1.000 by construction",
+      "Retained as the baseline every model must beat"
+    ],
+    [
+      "AutoARIMA (sktime, per series)",
+      "MASE 0.778 \u00b7 MAE $34,688 \u00b7 RMSE $39,689",
+      "Kept \u2014 interpretable, CPU-only, gives prediction intervals"
+    ],
+    [
+      "TensorFlow LSTM, Input(3,30) \u2192 LSTM(32) \u2192 Dense(30)",
+      "MASE 0.703 \u00b7 MAE $31,981 \u00b7 RMSE $38,165",
+      "Kept \u2014 most accurate, but no intervals"
+    ],
+    [
+      "MAPE as headline metric",
+      "Near-zero bikeshop months produce errors in the quadrillions",
+      "Rejected \u2014 MASE used instead"
+    ]
+  ],
+  "selected": "Both, presented side by side. LSTM leads on accuracy; AutoARIMA supplies the uncertainty bounds.",
+  "selection_rationale": "The LSTM wins on every error metric, but it produces bare point forecasts and needs GPU-class retraining. AutoARIMA is slower per series yet interpretable, retrainable on a CPU, and yields 95% prediction intervals. For a planning tool where the user needs to know how much to trust a number, showing both \u2014 with MASE against naive visible \u2014 is more useful than silently shipping the lower-error model.",
+  "evaluation": {
+    "strategy": "True holdout on the last 3 months of data, not in-sample fit. Train/validation/test split applied BEFORE Min-Max scaling to prevent leakage. compare_arima_lstm() aligns LSTM predictions to the same holdout window AutoARIMA is scored on, so MASE figures are directly comparable.",
+    "baseline": "Naive last-value-carried-forward, MASE 1.000.",
+    "metrics": [
+      [
+        "MASE \u2014 LSTM",
+        "0.703"
+      ],
+      [
+        "MASE \u2014 AutoARIMA",
+        "0.778"
+      ],
+      [
+        "MASE \u2014 Naive",
+        "1.000"
+      ],
+      [
+        "MAE \u2014 LSTM / AutoARIMA / Naive",
+        "$31,981 / $34,688 / $26,612"
+      ],
+      [
+        "RMSE \u2014 LSTM / AutoARIMA / Naive",
+        "$38,165 / $39,689 / $36,551"
+      ],
+      [
+        "Series evaluated",
+        "30 bikeshops"
+      ]
+    ]
+  },
+  "architecture": [
+    [
+      "Storage",
+      "SQLite",
+      "01_database/bike_orders_database.sqlite"
+    ],
+    [
+      "Data access",
+      "02_SRC/database.py",
+      "collect_data(), summarize_by_time()"
+    ],
+    [
+      "Statistical model",
+      "sktime AutoARIMA",
+      "02_SRC/Arima_forecasting.py, per series"
+    ],
+    [
+      "Neural model",
+      "TensorFlow/Keras LSTM",
+      "02_SRC/Multivariate_forecasting.py, joint across 30 series"
+    ],
+    [
+      "Evaluation",
+      "02_SRC/forecasting.py",
+      "evaluate_arima_holdout(), compare_arima_lstm(), _naive_forecast()"
+    ],
+    [
+      "Artifacts",
+      "03_outputs/",
+      "Trained .h5, predictions .pkl, comparison CSV"
+    ],
+    [
+      "Application",
+      "Streamlit (app.py)",
+      "KPIs, treemap, forecast chart, model comparison"
+    ],
+    [
+      "Serving",
+      "Cloud Run + Cloud Build",
+      "Dockerfile on python:3.12-slim"
+    ]
+  ],
+  "dataflow": [
+    "00_data_raw/*.xlsx \u2192 SQLite via collect_data()",
+    "SQLite \u2192 monthly aggregates via summarize_by_time()",
+    "aggregates \u2192 AutoARIMA per series \u2192 forecasts + 95% intervals",
+    "aggregates \u2192 scaled 3-month windows \u2192 LSTM \u2192 03_outputs/*.pkl (committed)",
+    "03_outputs/ \u2192 Streamlit app \u2192 Cloud Run"
+  ],
+  "deployment": {
+    "current": "Live on Google Cloud Run at bikes-forecast-6trxjbynbq-uc.a.run.app. Built from a python:3.12-slim Dockerfile; deployable either by cloudbuild.yaml or the deploy.sh script, which use identical resource settings. TensorFlow is deliberately absent from requirements.txt \u2014 the app loads pre-computed predictions instead, which is what keeps the image small enough for a 512Mi instance.",
+    "config": [
+      [
+        "Platform",
+        "Google Cloud Run"
+      ],
+      [
+        "Base image",
+        "python:3.12-slim"
+      ],
+      [
+        "Memory / CPU",
+        "512Mi / 1 vCPU"
+      ],
+      [
+        "Scaling",
+        "min-instances=0, max-instances=2 (scale to zero)"
+      ],
+      [
+        "Build",
+        "cloudbuild.yaml or deploy.sh"
+      ],
+      [
+        "Runtime deps",
+        "requirements.txt \u2014 no TensorFlow (requirements-train.txt is separate)"
+      ]
+    ],
+    "gaps": "Forecasts are static artifacts committed to the repository. There is no retraining job, no model registry, and no mechanism to notice that the committed predictions have gone stale relative to new sales data."
+  },
+  "monitoring": {
+    "current": "The dashboard's Model Performance Comparison section shows MAE, RMSE, and MASE per model against the naive baseline, so a user can see how much each model actually beats a trivial forecast. Cloud Run supplies request and error metrics by default.",
+    "gaps": "No forecast-accuracy tracking once actuals arrive, no data freshness check, no alert if the app is serving predictions generated months ago, and no logging of which artifact version is loaded."
+  },
+  "risks": [
+    [
+      "Point forecasts used for inventory or staffing decisions without uncertainty",
+      "Medium",
+      "AutoARIMA's 95% intervals are shown alongside LSTM points; MASE vs naive is displayed so users see the real lift."
+    ],
+    [
+      "Silent staleness \u2014 committed predictions keep serving after patterns change",
+      "High",
+      "Currently unmitigated. This is the top roadmap item."
+    ],
+    [
+      "README data counts do not match the committed database",
+      "Medium",
+      "Recorded in the data card; needs reconciling before the repo is shown to reviewers."
+    ],
+    [
+      "Synthetic data misread as real market insight",
+      "Low",
+      "Stated in README, model card, and data card."
+    ]
+  ],
+  "roadmap": [
+    [
+      "P0 \u2014 Correctness",
+      "README row counts and date range contradict the committed data",
+      "Reconcile: either regenerate the full dataset the README describes, or correct the README to 97 / 30 / 15,644 and the true 2011\u20132015 date range",
+      "S"
+    ],
+    [
+      "P0 \u2014 Freshness",
+      "No indication of when predictions were generated",
+      "Stamp generation date and source-data hash into the artifacts and display it in the app footer",
+      "S"
+    ],
+    [
+      "P1 \u2014 Retraining",
+      "No retraining pipeline",
+      "Add a Cloud Run Job on a monthly Cloud Scheduler trigger that re-fits AutoARIMA and the LSTM, writes new artifacts to Cloud Storage, and only promotes them if holdout MASE stays below 1.0",
+      "M"
+    ],
+    [
+      "P1 \u2014 Artifacts",
+      "Model binaries and predictions committed to git",
+      "Move to a Cloud Storage bucket with versioned objects; the app reads the current pointer at startup",
+      "M"
+    ],
+    [
+      "P1 \u2014 Accuracy tracking",
+      "Forecast error never measured against realized actuals",
+      "Log each forecast with its target period, then compute realized MASE as actuals arrive and chart it in the dashboard",
+      "M"
+    ],
+    [
+      "P2 \u2014 Uncertainty",
+      "LSTM produces no prediction intervals",
+      "Add quantile regression or Monte Carlo dropout so both models express uncertainty in the same units",
+      "M"
+    ],
+    [
+      "P2 \u2014 Operations",
+      "No availability target",
+      "Define an SLO (e.g. 99% of dashboard loads under 3s) and enable Cloud Run alerting against it; consider min-instances=1 if cold starts breach it",
+      "S"
+    ]
+  ],
+  "open_questions": [
+    "Does the LSTM's accuracy edge survive retraining on fresh data, or is 0.703 vs 0.778 within run-to-run noise for this sample size?",
+    "Is per-shop forecasting the right grain, or would hierarchical reconciliation across grains produce more coherent totals?",
+    "At 30 series and 15,644 orderlines, is a neural model justified at all versus a well-tuned statistical ensemble?"
+  ],
+  "references": [
+    "model_cards/model_card.docx \u2014 metrics and limitations",
+    "data_cards/data_card.docx \u2014 provenance, schema, the count discrepancy",
+    "README.md \u00b7 cloudbuild.yaml \u00b7 deploy.sh \u00b7 Dockerfile"
+  ],
+  "project": "Bikes_forecast",
+  "owner": {
+    "name": "Ella Ndalla",
+    "contact": "ndallaella@gmail.com"
+  },
+  "date": "2026-08-01",
+  "schema": "ml-design-doc/1.0"
+}

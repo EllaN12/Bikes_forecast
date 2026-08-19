@@ -1,0 +1,23 @@
+[browser]
+# Skips a cross-origin request to data.streamlit.io on every page load.
+gatherUsageStats = false
+
+[server]
+headless = true
+# The app is read-only; nothing is ever uploaded.
+maxUploadSize = 1
+# Cloud Run terminates TLS and the app holds no cross-site state.
+enableCORS = false
+enableXsrfProtection = false
+
+[client]
+# Don't ship tracebacks to the browser.
+showErrorDetails = "none"
+
+[runner]
+# No magic `st.write` of bare expressions — one less AST pass per rerun.
+magicEnabled = false
+fastReruns = true
+
+[global]
+developmentMode = false

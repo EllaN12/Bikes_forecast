@@ -1,0 +1,12 @@
+# Dependencies for regenerating the dashboard's artifacts. Not installed in the
+# deployed image.
+#
+#   python 02_SRC/precompute_forecasts.py   -> 03_outputs/precomputed/*.pkl
+-r requirements.txt
+openpyxl
+pandas-flavor
+sqlalchemy
+sktime
+pmdarima
+scikit-learn
+tqdm

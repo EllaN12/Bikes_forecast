@@ -1,0 +1,71 @@
+# Keeps every Cloud Run service warm so the first visitor after an idle period
+# does not pay a cold start. This replaces --min-instances=1, which would cost
+# roughly $300/month across the five services below.
+#
+# Setup: add a repository variable named WARM_URLS (Settings -> Secrets and
+# variables -> Actions -> Variables) holding one service URL per line, e.g.
+#
+#   https://bikes-forecast-xxxx.us-central1.run.app
+#   https://frontend-els-xxxx.us-central1.run.app
+#   https://backend-els-710930172854.us-central1.run.app
+#   https://finlens-app-xxxx.us-central1.run.app
+#   https://us-rental-market-xxxx.us-central1.run.app
+#
+# Adding or removing a service means editing that variable, not this file.
+name: Warm Cloud Run fleet
+
+on:
+  schedule:
+    # Cloud Run reclaims idle instances after roughly 15 minutes, and GitHub
+    # delays scheduled runs under load (notably on the hour), so the interval is
+    # deliberately well under the timeout it defends against.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+# A delayed run must not pile up behind the next one.
+concurrency:
+  group: warm-fleet
+  cancel-in-progress: true
+
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping every service
+        env:
+          WARM_URLS: ${{ vars.WARM_URLS }}
+        run: |
+          if [ -z "${WARM_URLS// /}" ]; then
+            echo "::error::Repository variable WARM_URLS is empty or unset."
+            exit 1
+          fi
+
+          failed=0
+          while IFS= read -r url; do
+            url="$(echo "$url" | tr -d '[:space:]')"
+            [ -z "$url" ] && continue
+
+            # A plain GET on / is enough to keep the instance resident. Cold
+            # starts on the FastAPI backend can take tens of seconds, so the
+            # timeout is generous and failures are reported, not fatal per-URL.
+            start=$(date +%s)
+            # curl already writes 000 on a connection failure; `|| true` keeps
+            # the non-zero exit from aborting the loop under `set -e`.
+            code=$(curl -sS --max-time 60 --retry 2 --retry-delay 5 \
+                        -o /dev/null -w '%{http_code}' "$url" || true)
+            code="${code:-000}"
+            elapsed=$(( $(date +%s) - start ))
+
+            if [ "$code" = "200" ]; then
+              echo "ok    ${elapsed}s  $code  $url"
+            else
+              echo "::warning::slow or failing (${elapsed}s, HTTP $code): $url"
+              failed=$((failed + 1))
+            fi
+          done <<< "$WARM_URLS"
+
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed service(s) did not return 200."
+            exit 1
+          fi

@@ -31,6 +31,14 @@ steps:
       - --cpu=1
       - --timeout=120
       - --concurrency=5
+      # Full CPU during container start instead of the throttled default —
+      # cuts the Python/Streamlit boot portion of a cold start.
+      - --cpu-boost
+      # Streamlit keeps a websocket per viewer; without affinity a reconnect can
+      # land on the other instance and replay the whole script.
+      - --session-affinity
+      # Scale to zero. Warmth comes from the scheduled pinger in
+      # .github/workflows/warm-fleet.yml, not from a paid idle instance.
       - --min-instances=0
       - --max-instances=2
 

@@ -1,11 +1,11 @@
+# Runtime dependencies for the deployed Streamlit app.
+#
+# The app reads only the precomputed artifacts in 03_outputs/precomputed/, so it
+# never imports sktime / pmdarima / scikit-learn / sqlalchemy at request time.
+# Those live in requirements-precompute.txt and stay out of the deployed image
+# (~260 MB of site-packages, plus the build-essential toolchain needed to
+# compile pmdarima's C extensions).
 streamlit
 plotly
 pandas
 numpy
-openpyxl
-pandas-flavor
-sqlalchemy
-sktime
-pmdarima
-scikit-learn
-tqdm

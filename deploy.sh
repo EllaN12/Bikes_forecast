@@ -51,6 +51,8 @@ gcloud run deploy "${SERVICE}" \
   --cpu=1 \
   --timeout=120 \
   --concurrency=5 \
+  --cpu-boost \
+  --session-affinity \
   --min-instances=0 \
   --max-instances=2 \
   --project="${PROJECT_ID}"

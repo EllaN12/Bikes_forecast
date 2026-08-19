@@ -1,0 +1,236 @@
+{
+  "schema": "data-card/1.0",
+  "project": "Bikes_forecast",
+  "title": "Bikeshop Orders Database (Synthetic)",
+  "owners": [
+    {
+      "name": "Ella Ndalla",
+      "contact": "ndallaella@gmail.com"
+    }
+  ],
+  "profiling": {
+    "status": "profiled",
+    "method": "pandas profile of the committed data in this repository",
+    "tables": 3
+  },
+  "summary": "A synthetic relational sales database for a fictitious bicycle manufacturer selling through independent bikeshops, used to forecast quarterly revenue with AutoARIMA and an LSTM. Three tables: bike catalog, bikeshop registry, and order lines.",
+  "provenance": {
+    "source": "Synthetic dataset generated in Python (Business Science teaching dataset lineage)",
+    "link": "",
+    "snapshot": "Order history spanning 2011-2015 in the raw file, presented as 2020-2024",
+    "collection": "Fully synthetic. Records were generated programmatically; no real company, shop, customer, or transaction is represented. Raw source files are Excel workbooks in 00_data_raw/, loaded into a SQLite database at 01_database/bike_orders_database.sqlite via collect_data() in 02_SRC/database.py.",
+    "license_terms": "MIT, as part of this repository. No third-party restrictions \u2014 the data is generated, not collected.",
+    "maintenance": "Static. Regenerating or extending the series requires re-running the generator; there is no scheduled refresh."
+  },
+  "labeling": "No labels in the supervised sense. The forecasting target is monthly aggregated revenue, derived arithmetically as quantity x price and rolled up by summarize_by_time().",
+  "preprocessing": "Date parsing; category and location strings split into component fields; monthly time-series aggregation by shop, category, and sub-category. For the LSTM, inputs are Min-Max scaled and windowed with a 3-month look-back across all 30 bikeshops simultaneously; the scaler is fit only on the training split to prevent leakage.",
+  "splits": "Last 3 months held out as a true out-of-sample window for both models. Train/validation/test split is applied BEFORE scaling. Both models are scored on the same holdout via evaluate_arima_holdout() so MASE figures are comparable.",
+  "sensitive_data": "None. The data is synthetic \u2014 no personal, financial, or commercially confidential information is present.",
+  "recommended_uses": [
+    "Demonstrating time-series forecasting workflow and MASE-based evaluation against a naive baseline.",
+    "Teaching relational-to-time-series aggregation patterns."
+  ],
+  "discouraged_uses": [
+    "Drawing any conclusion about the real bicycle retail market.",
+    "Treating the dollar error figures as calibrated to real revenue scales."
+  ],
+  "quality_issues": [
+    "The committed database is substantially smaller than the README states. Profiled counts: bikes 97 rows (README says 4,753), bikeshops 30 (README says 93), orderlines 15,644 (README says 109,514). The raw Excel files in 00_data_raw/ match the profiled numbers, so the README figures appear to describe a different or expanded generation run. The 30 bikeshops figure is consistent with the modeling code, which trains across 30 series.",
+    "Missing values: none in any of the three tables.",
+    "orderlines carries an unnamed index column inherited from the Excel export.",
+    "Profiled order dates run 2011-01-07 to 2015-12-25, while the README and dashboard present the series as 2020-2024. The series is shifted for presentation, so absolute dates are not meaningful and the 'Q1 2025 forecast' is a relabeled Q1 2016."
+  ],
+  "tables": [
+    {
+      "name": "bikes",
+      "source": "Bikes_forecast/01_database/bike_orders_database.sqlite",
+      "note": "Full tables profiled.",
+      "rows": 97,
+      "columns": 4,
+      "duplicate_rows": 0,
+      "memory_mb": 0.0,
+      "fields": [
+        {
+          "name": "bike.id",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 97,
+          "min": 1.0,
+          "max": 97.0,
+          "mean": 49.0,
+          "std": 28.0,
+          "p50": 49.0
+        },
+        {
+          "name": "model",
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 97
+        },
+        {
+          "name": "description",
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 13,
+          "top_values": [
+            {
+              "value": "Mountain - Cross Country Race - Carbon",
+              "count": 14,
+              "pct": 14.43
+            },
+            {
+              "value": "Road - Elite Road - Aluminum",
+              "count": 11,
+              "pct": 11.34
+            },
+            {
+              "value": "Road - Endurance Road - Carbon",
+              "count": 11,
+              "pct": 11.34
+            },
+            {
+              "value": "Road - Elite Road - Carbon",
+              "count": 10,
+              "pct": 10.31
+            },
+            {
+              "value": "Mountain - Sport - Aluminum",
+              "count": 9,
+              "pct": 9.28
+            }
+          ]
+        },
+        {
+          "name": "price",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 53,
+          "min": 415.0,
+          "max": 12790.0,
+          "mean": 3953.762886597938,
+          "std": 2857.049793247717,
+          "p50": 3200.0
+        }
+      ]
+    },
+    {
+      "name": "bikeshops",
+      "source": "Bikes_forecast/01_database/bike_orders_database.sqlite",
+      "note": "Full tables profiled.",
+      "rows": 30,
+      "columns": 3,
+      "duplicate_rows": 0,
+      "memory_mb": 0.0,
+      "fields": [
+        {
+          "name": "bikeshop.id",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 30,
+          "min": 1.0,
+          "max": 30.0,
+          "mean": 15.5,
+          "std": 8.65544144839919,
+          "p50": 15.5
+        },
+        {
+          "name": "bikeshop.name",
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 30
+        },
+        {
+          "name": "location",
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 30
+        }
+      ]
+    },
+    {
+      "name": "orderlines",
+      "source": "Bikes_forecast/01_database/bike_orders_database.sqlite",
+      "note": "Full tables profiled.",
+      "rows": 15644,
+      "columns": 6,
+      "duplicate_rows": 0,
+      "memory_mb": 0.75,
+      "fields": [
+        {
+          "name": "order.id",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 2000,
+          "min": 1.0,
+          "max": 2000.0,
+          "mean": 997.9530810534391,
+          "std": 569.6762341309908,
+          "p50": 985.5
+        },
+        {
+          "name": "order.line",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 30,
+          "min": 1.0,
+          "max": 30.0,
+          "mean": 8.471618511889542,
+          "std": 6.8165049979680115,
+          "p50": 7.0
+        },
+        {
+          "name": "order.date",
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 962
+        },
+        {
+          "name": "customer.id",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 30,
+          "min": 1.0,
+          "max": 30.0,
+          "mean": 13.458194835080542,
+          "std": 7.716431657761377,
+          "p50": 10.0
+        },
+        {
+          "name": "product.id",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 97,
+          "min": 1.0,
+          "max": 97.0,
+          "mean": 49.475326003579646,
+          "std": 28.230653467156056,
+          "p50": 48.0
+        },
+        {
+          "name": "quantity",
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "n_unique": 10,
+          "min": 1.0,
+          "max": 10.0,
+          "mean": 1.289440040910253,
+          "std": 0.8848065361507763,
+          "p50": 1.0
+        }
+      ]
+    }
+  ]
+}

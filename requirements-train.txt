@@ -1,6 +1,6 @@
-# Dependencies for running 03_SRC/Multivariate_forecasting.py locally.
+# Dependencies for training the LSTM (02_SRC/Multivariate_forecasting.py).
 # Not used in the deployed app — predictions are pre-computed and committed to outputs/.
--r requirements.txt
+-r requirements-precompute.txt
 tensorflow==2.20.0
 h5py
 matplotlib
